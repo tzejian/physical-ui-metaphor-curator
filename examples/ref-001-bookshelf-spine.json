@@ -1,0 +1,34 @@
+{
+  "id": "ref-001",
+  "title": "FREAK MAG - Bookshelf Spine Navigation",
+  "tags": {
+    "metaphors": ["bookshelf", "book-spine", "library-shelf"],
+    "art_styles": ["japanese-editorial", "neo-brutalist", "flat-skeuomorphic"],
+    "ui_components": ["navigation", "category-filter", "accordion"],
+    "materials": ["paper-jacket", "matte-surface"]
+  },
+  "affordance_translation": {
+    "physical_behavior": "Books leaning against gravity on a shelf, vertical spine typography, colored dust jackets.",
+    "digital_mechanic": "Full-height vertical card layout standing side-by-side; leftmost card tilted via 2D rotation; horizontal shelf divider grounds the base."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#99D4FF",
+      "#FE8667",
+      "#FEA7B0",
+      "#219DFE",
+      "#6D7B48",
+      "#FFCA00",
+      "#000000"
+    ],
+    "borders": "1px to 2px solid black keylines, 0px border radius",
+    "elevation": "Flat, 0px shadow; depth achieved through 2D tilt transformation",
+    "typography": "Vertical CJK Gothic text paired with rotated monospace dates and bold numerals"
+  },
+  "interactive_mechanics": [
+    "Hover triggers a slight Y-axis lift or forward translation",
+    "Clicking a spine expands the column into an article archive drawer"
+  ],
+  "usability_notes": "High visual memorability and strong editorial personality. Best suited for small curated collections under 15–20 items; vertical text can introduce legibility friction for non-CJK alphabets."
+}
+

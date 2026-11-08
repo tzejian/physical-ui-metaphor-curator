@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ReferenceEntry",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "tags",
+    "affordance_translation",
+    "design_tokens",
+    "interactive_mechanics",
+    "usability_notes"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "tags": {
+      "type": "object",
+      "required": ["metaphors", "art_styles", "ui_components", "materials"],
+      "properties": {
+        "metaphors": { "type": "array", "items": { "type": "string" } },
+        "art_styles": { "type": "array", "items": { "type": "string" } },
+        "ui_components": { "type": "array", "items": { "type": "string" } },
+        "materials": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "affordance_translation": {
+      "type": "object",
+      "required": ["physical_behavior", "digital_mechanic"],
+      "properties": {
+        "physical_behavior": { "type": "string" },
+        "digital_mechanic": { "type": "string" }
+      }
+    },
+    "design_tokens": {
+      "type": "object",
+      "required": ["dominant_colors", "borders", "elevation", "typography"],
+      "properties": {
+        "dominant_colors": { "type": "array", "items": { "type": "string" } },
+        "borders": { "type": "string" },
+        "elevation": { "type": "string" },
+        "typography": { "type": "string" }
+      }
+    },
+    "interactive_mechanics": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "usability_notes": { "type": "string" }
+  }
+}
+
