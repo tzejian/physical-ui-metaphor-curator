@@ -1,0 +1,53 @@
+{
+  "id": "ref-002",
+  "title": "Mosby's Files - Filing Cabinet & Index Tab Navigation",
+  "tags": {
+    "metaphors": [
+      "filing-cabinet",
+      "index-tab",
+      "manila-folder",
+      "loose-leaf-paper",
+      "drafting-desk"
+    ],
+    "art_styles": [
+      "archival-editorial",
+      "industrial-hardware",
+      "swiss-minimalist"
+    ],
+    "ui_components": [
+      "navigation",
+      "category-filter",
+      "accordion",
+      "data-table"
+    ],
+    "materials": [
+      "paper",
+      "metal",
+      "wood"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "Stacked filing drawers with protruding rounded index tabs; folders pull out of the drawer without disturbing the archive; desk clutter (paperclips, scissors, rulers, index cards) overlaps loose-leaf paper.",
+    "digital_mechanic": "Homepage presents four color-coded stacked drawer bars; each protruding tab is a clickable folder that opens in place, preserving spatial context. In dossier comparison view, horizontal tabs rotate 90 degrees onto the right margin as persistent navigation."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#1A1A1A",
+      "#2A4FD7",
+      "#1E8A6E",
+      "#5B2A86",
+      "#D42B1F",
+      "#F5D020",
+      "#EDE8DE"
+    ],
+    "borders": "Minimal keylines; folder edges defined by saturated flat color blocks with rounded tab corners (~8px), 0-1px radius elsewhere",
+    "elevation": "Flat layered stacking; depth via overlapping z-index (index cards, prints, paperclips) rather than drop shadows",
+    "typography": "Heavy condensed uppercase grotesque display (American Modernism headline), serif for folder-tab names and drop-cap essays, monospace for dates and metadata"
+  },
+  "interactive_mechanics": [
+    "Hover/Click on a protruding tab pulls that folder open while surrounding drawers remain in place",
+    "Comparison mode rotates tabs 90 degrees onto the right margin as a vertical tab rail for non-linear navigation",
+    "Playable embedded artifacts (waveform cards, audio spools, video buttons) styled as physical desk objects"
+  ],
+  "usability_notes": "Color-coded drawers create strong spatial memory and editorial personality; best for curated archives of 5-15 top-level categories. Overlapping desk-clutter collage risks legibility friction on mobile and needs careful contrast management; tab-rotation pattern requires orientation cues for screen readers."
+}

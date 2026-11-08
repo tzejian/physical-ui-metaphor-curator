@@ -1,0 +1,43 @@
+{
+  "id": "ref-003",
+  "title": "Madeline's Mobile - Kitchen Ticket Scroll Layout",
+  "tags": {
+    "metaphors": [
+      "kitchen-ticket",
+      "thermal-receipt",
+      "order-slip"
+    ],
+    "art_styles": [
+      "retro-tactile-modern",
+      "thermal-dot-matrix",
+      "monospace-editorial"
+    ],
+    "ui_components": [
+      "navigation",
+      "menu",
+      "form-input"
+    ],
+    "materials": [
+      "paper"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A restaurant kitchen order ticket: narrow paper roll, single monospaced typeface, ASCII section rules, handwritten patron signature and margin scribbles at the bottom.",
+    "digital_mechanic": "Entire website lives inside a narrow (~300px) vertical scroll frame styled as a continuously printed ticket; ASCII characters delineate sections; a sticky dropdown collapses to a single line highlighting the current section as you scroll."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#FAFAF7",
+      "#111111",
+      "#B5442E"
+    ],
+    "borders": "ASCII-rule separators (dashes, pipes, equals signs) instead of CSS borders; no rounded corners",
+    "elevation": "Completely flat; paper illusion carried by typography and spacing, not shadow",
+    "typography": "Single monospaced typeface, one weight throughout; scribbled handwritten annotations for signature and margin notes"
+  },
+  "interactive_mechanics": [
+    "Sticky top dropdown menu transforms into a single highlighted line tracking scroll position",
+    "Long-form vertical scroll reads as one continuously printing receipt"
+  ],
+  "usability_notes": "Extremely strong brand concept for hospitality (half of users browse on-site for menus). Single typeface and one weight enforce simplicity; seekers can jump via the sticky menu. Constraints: the 300px frame sacrifices horizontal content richness, and decorative scribbles must never carry wayfinding meaning. Approximated tokens - live site could not be fetched, details sourced from Communication Arts project coverage."
+}

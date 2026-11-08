@@ -1,0 +1,56 @@
+/* ============================================================
+   variables.css — Design token custom properties
+   ============================================================ */
+
+:root {
+  /* Backgrounds */
+  --bg-page:      #0d0d0f;
+  --bg-surface:   #141417;
+  --bg-card:      #1a1a1f;
+  --bg-card-hover:#1f1f26;
+
+  /* Text */
+  --text-primary:   #f0eee9;
+  --text-secondary: #a8a49e;
+  --text-muted:     #5c5856;
+
+  /* Accent & Borders */
+  --accent:          #d4a84b;
+  --accent-muted:    #8a6d2e;
+  --border-subtle:   #2a2a30;
+  --border-focus:    #d4a84b;
+  --border-card:     #242428;
+
+  /* Tag category colors */
+  --tag-metaphor:    #2a3a2e;
+  --tag-metaphor-fg: #7ec88a;
+  --tag-style:       #2d2a3e;
+  --tag-style-fg:    #a08ce8;
+  --tag-component:   #2e2a2a;
+  --tag-component-fg:#e88c8c;
+  --tag-material:    #2a2d3e;
+  --tag-material-fg: #8cb4e8;
+
+  /* Spacing */
+  --space-xs:  4px;
+  --space-sm:  8px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+
+  /* Radii */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-pill: 999px;
+
+  /* Typography */
+  --font-sans: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+
+  /* Transitions */
+  --transition-fast: 120ms ease;
+  --transition-base: 200ms ease;
+}
+
