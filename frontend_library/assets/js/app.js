@@ -1,6 +1,6 @@
 /**
  * app.js — Gallery Controller
- * Fetches manifest.json, renders reference cards, handles search & filter.
+ * Fetches manifest.json, renders reference cards, handles search & tab navigation.
  */
 
 import {
@@ -18,14 +18,29 @@ let allEntries = [];
 /** @type {string} current search query */
 let searchQuery = '';
 
-/** @type {{ category: string, value: string } | null} active filter */
+/** @type {string} active category tab */
+let currentTab = 'all';
+
+/** @type {{ category: string, value: string }} active filter */
 let activeFilter = { category: 'all', value: 'all' };
 
+// ── Tab Definitions ───────────────────────────────────────────────────────────
+const TABS = [
+  { id: 'all',           label: 'All',        key: null },
+  { id: 'metaphors',     label: 'Metaphors',  key: 'metaphors' },
+  { id: 'art_styles',    label: 'Styles',     key: 'art_styles' },
+  { id: 'ui_components', label: 'Component',  key: 'ui_components' },
+  { id: 'materials',     label: 'Material',   key: 'materials' },
+];
+
 // ── DOM refs ──────────────────────────────────────────────────────────────────
-const gallery      = document.getElementById('gallery');
-const searchInput  = document.getElementById('search-input');
-const filterBar    = document.getElementById('filter-pills');
-const resultsCount = document.getElementById('results-count');
+const gallery        = document.getElementById('gallery');
+const searchInput    = document.getElementById('search-input');
+const categoryTabs   = document.getElementById('category-tabs');
+const subFilterRow   = document.getElementById('sub-filter-row');
+const subFilterTitle = document.getElementById('sub-filter-title');
+const filterBar      = document.getElementById('filter-pills');
+const resultsCount   = document.getElementById('results-count');
 
 // ── Bootstrap ─────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', async () => {
@@ -38,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     return;
   }
 
-  buildFilterPills();
+  buildCategoryTabs();
   renderGallery();
 
   searchInput?.addEventListener('input', e => {
@@ -47,12 +62,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   });
 });
 
-// ── Filter pills ───────────────────────────────────────────────────────────────
-function buildFilterPills() {
-  if (!filterBar) return;
+// ── Category Tabs Navigation (Tier 1) ─────────────────────────────────────────
+function buildCategoryTabs() {
+  if (!categoryTabs) return;
 
-  // Gather unique values per category
-  const categories = {
+  // Compute tag counts per category
+  const tagCounts = {
     metaphors:    new Set(),
     art_styles:   new Set(),
     ui_components:new Set(),
@@ -60,55 +75,132 @@ function buildFilterPills() {
   };
 
   allEntries.forEach(entry => {
-    Object.keys(categories).forEach(cat => {
-      (entry.tags?.[cat] || []).forEach(v => categories[cat].add(v));
+    Object.keys(tagCounts).forEach(cat => {
+      (entry.tags?.[cat] || []).forEach(v => tagCounts[cat].add(v));
     });
   });
 
-  const categoryLabels = {
-    metaphors:    'Metaphors',
-    art_styles:   'Styles',
-    ui_components:'Components',
-    materials:    'Materials',
-  };
+  categoryTabs.innerHTML = TABS.map(tab => {
+    const count = tab.id === 'all'
+      ? allEntries.length
+      : (tagCounts[tab.key]?.size || 0);
 
-  // "All" pill
-  filterBar.innerHTML = `
-    <button class="pill is-active" data-category="all" data-value="all">All</button>
+    const isActive = tab.id === currentTab ? ' is-active' : '';
+
+    return `
+      <button
+        class="tab-btn${isActive}"
+        data-tab="${tab.id}"
+        role="tab"
+        aria-selected="${tab.id === currentTab}"
+      >
+        <span>${escapeHtml(tab.label)}</span>
+        <span class="tab-count">(${count})</span>
+      </button>
+    `;
+  }).join('');
+
+  categoryTabs.addEventListener('click', e => {
+    const btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    const tabId = btn.dataset.tab;
+    if (tabId === currentTab) return;
+
+    switchTab(tabId);
+  });
+}
+
+function switchTab(tabId) {
+  currentTab = tabId;
+
+  // Update tab buttons visual state
+  categoryTabs.querySelectorAll('.tab-btn').forEach(btn => {
+    const isSelected = btn.dataset.tab === tabId;
+    btn.classList.toggle('is-active', isSelected);
+    btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+  });
+
+  if (tabId === 'all') {
+    activeFilter = { category: 'all', value: 'all' };
+    if (subFilterRow) subFilterRow.style.display = 'none';
+    renderGallery();
+    return;
+  }
+
+  // Show sub-filter row for selected category
+  const tabConfig = TABS.find(t => t.id === tabId);
+  if (subFilterTitle && tabConfig) {
+    subFilterTitle.textContent = `Filter by ${tabConfig.label}`;
+  }
+  if (subFilterRow) subFilterRow.style.display = 'block';
+
+  // Reset active filter to all within this category
+  activeFilter = { category: tabId, value: 'all' };
+  renderSubFilterPills(tabId);
+  renderGallery();
+}
+
+// ── Contextual Sub-Filter Pills (Tier 2) ──────────────────────────────────────
+function renderSubFilterPills(categoryKey) {
+  if (!filterBar) return;
+
+  // Count occurrences of each tag in the current category
+  const tagFrequency = {};
+  allEntries.forEach(entry => {
+    (entry.tags?.[categoryKey] || []).forEach(tag => {
+      tagFrequency[tag] = (tagFrequency[tag] || 0) + 1;
+    });
+  });
+
+  // Sort tags alphabetically for clean scanning
+  const sortedTags = Object.keys(tagFrequency).sort((a, b) => a.localeCompare(b));
+
+  const tabConfig = TABS.find(t => t.id === categoryKey);
+  const allLabel = `All ${tabConfig?.label || ''}`.trim();
+
+  const allPillHtml = `
+    <button class="pill is-active" data-value="all">
+      <span>${escapeHtml(allLabel)}</span>
+      <span class="tab-count">(${allEntries.length})</span>
+    </button>
   `;
 
-  Object.entries(categories).forEach(([cat, values]) => {
-    if (!values.size) return;
+  const tagPillsHtml = sortedTags.map(tag => `
+    <button class="pill" data-value="${escapeHtml(tag)}">
+      <span>${escapeHtml(tag)}</span>
+      <span class="tab-count">(${tagFrequency[tag]})</span>
+    </button>
+  `).join('');
 
-    const groupLabel = document.createElement('span');
-    groupLabel.className = 'filter-pills__label';
-    groupLabel.textContent = categoryLabels[cat];
-    filterBar.appendChild(groupLabel);
+  filterBar.innerHTML = allPillHtml + tagPillsHtml;
 
-    values.forEach(value => {
-      const btn = document.createElement('button');
-      btn.className = `pill`;
-      btn.dataset.category = cat;
-      btn.dataset.value = value;
-      btn.textContent = value;
-      filterBar.appendChild(btn);
-    });
-  });
-
-  filterBar.addEventListener('click', e => {
+  // Attach sub-pill click listener (re-delegated cleanly)
+  filterBar.onclick = e => {
     const pill = e.target.closest('.pill');
     if (!pill) return;
-    activeFilter = { category: pill.dataset.category, value: pill.dataset.value };
-    filterBar.querySelectorAll('.pill').forEach(p => p.classList.remove('is-active'));
-    pill.classList.add('is-active');
+
+    const val = pill.dataset.value;
+
+    // Toggle: if clicking the active specific pill, reset to 'all'
+    if (activeFilter.value === val && val !== 'all') {
+      activeFilter = { category: currentTab, value: 'all' };
+    } else {
+      activeFilter = { category: currentTab, value: val };
+    }
+
+    // Update pill active classes
+    filterBar.querySelectorAll('.pill').forEach(p => {
+      p.classList.toggle('is-active', p.dataset.value === activeFilter.value);
+    });
+
     renderGallery();
-  });
+  };
 }
 
 // ── Filtering ─────────────────────────────────────────────────────────────────
 function getFilteredEntries() {
   return allEntries.filter(entry => {
-    // Search filter: matches title, metaphors, art styles, or ui_components
+    // 1. Text search filter
     if (searchQuery) {
       const haystack = [
         entry.title,
@@ -120,10 +212,12 @@ function getFilteredEntries() {
       if (!haystack.includes(searchQuery)) return false;
     }
 
-    // Pill filter
-    if (activeFilter.category !== 'all') {
-      const values = entry.tags?.[activeFilter.category] || [];
-      if (!values.includes(activeFilter.value)) return false;
+    // 2. Tab + Sub-pill filter
+    if (currentTab !== 'all') {
+      const tagsInCat = entry.tags?.[currentTab] || [];
+      if (activeFilter.value !== 'all') {
+        if (!tagsInCat.includes(activeFilter.value)) return false;
+      }
     }
 
     return true;
@@ -138,7 +232,7 @@ function renderGallery() {
   if (resultsCount) {
     resultsCount.textContent =
       filtered.length === allEntries.length
-        ? `${allEntries.length} entr${allEntries.length === 1 ? 'y' : 'ies'}`
+        ? `${allEntries.length} entries`
         : `${filtered.length} of ${allEntries.length}`;
   }
 
@@ -146,7 +240,7 @@ function renderGallery() {
     gallery.innerHTML = `
       <div class="empty-state">
         <div class="empty-state__icon">🔍</div>
-        <p class="empty-state__message">No references match your search.</p>
+        <p class="empty-state__message">No references match your filter criteria.</p>
       </div>`;
     return;
   }
@@ -155,9 +249,9 @@ function renderGallery() {
 }
 
 function buildCardHTML(entry) {
-  const colors  = entry.design_tokens?.dominant_colors || [];
-  const strip   = buildColorStrip(colors);
-  const badges  = buildAllBadges(entry.tags || {}, 2);
+  const colors   = entry.design_tokens?.dominant_colors || [];
+  const strip    = buildColorStrip(colors);
+  const badges   = buildAllBadges(entry.tags || {}, 2);
   const mechanic = escapeHtml(entry.affordance_translation?.digital_mechanic || '');
 
   return `
@@ -183,4 +277,3 @@ function renderError(message) {
       <p class="empty-state__message">${escapeHtml(message)}</p>
     </div>`;
 }
-

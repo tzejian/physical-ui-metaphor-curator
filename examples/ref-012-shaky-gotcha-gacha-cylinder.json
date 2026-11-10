@@ -1,0 +1,47 @@
+{
+  "id": "ref-012",
+  "title": "Shaky Gotcha - Rotating Gacha Capsule Cylinder",
+  "tags": {
+    "metaphors": [
+      "gacha-capsule-toy",
+      "vending-cylinder",
+      "arcade-machine"
+    ],
+    "art_styles": [
+      "playful-brutalist",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "cta",
+      "gallery",
+      "navigation"
+    ],
+    "materials": [
+      "plastic",
+      "glass"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A capsule-toy (gachapon) machine: rotate the cylindrical drum until a capsule drops into the chute; a DJ/arcade cabinet frames the play session with sound.",
+    "digital_mechanic": "A mobile-first 3D web arcade: rotating the cylinder browses/draws gacha items, tapping 'Shakys' collects them, and a triggerable 'Rage Mode' alters game state; a DJ console packs 22 tracks as diegetic sound design. The 3D gallery doubles as the prize shelf."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#FF3D6E",
+      "#FFC400",
+      "#3B7DDD",
+      "#111111",
+      "#F2EAD3"
+    ],
+    "borders": "Toy-molded capsule and cabinet silhouettes; chunky arcade bezels",
+    "elevation": "Real 3D drum rotation; UI chrome flat and arcade-styled",
+    "typography": "Arcade poster display type; character names as collectible labels"
+  },
+  "interactive_mechanics": [
+    "Rotate the 3D capsule drum to browse and draw",
+    "Tap characters to collect; Rage Mode as a state-shifting power-up",
+    "DJ console with 22 tracks as interactive diegetic audio",
+    "3D gallery acts as the collected-prizes shelf"
+  ],
+  "usability_notes": "Gacha/drum rotation gives browsing a tactile 'one draw per spin' pacing that fits collectibles and merch drops. Mobile-first 3D is demanding: keep poly counts low, gate Rage Mode audio, and ensure the collect action never depends on 3D precision. Source: Awwwards nominee summary (solo-developed 3D web arcade); live-site verification pending."
+}

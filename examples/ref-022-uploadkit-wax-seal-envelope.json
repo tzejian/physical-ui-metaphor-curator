@@ -1,0 +1,46 @@
+{
+  "id": "ref-022",
+  "title": "UploadEnvelope - Wax-Sealed Envelope as Drop Target",
+  "tags": {
+    "metaphors": [
+      "envelope",
+      "wax-seal",
+      "flap",
+      "mail-slot"
+    ],
+    "art_styles": [
+      "flat-skeuomorphic",
+      "editorial-print"
+    ],
+    "ui_components": [
+      "form-input",
+      "modal"
+    ],
+    "materials": [
+      "paper",
+      "wax"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "Mailing a letter: the envelope flap opens to receive contents, and a wax seal pressed shut means it is complete and sealed.",
+    "digital_mechanic": "A WeTransfer-inspired CSS 3D envelope as a file-upload drop target with a four-state machine: idle (closed, 'drop files into the envelope'), drag-over (flap opens via rotateX(180deg) with perspective), uploading (progress fill rises in the envelope body), complete (a wax seal with a checkmark appears and the flap closes). Files visually slide into the pocket."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#F2EAD3",
+      "#B3165E",
+      "#8A5A2B",
+      "#1A1A1A"
+    ],
+    "borders": "Envelope pocket cut to a V via clip-path; wax seal as a radial-gradient disc with embossed rim highlight",
+    "elevation": "True CSS 3D: back panel, letter and pocket layered on separate translateZ planes; flap hinges so it renders in front when closed and behind the letter when open - depth sorting replaces z-index",
+    "typography": "Invitation-style serif label; functional state copy beside the envelope"
+  },
+  "interactive_mechanics": [
+    "Drag-over opens the flap; drag-leave closes it (affordance state, not decoration)",
+    "Upload progress rendered as rising fill inside the envelope body",
+    "Completion wax-seal stamp with checkmark as the terminal reward state",
+    "File drop/slide-in animation into the pocket"
+  ],
+  "usability_notes": "The strongest argument in the library for metaphor-as-function: every state of a mundane file upload maps to a physical mail stage, so the drop target's affordance is unmistakable. Implementation notes that transfer: hinge-on-separate-plane solves the flap z-order without z-index; staged transitions belong to the state being entered (flap first, letter delayed 0.45s); keyboard equivalents and tabindex focus must exist for the drop target, and the wax-seal completion must also be announced to AT (role=status). Sibling implementations: James Frewin's drag-to-crack seal envelope and a pure-CSS hinge variant documented down to the transform math."
+}

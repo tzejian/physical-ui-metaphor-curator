@@ -1,0 +1,47 @@
+{
+  "id": "ref-006",
+  "title": "Polaroid I-2 - Physical Camera Dials & Instant Photo Frame",
+  "tags": {
+    "metaphors": [
+      "instant-camera",
+      "control-dial",
+      "instant-photo",
+      "viewfinder"
+    ],
+    "art_styles": [
+      "flat-skeuomorphic",
+      "retro-tactile-modern",
+      "swiss-minimalist"
+    ],
+    "ui_components": [
+      "navigation",
+      "gallery",
+      "form-input",
+      "cta"
+    ],
+    "materials": [
+      "plastic",
+      "metal"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "An instant camera's top-plate control dials (aperture, shutter, mode rings) with tactile detents; instant film ejecting from the slot; the white-framed square photo as the product's own output.",
+    "digital_mechanic": "3D camera model anchors the layout; a 'camera setting explore tool' lets users rotate real dials to learn I-2 features before purchase; scroll drives the camera through exploded/assembly states; photo gallery items render as freshly ejected instant photos with white polaroid frames."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#0E0E0E",
+      "#FFB500"
+    ],
+    "borders": "Nearly borderless; instant-photo white frames (~10-12%) are the only hard edges; dial knurling rendered as fine radial ridges in 3D",
+    "elevation": "Photographic depth from 3D lighting and shadows cast by the camera model; UI chrome itself flat",
+    "typography": "Compact uppercase grotesque labels echoing engraved camera legends; minimal supporting serif/sans body"
+  },
+  "interactive_mechanics": [
+    "Rotatable 3D camera dials as product-feature explorer (rotation = parameter change)",
+    "Scroll-choreographed camera assembly/exploded view transitions",
+    "Homepage intro animation of film ejecting into the hero photo frame",
+    "Gallery photos presented as freshly developed instants"
+  ],
+  "usability_notes": "E-commerce with education: dial-explorer converts spec-sheet features into muscle memory, ideal for prosumer cameras. Two-color palette keeps photography dominant. Risks: 3D interactivity needs mobile fallbacks and clear rotate affordances; dial controls must not gate purchase paths. Awwwards SOTD 7.48; dev award animation 8.0."
+}

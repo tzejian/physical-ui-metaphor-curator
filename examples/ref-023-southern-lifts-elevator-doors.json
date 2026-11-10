@@ -1,0 +1,46 @@
+{
+  "id": "ref-023",
+  "title": "Southern Lifts - Sliding Elevator Doors as Menu & 3D Lift Hero",
+  "tags": {
+    "metaphors": [
+      "elevator-doors",
+      "lift-cabin",
+      "door-swing"
+    ],
+    "art_styles": [
+      "industrial-hardware",
+      "swiss-minimalist"
+    ],
+    "ui_components": [
+      "navigation",
+      "modal",
+      "cta"
+    ],
+    "materials": [
+      "metal",
+      "glass"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "Elevator doors part in the middle to admit you; the cabin itself travels between floors; a door swings on hinges with an arc you can trace.",
+    "digital_mechanic": "For a lift company whose product IS the metaphor: the menu icon opens a menu animated as elevator doors sliding apart; a scroll-driven 3D lift hero carries the user through the product; an interactive door-swing diagram demonstrates installation geometry on hover. The brand's physical product is the navigation system."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#1A1A1A",
+      "#C0C5CC",
+      "#8A939E",
+      "#E8E4DC",
+      "#B5442E"
+    ],
+    "borders": "Metal panel seams and brushed-steel door parting lines; minimal chrome elsewhere",
+    "elevation": "3D cabin lighting and reflections; UI panels flat",
+    "typography": "Engineered grotesque; spec-sheet style labels for the door diagram"
+  },
+  "interactive_mechanics": [
+    "Menu opens as sliding elevator doors (icon = door state)",
+    "Scroll-driven 3D lift ride as hero narrative",
+    "Hover-driven interactive door swing diagram for install geometry"
+  ],
+  "usability_notes": "The rare case where a physical metaphor is literally the product - the door-menu is brand logic, not decoration. Keep the doors animation under ~600ms and always reveal a static menu fallback for AT users; 3D hero needs mobile LOD. Source: Awwwards nominee element listing (itsy-bytesy)."
+}

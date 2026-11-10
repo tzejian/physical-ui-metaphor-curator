@@ -1,0 +1,47 @@
+{
+  "id": "ref-018",
+  "title": "James Frewin Matchbox - Slide-Out Tray & Strike-to-Ignite",
+  "tags": {
+    "metaphors": [
+      "matchbox",
+      "slide-tray",
+      "striking-surface",
+      "living-flame"
+    ],
+    "art_styles": [
+      "industrial-hardware",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "cta",
+      "form-input"
+    ],
+    "materials": [
+      "cardboard",
+      "paper"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A card matchbox: thumb slides the inner tray out, then a match is dragged quickly along the side striker strip; it flares, settles into a warm living flame and slowly burns down the stick.",
+    "digital_mechanic": "Two-stage gesture sequence: drag the tray out (or press Enter), then drag a match across the striker quickly (or press Enter again). The strike velocity and the striker-strip contact decide ignition; the flame then lives - flickers, burns down the stick over time."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#C8A15A",
+      "#E8DCC0",
+      "#1A1A1A",
+      "#FF7A00",
+      "#B5442E"
+    ],
+    "borders": "Cardboard tray edges with printed label face; striker strip as a dark speckled band",
+    "elevation": "Drawer-slide parallax between tray and sleeve; flame glow as the only volumetric element",
+    "typography": "Letterpress-style matchbox label type"
+  },
+  "interactive_mechanics": [
+    "Slide-out tray drag with drawer physics",
+    "Velocity-gated strike: fast drag along the strip ignites, slow drag does not",
+    "Living flame animation that burns down the stick over session time",
+    "Full keyboard equivalent: Enter opens tray, Enter again strikes"
+  ],
+  "usability_notes": "A model two-step ritual component: each physical sub-action maps to one gesture AND one key, so the metaphor never blocks input. The velocity gate teaches the 'quick strike' through failure (a lazy drag just scuffs) - keep a visible hint so users connect drag speed to ignition. Flame states make excellent session/progress indicators. Source: component page self-documentation."
+}

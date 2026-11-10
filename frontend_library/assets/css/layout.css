@@ -35,6 +35,7 @@ body {
   margin: 0 auto;
   padding: 0 var(--space-lg);
   width: 100%;
+  padding-bottom: 100px;
 }
 
 /* ── Site header ── */
@@ -87,6 +88,7 @@ body {
   .detail-layout {
     grid-template-columns: 1fr 1fr;
   }
+
   .detail-layout__full {
     grid-column: 1 / -1;
   }
@@ -106,6 +108,7 @@ body {
     align-items: flex-end;
     justify-content: space-between;
   }
+
   .site-header__description {
     text-align: left;
   }
@@ -164,4 +167,3 @@ body {
   margin-top: var(--space-sm);
   margin-bottom: var(--space-lg);
 }
-

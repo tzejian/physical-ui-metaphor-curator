@@ -1,0 +1,47 @@
+{
+  "id": "ref-011",
+  "title": "Silicon & Sepia - The Corkboard Pin Wall",
+  "tags": {
+    "metaphors": [
+      "corkboard",
+      "push-pin",
+      "pinned-note",
+      "radar-minimap"
+    ],
+    "art_styles": [
+      "retro-tactile-modern",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "gallery",
+      "modal"
+    ],
+    "materials": [
+      "cork",
+      "paper",
+      "metal"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A corkboard wall: photos and notes pinned at arbitrary angles; you step back to see the whole board and lean in to read one note; a compass helps you orient.",
+    "digital_mechanic": "An infinite pannable/zoomable canvas of pinned photos with rotation and overlap; one unified gesture system (mouse, touch, trackpad pinch, momentum); a radar minimap keeps orientation; an auto-placement algorithm packs new photos without overlapping curated ones."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#C49A6C",
+      "#7A5230",
+      "#E9DCC3",
+      "#B5442E",
+      "#1A1A1A"
+    ],
+    "borders": "Photo prints with white frames; push-pin heads as the only circular chrome; torn-note edges on labels",
+    "elevation": "Board-flat base with pinned items casting small directional shadows; zoom creates genuine scale depth",
+    "typography": "Handwritten and typewriter labels pinned next to photos; map legend in small caps"
+  },
+  "interactive_mechanics": [
+    "Pan/zoom the wall with momentum across all input device types",
+    "Radar minimap shows current viewport within the whole board",
+    "Pin/pack new photos via auto-placement without overlap; drag to re-pin"
+  ],
+  "usability_notes": "Corkboard suits galleries of memory-like content (photos, milestones). The infinite canvas is powerful but disorienting: the minimap and a 'reset view' affordance are mandatory; keyboard users need a list alternative to spatial navigation. Performance: viewport-cull pinned items. Source: Devpost project documentation (self-reported mechanics)."
+}

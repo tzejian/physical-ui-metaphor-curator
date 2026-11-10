@@ -1,0 +1,45 @@
+{
+  "id": "ref-027",
+  "title": "Aralesk Collages & Motion - Draggable Fabric Sheets with Video Reveal",
+  "tags": {
+    "metaphors": [
+      "fabric-sheet",
+      "collage-paper",
+      "curtain-scrap"
+    ],
+    "art_styles": [
+      "collage-editorial",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "gallery",
+      "modal"
+    ],
+    "materials": [
+      "fabric",
+      "paper"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "Loose sheets of fabric and collage paper lying on a table; you drag one aside and what it covered is revealed underneath.",
+    "digital_mechanic": "Portfolio work presented under draggable fabric sheets (GSAP): grabbing a sheet and pulling it aside reveals the video piece beneath; sheets animate with cloth-like weight and settle at new angles, turning a video grid into an archaeology of the desk. Sibling elements include falling letters with fabric-sheet animation and a thread-ball cursor."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#14100C",
+      "#D9CFC0",
+      "#B5442E",
+      "#4A6741",
+      "#FFC400"
+    ],
+    "borders": "Torn/cut fabric edges; collage layering without frames",
+    "elevation": "Sheet shadows scale with lift height; revealed video sits flat beneath",
+    "typography": "Cut-and-paste collage type; handwritten annotations"
+  },
+  "interactive_mechanics": [
+    "Drag fabric sheets aside to uncover video work (drag = reveal affordance)",
+    "Cloth-weight animation: sheets settle with residual angle after release",
+    "Falling-letter and thread-ball cursor siblings extend the tactile system"
+  ],
+  "usability_notes": "Hiding work under draggable sheets trades scanability for discovery - acceptable for a motion designer's showreel where every item is worth the dig, dangerous for content that must be found. Cap the sheet count, keep one sheet per item (never layered hiding), and provide a grid/list view toggle. Drag targets need large hit areas and keyboard-reachable equivalents. Source: Awwwards element listing (self-tagged GSAP)."
+}

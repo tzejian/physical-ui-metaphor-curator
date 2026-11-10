@@ -1,0 +1,47 @@
+{
+  "id": "ref-017",
+  "title": "Tactile UI Pull-Cord Bulb - Detent & Snap Toggle Component",
+  "tags": {
+    "metaphors": [
+      "pendant-lamp",
+      "pull-cord-switch",
+      "detent-snap",
+      "filament-bulb"
+    ],
+    "art_styles": [
+      "industrial-hardware",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "form-input"
+    ],
+    "materials": [
+      "glass",
+      "brass",
+      "plastic"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A pull-cord switch: the cord resists as you pull, the internal detent trips with a snap, force drops, and the filament warms from dull red to white while the lamp sways on its cord.",
+    "digital_mechanic": "A shadcn-style component engineered for the full force curve: an under-detent pull visibly lags the pointer, at the trip point force drops and the acorn catch-up reads as the snap; a pull that never reaches the trip point stretches the cord, tilts the lamp and springs back without switching. Filament color temperature (2200-3200K option) animates with state; light direction option (0-345 degrees) drives every highlight and shadow consistently."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#181818",
+      "#F5F1E8",
+      "#FFB65C",
+      "#8A8A8A",
+      "#C8102E"
+    ],
+    "borders": "Spun-dome shade silhouette; acorn pull knob as the sole decorative element",
+    "elevation": "Light-direction-aware highlight/shadow system that follows one configurable light angle",
+    "typography": "Component-label minimal; state announced to assistive tech, not drawn"
+  },
+  "interactive_mechanics": [
+    "Pointer-lag under detent, force-drop snap at trip point, spring-back on incomplete pulls",
+    "Filament warmth animation tied to on/off state",
+    "Optional synthesized snap sound, gated to start only after first user touch (autoplay-safe)",
+    "Page-finish integration: pull sets data-finish (aluminium/graphite) and persists the choice"
+  ],
+  "usability_notes": "The most complete published spec for cord-physics as UI: explicit lag/snap/spring-back states distinguish 'tried but not enough' from 'done' - a crucial but rarely modeled affordance. Ships as an installable component with aria label, keyboard pull(), and reduced-motion-friendly design. Use as the reference implementation when the pull-cord metaphor needs to be real UI, not illustration. Source: tactileui.dev component documentation."
+}

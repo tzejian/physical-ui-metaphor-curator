@@ -1,0 +1,43 @@
+{
+  "id": "ref-025",
+  "title": "The Turn of the Screw (Lusion) - Curtain Overlay Menu for Opera",
+  "tags": {
+    "metaphors": [
+      "theatre-curtain",
+      "stage-drape",
+      "opera-house"
+    ],
+    "art_styles": [
+      "editorial-print",
+      "theatrical-gothic"
+    ],
+    "ui_components": [
+      "navigation",
+      "modal"
+    ],
+    "materials": [
+      "velvet-fabric"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "An opera house: the house lights dim, the velvet main drape parts, and the stage is revealed for the performance.",
+    "digital_mechanic": "The overlay menu opens as a curtain effect - velvet panels sweep across to reveal navigation, framing site sections as acts of the production. The whole site is an immersive trailer for Opera North's 2020 production, built as WebGL with a sound-art score (James Bulley, Audiolab), so the curtain framing extends to scene transitions."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#000000",
+      "#7A1024",
+      "#C9A227",
+      "#F2EAD3"
+    ],
+    "borders": "Drape folds rendered as velvet shading rather than lines; no UI chrome",
+    "elevation": "WebGL fabric folds with theatrical rim lighting; depth is staged like scenography",
+    "typography": "Playbill-style serif titles; act/scene numbering for sections"
+  },
+  "interactive_mechanics": [
+    "Overlay menu as animated curtain sweep (open = drape parting)",
+    "Scene transitions staged as curtain resets between acts",
+    "WebGL immersive trailer environment with scored sound design"
+  ],
+  "usability_notes": "Curtain menus fit performance brands (opera, theatre, film festivals) where anticipation is the product. The curtain must never trap users: menu open/close has to be keyboard operable, the animation brief, and the underlying page still reachable. Heavy WebGL trailer needs a lightweight poster fallback. Awwwards SOTD 7.59 (creativity 8.17); palette single-black plus accent per Awwwards data."
+}

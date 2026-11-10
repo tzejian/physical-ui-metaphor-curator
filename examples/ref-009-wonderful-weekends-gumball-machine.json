@@ -1,0 +1,46 @@
+{
+  "id": "ref-009",
+  "title": "Wonderful Weekends - Physics-Based 3D Gumball Machine",
+  "tags": {
+    "metaphors": [
+      "gumball-machine",
+      "capsule-dispenser",
+      "coin-op-vending"
+    ],
+    "art_styles": [
+      "flat-skeuomorphic",
+      "playful-brutalist"
+    ],
+    "ui_components": [
+      "cta",
+      "modal"
+    ],
+    "materials": [
+      "glass",
+      "plastic",
+      "metal"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A countertop gumball machine: a glass globe filled with spheres, a coin slot, a hand crank, and a chute; turning the crank releases a cascade of balls with real momentum and collision.",
+    "digital_mechanic": "A 3D gumball machine rendered in WebGL with rigid-body physics - cranking releases gumballs that tumble, bounce and settle realistically; the dispensed ball becomes the reward (prize/reveal), turning a CTA into a mechanical ritual."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#E8412C",
+      "#FFC400",
+      "#3B7DDD",
+      "#FFFFFF",
+      "#1A1A1A"
+    ],
+    "borders": "Toy-like molded silhouettes; glass globe rendered with translucent highlights rather than outlines",
+    "elevation": "Full 3D depth with real shadows and physics collision; no pseudo-flat chrome",
+    "typography": "Rounded playful display type matching toy iconography"
+  },
+  "interactive_mechanics": [
+    "Crank interaction dispenses a physics-simulated gumball cascade",
+    "Dispensed ball resolves into a reward/prize reveal",
+    "Rigid-body bounce and settle for every sphere"
+  ],
+  "usability_notes": "Gumball dispensing is a jackpot-loop metaphor - perfect for one-shot campaigns and promotions where a single delight moment is the goal. Cost: WebGL + physics payloads, mobile performance risk, and the reward must be reachable without the toy (respect reduced-motion and provide a plain reveal path). Source: Awwwards SOTD summary; live-site verification pending."
+}

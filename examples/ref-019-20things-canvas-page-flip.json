@@ -1,0 +1,44 @@
+{
+  "id": "ref-019",
+  "title": "20 Things I Learned - Canvas Book Page Flip",
+  "tags": {
+    "metaphors": [
+      "hardcover-book",
+      "page-turn",
+      "book-spine"
+    ],
+    "art_styles": [
+      "editorial-print",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "navigation",
+      "modal"
+    ],
+    "materials": [
+      "paper"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A hardcover book: grab the page edge, the sheet bends and curls over the spine with a folding shadow, and settles on the other side.",
+    "digital_mechanic": "Google's HTML5 case study (web.dev): each page is a section with a flip object tracking progress/target/dragging; dragging near the spine bends the page via canvas rendering - fold position, page bend strength and progressive left/right shadows are all derived from flip progress. Release completes the flip or snaps back depending on drag side."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#F4E8C1",
+      "#2A1F14",
+      "#C8A15A",
+      "#8A5A2B"
+    ],
+    "borders": "Book cover with rounded spine; page edges shaded by fold geometry, no UI borders",
+    "elevation": "Dynamic fold shadow computed per frame (left/right shadow width from bend strength) - depth is the flip itself",
+    "typography": "Storybook serif with large initials, warm paper background texture"
+  },
+  "interactive_mechanics": [
+    "Drag a page edge to bend and flip; release physics decides complete vs snap-back",
+    "zIndex stacking per page with continuous flip progress",
+    "Canvas-drawn curl: page masked at foldX with animated fold shadow",
+    "Arrow-key page turns as the keyboard equivalent"
+  ],
+  "usability_notes": "The canonical reference implementation (web.dev full source walkthrough). Page flip earns its cost only for linear, chapter-like content (guides, annual reports, lookbooks); for arbitrary navigation it impedes scanning - always pair with a persistent index or progress bar, keep flip animation under ~500ms, and support swipe plus arrows. Text must stay selectable/accessible outside the canvas-rendered fold frames."
+}

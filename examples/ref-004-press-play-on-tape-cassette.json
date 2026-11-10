@@ -1,0 +1,51 @@
+{
+  "id": "ref-004",
+  "title": "Press Play On Tape - Cassette Deck & VHS Packaging Interface",
+  "tags": {
+    "metaphors": [
+      "audio-cassette",
+      "vhs-tape",
+      "walkman",
+      "magnetic-tape-reel"
+    ],
+    "art_styles": [
+      "retro-tactile-modern",
+      "neo-retro-80s",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "navigation",
+      "cta",
+      "modal"
+    ],
+    "materials": [
+      "plastic",
+      "paper-jacket"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "Cassette lined up side by side forming striped spool motifs; VHS packaging with ergonomic cut corners; A/B side flipping; magnetic tape movement; worn-out tapes jamming.",
+    "digital_mechanic": "Services section arranged as cassettes side-by-side; graphic stripes animate through page layouts and titles mimicking tape travel; mechanical A/B-side flip animations with mechanical sound effects; 404 page is a worn-out jammed cassette rendered with WebGL shaders."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#111111",
+      "#F2EAD3",
+      "#FF7A00",
+      "#E8332A",
+      "#C41E7A",
+      "#FFC400",
+      "#00B3B0"
+    ],
+    "borders": "Hard-edged cassette-window frames and packaging-cut corner silhouettes; stripes as full-bleed color bands, no rounded corners",
+    "elevation": "Flat with 2D mechanical movement; depth from overlapping tape stripes and label layers, no drop shadows",
+    "typography": "Bold uppercase sans-serif echoing VHS cover titles; category acronyms (VM, AB, S, SD) echoing cassette mode labels; filled 'O' glyphs animate as reactive sound circles"
+  },
+  "interactive_mechanics": [
+    "Audio-reactive typography: Web Audio API listens to five frequency bands and scales the filled 'O' glyphs in real time",
+    "A/B side flip animations with mechanical cassette sounds on section transitions",
+    "Infinite scroll illusion: identical component at page start/end matching scale and color state for seamless loop",
+    "WebGL (Curtains.js) shader plane for the worn-tape 404 page"
+  ],
+  "usability_notes": "Every interaction emits sound, so audio must be opt-in and fully muteable (accessibility + autoplay policy). Best for audio/sound studios where audio-reactivity is the brand. Rainbow-stripe palette and mechanical animations can overwhelm; content hierarchy depends on restraining stripes to structural bands. Strong delight and memorability; heavier CPU/GPU cost on low-end devices."
+}

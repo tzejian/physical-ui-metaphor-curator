@@ -1,0 +1,48 @@
+{
+  "id": "ref-024",
+  "title": "Rise of Digital - Elevator Ride Through Six Floors of Craft",
+  "tags": {
+    "metaphors": [
+      "elevator",
+      "floor-guide",
+      "building-storeys",
+      "express-ride"
+    ],
+    "art_styles": [
+      "industrial-hardware",
+      "playful-brutalist"
+    ],
+    "ui_components": [
+      "navigation",
+      "gallery",
+      "modal"
+    ],
+    "materials": [
+      "glass",
+      "metal"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A building's elevator: a floor guide panel, a cabin ride between storeys, an express ride skipping floors, and hands-on exhibits waiting on each floor.",
+    "digital_mechanic": "Site IA IS the building: six floors of craft navigated by an elevator ride; a floor menu doubles as wayfinding and supports an express ride that skips intermediate floors; each floor holds playable exhibits (draggable Newton's cradle, a Galton board that fills the brand's 'R', an AI desk on the night shift); the closing scene folds the night city into a motherboard."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#0E0E10",
+      "#F2C200",
+      "#3B7DDD",
+      "#E8E4DC",
+      "#1C1C1E"
+    ],
+    "borders": "Elevator panel framing and floor-number plates; glass exhibit vitrines",
+    "elevation": "Full 3D environments with per-floor lighting scenes (day exhibits, night-shift desk)",
+    "typography": "Floor-plate numerals as section markers; exhibit placard labels"
+  },
+  "interactive_mechanics": [
+    "Elevator ride as primary navigation between six floors",
+    "Floor menu with express-ride skip (direct jump = holding a door-close button)",
+    "Playable floor exhibits: draggable Newton's cradle, Galton board filling a glyph",
+    "Scene transition folding 3D city into circuit board"
+  ],
+  "usability_notes": "Elevator-as-IA gives every page an unambiguous spatial position (floor number = section index) and makes wayfinding diegetic - the express ride is just deep linking. Floor rides must be skippable (express, menu) or deep content becomes a chore; physics exhibits must pause off-screen and respect reduced motion. Source: Awwwards nominee element listing (self-descriptive)."
+}

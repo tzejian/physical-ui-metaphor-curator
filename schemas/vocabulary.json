@@ -1,0 +1,35 @@
+{
+  "_comment": "Machine-readable tag vocabulary used by scripts/validate_entries.py. materials is open, so it is not checked. Keep in sync with SKILL.md.",
+  "art_styles": [
+    "flat-skeuomorphic",
+    "neo-brutalist",
+    "playful-brutalist",
+    "japanese-editorial",
+    "swiss-minimalist",
+    "retro-tactile-modern",
+    "neo-retro-80s",
+    "archival-editorial",
+    "editorial-print",
+    "industrial-hardware",
+    "collage-editorial"
+  ],
+  "ui_components": [
+    "navigation",
+    "cta",
+    "modal",
+    "form-input",
+    "data-table",
+    "accordion",
+    "drawer",
+    "category-filter",
+    "gallery"
+  ],
+  "aliases": {
+    "print-ephemera": "pick the closest preferred art style",
+    "monospace-editorial": "pick the closest preferred art style",
+    "theatrical-gothic": "pick the closest preferred art style",
+    "thermal-dot-matrix": "move to the typography text",
+    "menu": "navigation",
+    "flat-design": "flat-skeuomorphic (only if a physical object is present)"
+  }
+}

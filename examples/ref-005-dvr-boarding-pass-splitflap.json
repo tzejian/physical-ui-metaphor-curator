@@ -1,0 +1,47 @@
+{
+  "id": "ref-005",
+  "title": "DVR Labs Boarding Pass - Split-Flap Ticker & Perforated Tear-Off Stub",
+  "tags": {
+    "metaphors": [
+      "boarding-pass",
+      "split-flap-display",
+      "perforation-tear-off",
+      "paper-ticket"
+    ],
+    "art_styles": [
+      "industrial-hardware",
+      "swiss-minimalist",
+      "print-ephemera"
+    ],
+    "ui_components": [
+      "form-input",
+      "cta",
+      "data-table"
+    ],
+    "materials": [
+      "paper"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "Airport split-flap departure boards flipping characters; a paper boarding pass with radial notches and a tear-off stub along a perforation line that gives resistance before ripping raggedly.",
+    "digital_mechanic": "Airport codes and gate rendered as split-flap tiles: on change each tile's top half falls and bottom half rises via Web Animations API, tiles staggered a beat apart, gate changes flagged in accent color. Dragging the stub along the perforation makes the paper flex, then tear along a ragged clip-path edge and fall with the user's throw; Reprint restores it."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#F6F3EC",
+      "#1A1A1A",
+      "#FF3D1F",
+      "#D8D2C4"
+    ],
+    "borders": "Paper perforation via radial-gradient notch masks; hairline ticket rules; ragged clip-path tear edge",
+    "elevation": "Subtle paper depth (slight shadow/flex on drag), tiles flat; on tall screens the pass rotates upright",
+    "typography": "Monospaced condensed ticket type with per-letter split-flap tiles; bold seat/gate numerals; functional label-value rows like printed ticket fields"
+  },
+  "interactive_mechanics": [
+    "Drag the stub along the perforation - elastic paper give, ragged tear, stub falls away with throw physics",
+    "Split-flap letter flip animations with staggered timing on any code/gate change",
+    "Settings panel re-generates route/gate and replays flips; live QR code encoded from route/seat/gate as one SVG path",
+    "Auto-play flips until first user touch"
+  ],
+  "usability_notes": "Excellent micro-interaction showcase for travel/booking components; the tear-off affordance doubles as a satisfying 'confirm/done' gesture. Risks: tear gesture needs a visible affordance hint and a keyboard/reduced-motion fallback; split-flap animations must respect prefers-reduced-motion; notches and ragged edges reduce scan-column alignment, so keep data rows outside the perforation zone."
+}

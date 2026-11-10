@@ -1,0 +1,46 @@
+{
+  "id": "ref-014",
+  "title": "Achraf Kassioui Keyboard - Romantic Skeuomorphism of Mechanical Input",
+  "tags": {
+    "metaphors": [
+      "mechanical-keyboard",
+      "keycap",
+      "switch-actuation"
+    ],
+    "art_styles": [
+      "flat-skeuomorphic",
+      "industrial-hardware"
+    ],
+    "ui_components": [
+      "form-input",
+      "navigation"
+    ],
+    "materials": [
+      "plastic",
+      "metal"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A mechanical keyboard (Filco Majestouch TKL, red Esc, purple WASD): keycaps wobble slightly on their switches, depress under force, and cast moving shadows as they actuate.",
+    "digital_mechanic": "The onscreen keyboard mirrors the physical one bidirectionally: keys wobble on hover, depress on mousedown, AND depress when the user types on their own physical keyboard; Caps/Scroll Lock indicators sync with real hardware state. Clicking keys types into a text area; hold-and-drag gives a piano glissando."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#1C1C1E",
+      "#3A3A3C",
+      "#B3122F",
+      "#5B2A86",
+      "#F2F2F0"
+    ],
+    "borders": "Keycap silhouettes with 3D top faces and side walls; legends engraved-style",
+    "elevation": "Per-key cast shadows that deepen on actuation - the shadow IS the key travel indicator",
+    "typography": "Compact keycap legends in two stacked rows (symbol + fn label) like real doubleshot caps"
+  },
+  "interactive_mechanics": [
+    "Two-way key state sync: onscreen keys depress from real keyboard input",
+    "Hardware indicator LEDs (Caps/Scroll Lock) reflect the user's actual device",
+    "Hover wobble, mousedown depress, hold-drag piano effect",
+    "Keyboard-shortcut display mode reusing the same key objects"
+  ],
+  "usability_notes": "The decisive pattern is bidirectional sync - the skeuomorph responds to the user's REAL device, which makes the metaphor feel alive rather than decorative. Best as a settings/shortcut surface or a delight moment. Weaknesses are documented by the author honestly: heavy image assets, poor touch optimization, limited functionality - a desktop-first experiment. Accessibility: keys must remain real buttons; visual travel is decoration only. Author's own 2017 experiment page, self-documented."
+}

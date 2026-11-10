@@ -1,0 +1,45 @@
+{
+  "id": "ref-015",
+  "title": "ERA Residence - Day-Night Light Switch as Hero Control",
+  "tags": {
+    "metaphors": [
+      "light-switch",
+      "day-night-cycle",
+      "slider-toggle"
+    ],
+    "art_styles": [
+      "swiss-minimalist",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "navigation",
+      "cta"
+    ],
+    "materials": [
+      "plastic",
+      "metal"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A wall light switch or short travel slider: one decisive motion flips the room between lit and dark.",
+    "digital_mechanic": "The first control under the wordmark is a short BY DAY / BY NIGHT slider; moving it re-lights the hero photography - blue sky, palms, bougainvillea vs the same white terraces after sunset. It sits at the optical centre as the only touchable thing besides the scroll cue: the day/night flip IS the sales argument (buying a second home = buying light)."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#87B4E0",
+      "#F4EFE6",
+      "#1F3A5F",
+      "#E8A13C",
+      "#2A2A28"
+    ],
+    "borders": "Hairline letterspaced-caps wordmark; slider as a short track with a thumb, no heavy chrome",
+    "elevation": "Flat photography; state change handled by re-lighting imagery, not shadows",
+    "typography": "Letterspaced uppercase caps for the toggle labels; serif headline over the hero"
+  },
+  "interactive_mechanics": [
+    "Short slider flips hero photography between day and night lighting states",
+    "Single dominant control in the first viewport - nothing competes for the click",
+    "Scene re-lighting rather than overlay dimming"
+  ],
+  "usability_notes": "A masterclass in restraint: one metaphor, one control, placed where the decision lives. Works because the physical switch maps directly to the product's core value (light). Generalizes to any product with a day/night or before/after axis (real estate, lighting, hospitality). Travel should stay short and the label explicit; photography swap must be preloaded to avoid flash. Source: design-review writeup (dokle.design); live site not fetched."
+}

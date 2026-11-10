@@ -1,0 +1,42 @@
+{
+  "id": "ref-008",
+  "title": "XO Festival - Rotary Knob as Slider Control",
+  "tags": {
+    "metaphors": [
+      "control-knob",
+      "potentiometer",
+      "hi-fi-volume-dial"
+    ],
+    "art_styles": [
+      "flat-design",
+      "retro-tactile-modern"
+    ],
+    "ui_components": [
+      "form-input",
+      "navigation"
+    ],
+    "materials": [
+      "plastic"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A hi-fi / mixer potentiometer knob: rotate around a fixed axis, detents or tick marks indicate value, rotation angle maps to level.",
+    "digital_mechanic": "A flat-design knob element replaces a conventional slider: drag (or scroll) rotates the knob through a 270-degree travel arc and sets the underlying value; rotation angle is the data."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#2779A7",
+      "#49C5B6",
+      "#FFFFFF"
+    ],
+    "borders": "Flat circular knob silhouette with a single indicator line from center to edge; clean vector edges, no bevels",
+    "elevation": "Completely flat; depth suggested only by the knob's tick arc",
+    "typography": "Geometric sans-serif festival type; value readouts set near the knob like equipment legends"
+  },
+  "interactive_mechanics": [
+    "Drag vertically/rotationally to spin the knob and update the slider value",
+    "Arc/tick marks show travel range and current position",
+    "Touch and pointer supported as one continuous rotational gesture"
+  ],
+  "usability_notes": "A knob suits music/audio festival brands where the metaphor IS the product domain, but it is objectively worse than a slider for precise input (NN/g: precise value entry via rotary control needs high motor skill). Provide an accompanying numeric readout and a plain slider fallback; keep knob for low-precision, fun-only controls. Awwwards Honorable Mention (Gewest13, 2017)."
+}

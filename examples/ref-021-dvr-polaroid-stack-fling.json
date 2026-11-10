@@ -1,0 +1,44 @@
+{
+  "id": "ref-021",
+  "title": "DVR Labs Polaroid Stack - Fling-to-Shuffle Photo Pile",
+  "tags": {
+    "metaphors": [
+      "polaroid-photo",
+      "photo-pile",
+      "card-fling"
+    ],
+    "art_styles": [
+      "retro-tactile-modern",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "gallery",
+      "modal"
+    ],
+    "materials": [
+      "paper",
+      "plastic"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A pile of instant photos lying at their own casual angles on a desk; you fling the top one aside and it lands underneath the pile.",
+    "digital_mechanic": "A gallery where the top photo can be flung: it slides off with the throw's velocity, tucks in behind the stack, and the next photo becomes active - browsing by reshuffling the pile instead of paging through a carousel."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#F2EAD3",
+      "#1A1A1A",
+      "#B5442E",
+      "#4A6741"
+    ],
+    "borders": "White instant-photo frames with slight per-item rotation",
+    "elevation": "Stacked depth via rotation offsets and small shadow separation between layers",
+    "typography": "Handwritten captions under photos; minimal supporting UI type"
+  },
+  "interactive_mechanics": [
+    "Fling the top photo - velocity carries it off and it tucks behind the stack",
+    "Per-photo resting rotation for a naturally untidy pile",
+    "Replay control resets the stack"
+  ],
+  "usability_notes": "Fling-to-cycle replaces prev/next buttons with one gesture that reads as reshuffling rather than navigation - good for small personal galleries where serendipity beats completeness. Keep piles short (the stack hides content depth; a counter or thumbnails preserve orientation), mirror the fling for RTL locales, and give keyboard/AT users a plain list alternative. Same-author sibling to ref-005/ref-007 (DVR Labs); source: component page description."
+}

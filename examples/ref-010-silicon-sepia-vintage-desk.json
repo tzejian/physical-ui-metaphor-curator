@@ -1,0 +1,50 @@
+{
+  "id": "ref-010",
+  "title": "Silicon & Sepia - The Vintage Desk Writing Environment",
+  "tags": {
+    "metaphors": [
+      "office-desk",
+      "desk-lamp",
+      "tea-cup",
+      "loose-papers",
+      "polaroid-photos"
+    ],
+    "art_styles": [
+      "retro-tactile-modern",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "navigation",
+      "modal",
+      "form-input"
+    ],
+    "materials": [
+      "paper",
+      "plastic",
+      "ceramic"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A writer's desk: flick the lamp on to light the work, papers lie scattered and rotated, photographs overlap with curl, a cup of tea drains as you work.",
+    "digital_mechanic": "A 3D-transformed desk scene is the article index: polaroids and scattered papers are clickable; picking up a paper opens the full written piece in a reader with drop caps. Hover hit-testing uses real pointer geometry (elementsFromPoint) so whichever pixel is under the cursor lifts, matching true overlapping-photo behavior. The lamp is a literal light/dark toggle; the tea cup is a session timer."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#2B2218",
+      "#E9DCC3",
+      "#B5442E",
+      "#4A6741",
+      "#D9A441"
+    ],
+    "borders": "Photo white frames and paper edges; slight rotations (2-8 degrees) on every prop",
+    "elevation": "3D-transformed layered props with soft cast shadows; lifted items translate toward the viewer",
+    "typography": "Drop-cap serif reader for article content; handwritten/typewriter accents on props"
+  },
+  "interactive_mechanics": [
+    "Lamp toggle switches ambient light (light/dark mode as a physical switch)",
+    "Pick up a scattered paper to open the corresponding article reader",
+    "Polaroids lift under the true cursor pixel, not a bounding box",
+    "Tea cup drains as a playful session/progress indicator"
+  ],
+  "usability_notes": "Strong for personal writing portfolios where editorial warmth is the brand. Navigation via scattered props is inherently low-scanability - pair with a conventional index or strong category labels. Wide 3D scenes compress poorly on mobile; needs a list-mode fallback. Source: Devpost project documentation (self-reported mechanics)."
+}

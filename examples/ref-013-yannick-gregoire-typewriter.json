@@ -1,0 +1,46 @@
+{
+  "id": "ref-013",
+  "title": "Yannick Gregoire Portfolio - Typewriter & Command Line Grid",
+  "tags": {
+    "metaphors": [
+      "typewriter",
+      "command-line",
+      "terminal",
+      "ascii-art"
+    ],
+    "art_styles": [
+      "monospace-editorial",
+      "swiss-minimalist",
+      "retro-tactile-modern"
+    ],
+    "ui_components": [
+      "navigation",
+      "modal",
+      "gallery"
+    ],
+    "materials": [
+      "paper"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A typewriter's fixed-pitch grid: every character occupies the same cell, lines align perfectly like pages produced on a typewriter; typed text appears character by character.",
+    "digital_mechanic": "The whole site is built on a font-sized grid derived from the 16-character title: every heading, paragraph and layout unit is a multiplication of 16, echoing a typewriter's pitch. Headings render with a typewriter effect when scrolled into view or when a project opens; the intro plays video mapped to ASCII characters on a canvas ('x/c=;+,.' dark-to-light) as a command-line boot sequence."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#111111",
+      "#EDEDE6",
+      "#FF3D1F"
+    ],
+    "borders": "None - structure carried entirely by monospace alignment; accent used on links and states",
+    "elevation": "Flat; hierarchy purely typographic",
+    "typography": "Custom-designed monospace typeface as the layout engine (16-char unit grid); uppercase headings typed out character-by-character"
+  },
+  "interactive_mechanics": [
+    "Typewriter-reveal headings on scroll into view and on project open",
+    "ASCII-art intro: video pixels mapped to characters on canvas",
+    "Project video drawn to background canvas for several frames on open, then reset",
+    "Dark mode via CSS variables and a body class toggle"
+  ],
+  "usability_notes": "Monospace-as-grid gives unusual alignment discipline and strong technical identity - ideal for designers/engineers. Typewriter effects must never delay critical text beyond a beat (screen readers and impatient users); ASCII intro needs a skip. Awwwards SOTD + Developer Award 2022 (Loonatiks Design Crew, Gatsby). Palette approximated from project imagery."
+}

@@ -1,0 +1,45 @@
+{
+  "id": "ref-007",
+  "title": "DVR Labs Playful 404 - Numbers Hanging on Threads",
+  "tags": {
+    "metaphors": [
+      "hanging-sign",
+      "thread-string",
+      "pendulum",
+      "torn-thread"
+    ],
+    "art_styles": [
+      "playful-brutalist",
+      "industrial-hardware"
+    ],
+    "ui_components": [
+      "modal",
+      "form-input"
+    ],
+    "materials": [
+      "string",
+      "metal"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "Characters hung from threads like a shop sign: they sway in a breeze, swing when pushed, and a thread pulled too far snaps, dropping the character.",
+    "digital_mechanic": "Each '404' digit is a damped pendulum on a stiff, slightly elastic SVG thread (paths sag when slack), simulated two substeps per frame on one rAF loop that pauses off-screen; simplex-noise breeze keeps them swaying; pointer velocity pushes them. Pulling a digit past thread length snaps it - it falls with throw physics, bounces, rolls flat on the shelf above the copy, and is re-hung seconds later."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#F6F3EC",
+      "#1A1A1A",
+      "#FF3D1F"
+    ],
+    "borders": "Thread rendered as 1-2px SVG strokes with sag curves; digits as solid heavy glyphs, no decorative borders",
+    "elevation": "Flat page; depth implied only by swing amplitude and thread sag",
+    "typography": "Oversized display digits as physical objects; compact functional type for search and recovery actions"
+  },
+  "interactive_mechanics": [
+    "Sweeping pointer pushes hanging digits proportionally to cursor speed",
+    "Drag to swing; over-stretch snaps the thread with fall/bounce/roll physics",
+    "Snapped digit auto re-hangs after a delay or instantly via replay button",
+    "Beneath: real search combobox with suggestions and a way home"
+  ],
+  "usability_notes": "Error pages are the safest sandbox for physics metaphors - nothing transactional is at stake, so delight is pure win. The pattern still works because the functional layer (search + home link) stays fully independent of the toy. Must honor prefers-reduced-motion (digits simply hang), pause the rAF loop off-screen, and keep the digits decorative only (aria-hidden). Same-author sibling to ref-005 (DVR Labs)."
+}

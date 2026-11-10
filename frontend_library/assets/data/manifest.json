@@ -142,5 +142,1065 @@
       "Long-form vertical scroll reads as one continuously printing receipt"
     ],
     "usability_notes": "Extremely strong brand concept for hospitality (half of users browse on-site for menus). Single typeface and one weight enforce simplicity; seekers can jump via the sticky menu. Constraints: the 300px frame sacrifices horizontal content richness, and decorative scribbles must never carry wayfinding meaning. Approximated tokens - live site could not be fetched, details sourced from Communication Arts project coverage."
+  },
+  {
+    "id": "ref-004",
+    "title": "Press Play On Tape - Cassette Deck & VHS Packaging Interface",
+    "tags": {
+      "metaphors": [
+        "audio-cassette",
+        "vhs-tape",
+        "walkman",
+        "magnetic-tape-reel"
+      ],
+      "art_styles": [
+        "retro-tactile-modern",
+        "neo-retro-80s",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "navigation",
+        "cta",
+        "modal"
+      ],
+      "materials": [
+        "plastic",
+        "paper-jacket"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "Cassette lined up side by side forming striped spool motifs; VHS packaging with ergonomic cut corners; A/B side flipping; magnetic tape movement; worn-out tapes jamming.",
+      "digital_mechanic": "Services section arranged as cassettes side-by-side; graphic stripes animate through page layouts and titles mimicking tape travel; mechanical A/B-side flip animations with mechanical sound effects; 404 page is a worn-out jammed cassette rendered with WebGL shaders."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#111111",
+        "#F2EAD3",
+        "#FF7A00",
+        "#E8332A",
+        "#C41E7A",
+        "#FFC400",
+        "#00B3B0"
+      ],
+      "borders": "Hard-edged cassette-window frames and packaging-cut corner silhouettes; stripes as full-bleed color bands, no rounded corners",
+      "elevation": "Flat with 2D mechanical movement; depth from overlapping tape stripes and label layers, no drop shadows",
+      "typography": "Bold uppercase sans-serif echoing VHS cover titles; category acronyms (VM, AB, S, SD) echoing cassette mode labels; filled 'O' glyphs animate as reactive sound circles"
+    },
+    "interactive_mechanics": [
+      "Audio-reactive typography: Web Audio API listens to five frequency bands and scales the filled 'O' glyphs in real time",
+      "A/B side flip animations with mechanical cassette sounds on section transitions",
+      "Infinite scroll illusion: identical component at page start/end matching scale and color state for seamless loop",
+      "WebGL (Curtains.js) shader plane for the worn-tape 404 page"
+    ],
+    "usability_notes": "Every interaction emits sound, so audio must be opt-in and fully muteable (accessibility + autoplay policy). Best for audio/sound studios where audio-reactivity is the brand. Rainbow-stripe palette and mechanical animations can overwhelm; content hierarchy depends on restraining stripes to structural bands. Strong delight and memorability; heavier CPU/GPU cost on low-end devices."
+  },
+  {
+    "id": "ref-005",
+    "title": "DVR Labs Boarding Pass - Split-Flap Ticker & Perforated Tear-Off Stub",
+    "tags": {
+      "metaphors": [
+        "boarding-pass",
+        "split-flap-display",
+        "perforation-tear-off",
+        "paper-ticket"
+      ],
+      "art_styles": [
+        "industrial-hardware",
+        "swiss-minimalist",
+        "print-ephemera"
+      ],
+      "ui_components": [
+        "form-input",
+        "cta",
+        "data-table"
+      ],
+      "materials": [
+        "paper"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "Airport split-flap departure boards flipping characters; a paper boarding pass with radial notches and a tear-off stub along a perforation line that gives resistance before ripping raggedly.",
+      "digital_mechanic": "Airport codes and gate rendered as split-flap tiles: on change each tile's top half falls and bottom half rises via Web Animations API, tiles staggered a beat apart, gate changes flagged in accent color. Dragging the stub along the perforation makes the paper flex, then tear along a ragged clip-path edge and fall with the user's throw; Reprint restores it."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#F6F3EC",
+        "#1A1A1A",
+        "#FF3D1F",
+        "#D8D2C4"
+      ],
+      "borders": "Paper perforation via radial-gradient notch masks; hairline ticket rules; ragged clip-path tear edge",
+      "elevation": "Subtle paper depth (slight shadow/flex on drag), tiles flat; on tall screens the pass rotates upright",
+      "typography": "Monospaced condensed ticket type with per-letter split-flap tiles; bold seat/gate numerals; functional label-value rows like printed ticket fields"
+    },
+    "interactive_mechanics": [
+      "Drag the stub along the perforation - elastic paper give, ragged tear, stub falls away with throw physics",
+      "Split-flap letter flip animations with staggered timing on any code/gate change",
+      "Settings panel re-generates route/gate and replays flips; live QR code encoded from route/seat/gate as one SVG path",
+      "Auto-play flips until first user touch"
+    ],
+    "usability_notes": "Excellent micro-interaction showcase for travel/booking components; the tear-off affordance doubles as a satisfying 'confirm/done' gesture. Risks: tear gesture needs a visible affordance hint and a keyboard/reduced-motion fallback; split-flap animations must respect prefers-reduced-motion; notches and ragged edges reduce scan-column alignment, so keep data rows outside the perforation zone."
+  },
+  {
+    "id": "ref-006",
+    "title": "Polaroid I-2 - Physical Camera Dials & Instant Photo Frame",
+    "tags": {
+      "metaphors": [
+        "instant-camera",
+        "control-dial",
+        "instant-photo",
+        "viewfinder"
+      ],
+      "art_styles": [
+        "flat-skeuomorphic",
+        "retro-tactile-modern",
+        "swiss-minimalist"
+      ],
+      "ui_components": [
+        "navigation",
+        "gallery",
+        "form-input",
+        "cta"
+      ],
+      "materials": [
+        "plastic",
+        "metal"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "An instant camera's top-plate control dials (aperture, shutter, mode rings) with tactile detents; instant film ejecting from the slot; the white-framed square photo as the product's own output.",
+      "digital_mechanic": "3D camera model anchors the layout; a 'camera setting explore tool' lets users rotate real dials to learn I-2 features before purchase; scroll drives the camera through exploded/assembly states; photo gallery items render as freshly ejected instant photos with white polaroid frames."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#0E0E0E",
+        "#FFB500"
+      ],
+      "borders": "Nearly borderless; instant-photo white frames (~10-12%) are the only hard edges; dial knurling rendered as fine radial ridges in 3D",
+      "elevation": "Photographic depth from 3D lighting and shadows cast by the camera model; UI chrome itself flat",
+      "typography": "Compact uppercase grotesque labels echoing engraved camera legends; minimal supporting serif/sans body"
+    },
+    "interactive_mechanics": [
+      "Rotatable 3D camera dials as product-feature explorer (rotation = parameter change)",
+      "Scroll-choreographed camera assembly/exploded view transitions",
+      "Homepage intro animation of film ejecting into the hero photo frame",
+      "Gallery photos presented as freshly developed instants"
+    ],
+    "usability_notes": "E-commerce with education: dial-explorer converts spec-sheet features into muscle memory, ideal for prosumer cameras. Two-color palette keeps photography dominant. Risks: 3D interactivity needs mobile fallbacks and clear rotate affordances; dial controls must not gate purchase paths. Awwwards SOTD 7.48; dev award animation 8.0."
+  },
+  {
+    "id": "ref-007",
+    "title": "DVR Labs Playful 404 - Numbers Hanging on Threads",
+    "tags": {
+      "metaphors": [
+        "hanging-sign",
+        "thread-string",
+        "pendulum",
+        "torn-thread"
+      ],
+      "art_styles": [
+        "playful-brutalist",
+        "industrial-hardware"
+      ],
+      "ui_components": [
+        "modal",
+        "form-input"
+      ],
+      "materials": [
+        "string",
+        "metal"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "Characters hung from threads like a shop sign: they sway in a breeze, swing when pushed, and a thread pulled too far snaps, dropping the character.",
+      "digital_mechanic": "Each '404' digit is a damped pendulum on a stiff, slightly elastic SVG thread (paths sag when slack), simulated two substeps per frame on one rAF loop that pauses off-screen; simplex-noise breeze keeps them swaying; pointer velocity pushes them. Pulling a digit past thread length snaps it - it falls with throw physics, bounces, rolls flat on the shelf above the copy, and is re-hung seconds later."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#F6F3EC",
+        "#1A1A1A",
+        "#FF3D1F"
+      ],
+      "borders": "Thread rendered as 1-2px SVG strokes with sag curves; digits as solid heavy glyphs, no decorative borders",
+      "elevation": "Flat page; depth implied only by swing amplitude and thread sag",
+      "typography": "Oversized display digits as physical objects; compact functional type for search and recovery actions"
+    },
+    "interactive_mechanics": [
+      "Sweeping pointer pushes hanging digits proportionally to cursor speed",
+      "Drag to swing; over-stretch snaps the thread with fall/bounce/roll physics",
+      "Snapped digit auto re-hangs after a delay or instantly via replay button",
+      "Beneath: real search combobox with suggestions and a way home"
+    ],
+    "usability_notes": "Error pages are the safest sandbox for physics metaphors - nothing transactional is at stake, so delight is pure win. The pattern still works because the functional layer (search + home link) stays fully independent of the toy. Must honor prefers-reduced-motion (digits simply hang), pause the rAF loop off-screen, and keep the digits decorative only (aria-hidden). Same-author sibling to ref-005 (DVR Labs)."
+  },
+  {
+    "id": "ref-008",
+    "title": "XO Festival - Rotary Knob as Slider Control",
+    "tags": {
+      "metaphors": [
+        "control-knob",
+        "potentiometer",
+        "hi-fi-volume-dial"
+      ],
+      "art_styles": [
+        "flat-design",
+        "retro-tactile-modern"
+      ],
+      "ui_components": [
+        "form-input",
+        "navigation"
+      ],
+      "materials": [
+        "plastic"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A hi-fi / mixer potentiometer knob: rotate around a fixed axis, detents or tick marks indicate value, rotation angle maps to level.",
+      "digital_mechanic": "A flat-design knob element replaces a conventional slider: drag (or scroll) rotates the knob through a 270-degree travel arc and sets the underlying value; rotation angle is the data."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#2779A7",
+        "#49C5B6",
+        "#FFFFFF"
+      ],
+      "borders": "Flat circular knob silhouette with a single indicator line from center to edge; clean vector edges, no bevels",
+      "elevation": "Completely flat; depth suggested only by the knob's tick arc",
+      "typography": "Geometric sans-serif festival type; value readouts set near the knob like equipment legends"
+    },
+    "interactive_mechanics": [
+      "Drag vertically/rotationally to spin the knob and update the slider value",
+      "Arc/tick marks show travel range and current position",
+      "Touch and pointer supported as one continuous rotational gesture"
+    ],
+    "usability_notes": "A knob suits music/audio festival brands where the metaphor IS the product domain, but it is objectively worse than a slider for precise input (NN/g: precise value entry via rotary control needs high motor skill). Provide an accompanying numeric readout and a plain slider fallback; keep knob for low-precision, fun-only controls. Awwwards Honorable Mention (Gewest13, 2017)."
+  },
+  {
+    "id": "ref-009",
+    "title": "Wonderful Weekends - Physics-Based 3D Gumball Machine",
+    "tags": {
+      "metaphors": [
+        "gumball-machine",
+        "capsule-dispenser",
+        "coin-op-vending"
+      ],
+      "art_styles": [
+        "flat-skeuomorphic",
+        "playful-brutalist"
+      ],
+      "ui_components": [
+        "cta",
+        "modal"
+      ],
+      "materials": [
+        "glass",
+        "plastic",
+        "metal"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A countertop gumball machine: a glass globe filled with spheres, a coin slot, a hand crank, and a chute; turning the crank releases a cascade of balls with real momentum and collision.",
+      "digital_mechanic": "A 3D gumball machine rendered in WebGL with rigid-body physics - cranking releases gumballs that tumble, bounce and settle realistically; the dispensed ball becomes the reward (prize/reveal), turning a CTA into a mechanical ritual."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#E8412C",
+        "#FFC400",
+        "#3B7DDD",
+        "#FFFFFF",
+        "#1A1A1A"
+      ],
+      "borders": "Toy-like molded silhouettes; glass globe rendered with translucent highlights rather than outlines",
+      "elevation": "Full 3D depth with real shadows and physics collision; no pseudo-flat chrome",
+      "typography": "Rounded playful display type matching toy iconography"
+    },
+    "interactive_mechanics": [
+      "Crank interaction dispenses a physics-simulated gumball cascade",
+      "Dispensed ball resolves into a reward/prize reveal",
+      "Rigid-body bounce and settle for every sphere"
+    ],
+    "usability_notes": "Gumball dispensing is a jackpot-loop metaphor - perfect for one-shot campaigns and promotions where a single delight moment is the goal. Cost: WebGL + physics payloads, mobile performance risk, and the reward must be reachable without the toy (respect reduced-motion and provide a plain reveal path). Source: Awwwards SOTD summary; live-site verification pending."
+  },
+  {
+    "id": "ref-010",
+    "title": "Silicon & Sepia - The Vintage Desk Writing Environment",
+    "tags": {
+      "metaphors": [
+        "office-desk",
+        "desk-lamp",
+        "tea-cup",
+        "loose-papers",
+        "polaroid-photos"
+      ],
+      "art_styles": [
+        "retro-tactile-modern",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "navigation",
+        "modal",
+        "form-input"
+      ],
+      "materials": [
+        "paper",
+        "plastic",
+        "ceramic"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A writer's desk: flick the lamp on to light the work, papers lie scattered and rotated, photographs overlap with curl, a cup of tea drains as you work.",
+      "digital_mechanic": "A 3D-transformed desk scene is the article index: polaroids and scattered papers are clickable; picking up a paper opens the full written piece in a reader with drop caps. Hover hit-testing uses real pointer geometry (elementsFromPoint) so whichever pixel is under the cursor lifts, matching true overlapping-photo behavior. The lamp is a literal light/dark toggle; the tea cup is a session timer."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#2B2218",
+        "#E9DCC3",
+        "#B5442E",
+        "#4A6741",
+        "#D9A441"
+      ],
+      "borders": "Photo white frames and paper edges; slight rotations (2-8 degrees) on every prop",
+      "elevation": "3D-transformed layered props with soft cast shadows; lifted items translate toward the viewer",
+      "typography": "Drop-cap serif reader for article content; handwritten/typewriter accents on props"
+    },
+    "interactive_mechanics": [
+      "Lamp toggle switches ambient light (light/dark mode as a physical switch)",
+      "Pick up a scattered paper to open the corresponding article reader",
+      "Polaroids lift under the true cursor pixel, not a bounding box",
+      "Tea cup drains as a playful session/progress indicator"
+    ],
+    "usability_notes": "Strong for personal writing portfolios where editorial warmth is the brand. Navigation via scattered props is inherently low-scanability - pair with a conventional index or strong category labels. Wide 3D scenes compress poorly on mobile; needs a list-mode fallback. Source: Devpost project documentation (self-reported mechanics)."
+  },
+  {
+    "id": "ref-011",
+    "title": "Silicon & Sepia - The Corkboard Pin Wall",
+    "tags": {
+      "metaphors": [
+        "corkboard",
+        "push-pin",
+        "pinned-note",
+        "radar-minimap"
+      ],
+      "art_styles": [
+        "retro-tactile-modern",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "gallery",
+        "modal"
+      ],
+      "materials": [
+        "cork",
+        "paper",
+        "metal"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A corkboard wall: photos and notes pinned at arbitrary angles; you step back to see the whole board and lean in to read one note; a compass helps you orient.",
+      "digital_mechanic": "An infinite pannable/zoomable canvas of pinned photos with rotation and overlap; one unified gesture system (mouse, touch, trackpad pinch, momentum); a radar minimap keeps orientation; an auto-placement algorithm packs new photos without overlapping curated ones."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#C49A6C",
+        "#7A5230",
+        "#E9DCC3",
+        "#B5442E",
+        "#1A1A1A"
+      ],
+      "borders": "Photo prints with white frames; push-pin heads as the only circular chrome; torn-note edges on labels",
+      "elevation": "Board-flat base with pinned items casting small directional shadows; zoom creates genuine scale depth",
+      "typography": "Handwritten and typewriter labels pinned next to photos; map legend in small caps"
+    },
+    "interactive_mechanics": [
+      "Pan/zoom the wall with momentum across all input device types",
+      "Radar minimap shows current viewport within the whole board",
+      "Pin/pack new photos via auto-placement without overlap; drag to re-pin"
+    ],
+    "usability_notes": "Corkboard suits galleries of memory-like content (photos, milestones). The infinite canvas is powerful but disorienting: the minimap and a 'reset view' affordance are mandatory; keyboard users need a list alternative to spatial navigation. Performance: viewport-cull pinned items. Source: Devpost project documentation (self-reported mechanics)."
+  },
+  {
+    "id": "ref-012",
+    "title": "Shaky Gotcha - Rotating Gacha Capsule Cylinder",
+    "tags": {
+      "metaphors": [
+        "gacha-capsule-toy",
+        "vending-cylinder",
+        "arcade-machine"
+      ],
+      "art_styles": [
+        "playful-brutalist",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "cta",
+        "gallery",
+        "navigation"
+      ],
+      "materials": [
+        "plastic",
+        "glass"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A capsule-toy (gachapon) machine: rotate the cylindrical drum until a capsule drops into the chute; a DJ/arcade cabinet frames the play session with sound.",
+      "digital_mechanic": "A mobile-first 3D web arcade: rotating the cylinder browses/draws gacha items, tapping 'Shakys' collects them, and a triggerable 'Rage Mode' alters game state; a DJ console packs 22 tracks as diegetic sound design. The 3D gallery doubles as the prize shelf."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#FF3D6E",
+        "#FFC400",
+        "#3B7DDD",
+        "#111111",
+        "#F2EAD3"
+      ],
+      "borders": "Toy-molded capsule and cabinet silhouettes; chunky arcade bezels",
+      "elevation": "Real 3D drum rotation; UI chrome flat and arcade-styled",
+      "typography": "Arcade poster display type; character names as collectible labels"
+    },
+    "interactive_mechanics": [
+      "Rotate the 3D capsule drum to browse and draw",
+      "Tap characters to collect; Rage Mode as a state-shifting power-up",
+      "DJ console with 22 tracks as interactive diegetic audio",
+      "3D gallery acts as the collected-prizes shelf"
+    ],
+    "usability_notes": "Gacha/drum rotation gives browsing a tactile 'one draw per spin' pacing that fits collectibles and merch drops. Mobile-first 3D is demanding: keep poly counts low, gate Rage Mode audio, and ensure the collect action never depends on 3D precision. Source: Awwwards nominee summary (solo-developed 3D web arcade); live-site verification pending."
+  },
+  {
+    "id": "ref-013",
+    "title": "Yannick Gregoire Portfolio - Typewriter & Command Line Grid",
+    "tags": {
+      "metaphors": [
+        "typewriter",
+        "command-line",
+        "terminal",
+        "ascii-art"
+      ],
+      "art_styles": [
+        "monospace-editorial",
+        "swiss-minimalist",
+        "retro-tactile-modern"
+      ],
+      "ui_components": [
+        "navigation",
+        "modal",
+        "gallery"
+      ],
+      "materials": [
+        "paper"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A typewriter's fixed-pitch grid: every character occupies the same cell, lines align perfectly like pages produced on a typewriter; typed text appears character by character.",
+      "digital_mechanic": "The whole site is built on a font-sized grid derived from the 16-character title: every heading, paragraph and layout unit is a multiplication of 16, echoing a typewriter's pitch. Headings render with a typewriter effect when scrolled into view or when a project opens; the intro plays video mapped to ASCII characters on a canvas ('x/c=;+,.' dark-to-light) as a command-line boot sequence."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#111111",
+        "#EDEDE6",
+        "#FF3D1F"
+      ],
+      "borders": "None - structure carried entirely by monospace alignment; accent used on links and states",
+      "elevation": "Flat; hierarchy purely typographic",
+      "typography": "Custom-designed monospace typeface as the layout engine (16-char unit grid); uppercase headings typed out character-by-character"
+    },
+    "interactive_mechanics": [
+      "Typewriter-reveal headings on scroll into view and on project open",
+      "ASCII-art intro: video pixels mapped to characters on canvas",
+      "Project video drawn to background canvas for several frames on open, then reset",
+      "Dark mode via CSS variables and a body class toggle"
+    ],
+    "usability_notes": "Monospace-as-grid gives unusual alignment discipline and strong technical identity - ideal for designers/engineers. Typewriter effects must never delay critical text beyond a beat (screen readers and impatient users); ASCII intro needs a skip. Awwwards SOTD + Developer Award 2022 (Loonatiks Design Crew, Gatsby). Palette approximated from project imagery."
+  },
+  {
+    "id": "ref-014",
+    "title": "Achraf Kassioui Keyboard - Romantic Skeuomorphism of Mechanical Input",
+    "tags": {
+      "metaphors": [
+        "mechanical-keyboard",
+        "keycap",
+        "switch-actuation"
+      ],
+      "art_styles": [
+        "flat-skeuomorphic",
+        "industrial-hardware"
+      ],
+      "ui_components": [
+        "form-input",
+        "navigation"
+      ],
+      "materials": [
+        "plastic",
+        "metal"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A mechanical keyboard (Filco Majestouch TKL, red Esc, purple WASD): keycaps wobble slightly on their switches, depress under force, and cast moving shadows as they actuate.",
+      "digital_mechanic": "The onscreen keyboard mirrors the physical one bidirectionally: keys wobble on hover, depress on mousedown, AND depress when the user types on their own physical keyboard; Caps/Scroll Lock indicators sync with real hardware state. Clicking keys types into a text area; hold-and-drag gives a piano glissando."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#1C1C1E",
+        "#3A3A3C",
+        "#B3122F",
+        "#5B2A86",
+        "#F2F2F0"
+      ],
+      "borders": "Keycap silhouettes with 3D top faces and side walls; legends engraved-style",
+      "elevation": "Per-key cast shadows that deepen on actuation - the shadow IS the key travel indicator",
+      "typography": "Compact keycap legends in two stacked rows (symbol + fn label) like real doubleshot caps"
+    },
+    "interactive_mechanics": [
+      "Two-way key state sync: onscreen keys depress from real keyboard input",
+      "Hardware indicator LEDs (Caps/Scroll Lock) reflect the user's actual device",
+      "Hover wobble, mousedown depress, hold-drag piano effect",
+      "Keyboard-shortcut display mode reusing the same key objects"
+    ],
+    "usability_notes": "The decisive pattern is bidirectional sync - the skeuomorph responds to the user's REAL device, which makes the metaphor feel alive rather than decorative. Best as a settings/shortcut surface or a delight moment. Weaknesses are documented by the author honestly: heavy image assets, poor touch optimization, limited functionality - a desktop-first experiment. Accessibility: keys must remain real buttons; visual travel is decoration only. Author's own 2017 experiment page, self-documented."
+  },
+  {
+    "id": "ref-015",
+    "title": "ERA Residence - Day-Night Light Switch as Hero Control",
+    "tags": {
+      "metaphors": [
+        "light-switch",
+        "day-night-cycle",
+        "slider-toggle"
+      ],
+      "art_styles": [
+        "swiss-minimalist",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "navigation",
+        "cta"
+      ],
+      "materials": [
+        "plastic",
+        "metal"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A wall light switch or short travel slider: one decisive motion flips the room between lit and dark.",
+      "digital_mechanic": "The first control under the wordmark is a short BY DAY / BY NIGHT slider; moving it re-lights the hero photography - blue sky, palms, bougainvillea vs the same white terraces after sunset. It sits at the optical centre as the only touchable thing besides the scroll cue: the day/night flip IS the sales argument (buying a second home = buying light)."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#87B4E0",
+        "#F4EFE6",
+        "#1F3A5F",
+        "#E8A13C",
+        "#2A2A28"
+      ],
+      "borders": "Hairline letterspaced-caps wordmark; slider as a short track with a thumb, no heavy chrome",
+      "elevation": "Flat photography; state change handled by re-lighting imagery, not shadows",
+      "typography": "Letterspaced uppercase caps for the toggle labels; serif headline over the hero"
+    },
+    "interactive_mechanics": [
+      "Short slider flips hero photography between day and night lighting states",
+      "Single dominant control in the first viewport - nothing competes for the click",
+      "Scene re-lighting rather than overlay dimming"
+    ],
+    "usability_notes": "A masterclass in restraint: one metaphor, one control, placed where the decision lives. Works because the physical switch maps directly to the product's core value (light). Generalizes to any product with a day/night or before/after axis (real estate, lighting, hospitality). Travel should stay short and the label explicit; photography swap must be preloaded to avoid flash. Source: design-review writeup (dokle.design); live site not fetched."
+  },
+  {
+    "id": "ref-016",
+    "title": "Halden Review Lamp - Pull-Cord Theme Toggle with Radial Reveal",
+    "tags": {
+      "metaphors": [
+        "pendant-lamp",
+        "pull-cord-switch",
+        "bead-pull"
+      ],
+      "art_styles": [
+        "editorial-print",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "form-input",
+        "navigation"
+      ],
+      "materials": [
+        "brass",
+        "glass"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A brass reading lamp hung from the ceiling: tug the beaded pull cord a short distance with springy resistance; the bulb lights and pools amber glow under the shade.",
+      "digital_mechanic": "The theme toggle is a hanging lamp button: clicking tugs the cord 14px with a spring, then the new theme spreads from the bulb as a growing clip-path circle (640ms) on the View Transitions root snapshot instead of a global fade. Night mode lights the bulb, pools glow, and shifts accents rust to lamp-yellow. The circle origin is measured from the bulb's actual bounding box at click time, so the reveal is always anchored correctly at any viewport."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#F5F0E6",
+        "#8A6D3B",
+        "#B5442E",
+        "#E8A13C",
+        "#141414"
+      ],
+      "borders": "Editorial hairlines (masthead rules); lamp drawn as SVG line work with a shade path, collar, bulb circle",
+      "elevation": "Glow ellipse and pooled light under the shade as the only depth cues",
+      "typography": "Serif headline with one italic word, rust drop cap, newspaper-style masthead (volume/number, evening edition)"
+    },
+    "interactive_mechanics": [
+      "Cord tug spring animation on click; Enter/Space perform the same pull for keyboard users",
+      "Radial clip-path circle theme reveal originating at the bulb (View Transitions API)",
+      "Fallbacks: 400ms crossfade for browsers without View Transitions and for prefers-reduced-motion",
+      "aria-pressed state with label describing the RESULT of the next press"
+    ],
+    "usability_notes": "The accessibility spec is the reason to keep this entry: button semantics, result-oriented aria-label, keyboard-equivalent pull, motion fallbacks - while the physics stays purely visual (SVG aria-hidden). Copy this pattern's discipline wherever a physical control replaces a settings toggle. Source: design-lounge.live component writeup with full behavior spec."
+  },
+  {
+    "id": "ref-017",
+    "title": "Tactile UI Pull-Cord Bulb - Detent & Snap Toggle Component",
+    "tags": {
+      "metaphors": [
+        "pendant-lamp",
+        "pull-cord-switch",
+        "detent-snap",
+        "filament-bulb"
+      ],
+      "art_styles": [
+        "industrial-hardware",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "form-input"
+      ],
+      "materials": [
+        "glass",
+        "brass",
+        "plastic"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A pull-cord switch: the cord resists as you pull, the internal detent trips with a snap, force drops, and the filament warms from dull red to white while the lamp sways on its cord.",
+      "digital_mechanic": "A shadcn-style component engineered for the full force curve: an under-detent pull visibly lags the pointer, at the trip point force drops and the acorn catch-up reads as the snap; a pull that never reaches the trip point stretches the cord, tilts the lamp and springs back without switching. Filament color temperature (2200-3200K option) animates with state; light direction option (0-345 degrees) drives every highlight and shadow consistently."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#181818",
+        "#F5F1E8",
+        "#FFB65C",
+        "#8A8A8A",
+        "#C8102E"
+      ],
+      "borders": "Spun-dome shade silhouette; acorn pull knob as the sole decorative element",
+      "elevation": "Light-direction-aware highlight/shadow system that follows one configurable light angle",
+      "typography": "Component-label minimal; state announced to assistive tech, not drawn"
+    },
+    "interactive_mechanics": [
+      "Pointer-lag under detent, force-drop snap at trip point, spring-back on incomplete pulls",
+      "Filament warmth animation tied to on/off state",
+      "Optional synthesized snap sound, gated to start only after first user touch (autoplay-safe)",
+      "Page-finish integration: pull sets data-finish (aluminium/graphite) and persists the choice"
+    ],
+    "usability_notes": "The most complete published spec for cord-physics as UI: explicit lag/snap/spring-back states distinguish 'tried but not enough' from 'done' - a crucial but rarely modeled affordance. Ships as an installable component with aria label, keyboard pull(), and reduced-motion-friendly design. Use as the reference implementation when the pull-cord metaphor needs to be real UI, not illustration. Source: tactileui.dev component documentation."
+  },
+  {
+    "id": "ref-018",
+    "title": "James Frewin Matchbox - Slide-Out Tray & Strike-to-Ignite",
+    "tags": {
+      "metaphors": [
+        "matchbox",
+        "slide-tray",
+        "striking-surface",
+        "living-flame"
+      ],
+      "art_styles": [
+        "industrial-hardware",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "cta",
+        "form-input"
+      ],
+      "materials": [
+        "cardboard",
+        "paper"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A card matchbox: thumb slides the inner tray out, then a match is dragged quickly along the side striker strip; it flares, settles into a warm living flame and slowly burns down the stick.",
+      "digital_mechanic": "Two-stage gesture sequence: drag the tray out (or press Enter), then drag a match across the striker quickly (or press Enter again). The strike velocity and the striker-strip contact decide ignition; the flame then lives - flickers, burns down the stick over time."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#C8A15A",
+        "#E8DCC0",
+        "#1A1A1A",
+        "#FF7A00",
+        "#B5442E"
+      ],
+      "borders": "Cardboard tray edges with printed label face; striker strip as a dark speckled band",
+      "elevation": "Drawer-slide parallax between tray and sleeve; flame glow as the only volumetric element",
+      "typography": "Letterpress-style matchbox label type"
+    },
+    "interactive_mechanics": [
+      "Slide-out tray drag with drawer physics",
+      "Velocity-gated strike: fast drag along the strip ignites, slow drag does not",
+      "Living flame animation that burns down the stick over session time",
+      "Full keyboard equivalent: Enter opens tray, Enter again strikes"
+    ],
+    "usability_notes": "A model two-step ritual component: each physical sub-action maps to one gesture AND one key, so the metaphor never blocks input. The velocity gate teaches the 'quick strike' through failure (a lazy drag just scuffs) - keep a visible hint so users connect drag speed to ignition. Flame states make excellent session/progress indicators. Source: component page self-documentation."
+  },
+  {
+    "id": "ref-019",
+    "title": "20 Things I Learned - Canvas Book Page Flip",
+    "tags": {
+      "metaphors": [
+        "hardcover-book",
+        "page-turn",
+        "book-spine"
+      ],
+      "art_styles": [
+        "editorial-print",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "navigation",
+        "modal"
+      ],
+      "materials": [
+        "paper"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A hardcover book: grab the page edge, the sheet bends and curls over the spine with a folding shadow, and settles on the other side.",
+      "digital_mechanic": "Google's HTML5 case study (web.dev): each page is a section with a flip object tracking progress/target/dragging; dragging near the spine bends the page via canvas rendering - fold position, page bend strength and progressive left/right shadows are all derived from flip progress. Release completes the flip or snaps back depending on drag side."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#F4E8C1",
+        "#2A1F14",
+        "#C8A15A",
+        "#8A5A2B"
+      ],
+      "borders": "Book cover with rounded spine; page edges shaded by fold geometry, no UI borders",
+      "elevation": "Dynamic fold shadow computed per frame (left/right shadow width from bend strength) - depth is the flip itself",
+      "typography": "Storybook serif with large initials, warm paper background texture"
+    },
+    "interactive_mechanics": [
+      "Drag a page edge to bend and flip; release physics decides complete vs snap-back",
+      "zIndex stacking per page with continuous flip progress",
+      "Canvas-drawn curl: page masked at foldX with animated fold shadow",
+      "Arrow-key page turns as the keyboard equivalent"
+    ],
+    "usability_notes": "The canonical reference implementation (web.dev full source walkthrough). Page flip earns its cost only for linear, chapter-like content (guides, annual reports, lookbooks); for arbitrary navigation it impedes scanning - always pair with a persistent index or progress bar, keep flip animation under ~500ms, and support swipe plus arrows. Text must stay selectable/accessible outside the canvas-rendered fold frames."
+  },
+  {
+    "id": "ref-021",
+    "title": "DVR Labs Polaroid Stack - Fling-to-Shuffle Photo Pile",
+    "tags": {
+      "metaphors": [
+        "polaroid-photo",
+        "photo-pile",
+        "card-fling"
+      ],
+      "art_styles": [
+        "retro-tactile-modern",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "gallery",
+        "modal"
+      ],
+      "materials": [
+        "paper",
+        "plastic"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A pile of instant photos lying at their own casual angles on a desk; you fling the top one aside and it lands underneath the pile.",
+      "digital_mechanic": "A gallery where the top photo can be flung: it slides off with the throw's velocity, tucks in behind the stack, and the next photo becomes active - browsing by reshuffling the pile instead of paging through a carousel."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#F2EAD3",
+        "#1A1A1A",
+        "#B5442E",
+        "#4A6741"
+      ],
+      "borders": "White instant-photo frames with slight per-item rotation",
+      "elevation": "Stacked depth via rotation offsets and small shadow separation between layers",
+      "typography": "Handwritten captions under photos; minimal supporting UI type"
+    },
+    "interactive_mechanics": [
+      "Fling the top photo - velocity carries it off and it tucks behind the stack",
+      "Per-photo resting rotation for a naturally untidy pile",
+      "Replay control resets the stack"
+    ],
+    "usability_notes": "Fling-to-cycle replaces prev/next buttons with one gesture that reads as reshuffling rather than navigation - good for small personal galleries where serendipity beats completeness. Keep piles short (the stack hides content depth; a counter or thumbnails preserve orientation), mirror the fling for RTL locales, and give keyboard/AT users a plain list alternative. Same-author sibling to ref-005/ref-007 (DVR Labs); source: component page description."
+  },
+  {
+    "id": "ref-022",
+    "title": "UploadEnvelope - Wax-Sealed Envelope as Drop Target",
+    "tags": {
+      "metaphors": [
+        "envelope",
+        "wax-seal",
+        "flap",
+        "mail-slot"
+      ],
+      "art_styles": [
+        "flat-skeuomorphic",
+        "editorial-print"
+      ],
+      "ui_components": [
+        "form-input",
+        "modal"
+      ],
+      "materials": [
+        "paper",
+        "wax"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "Mailing a letter: the envelope flap opens to receive contents, and a wax seal pressed shut means it is complete and sealed.",
+      "digital_mechanic": "A WeTransfer-inspired CSS 3D envelope as a file-upload drop target with a four-state machine: idle (closed, 'drop files into the envelope'), drag-over (flap opens via rotateX(180deg) with perspective), uploading (progress fill rises in the envelope body), complete (a wax seal with a checkmark appears and the flap closes). Files visually slide into the pocket."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#F2EAD3",
+        "#B3165E",
+        "#8A5A2B",
+        "#1A1A1A"
+      ],
+      "borders": "Envelope pocket cut to a V via clip-path; wax seal as a radial-gradient disc with embossed rim highlight",
+      "elevation": "True CSS 3D: back panel, letter and pocket layered on separate translateZ planes; flap hinges so it renders in front when closed and behind the letter when open - depth sorting replaces z-index",
+      "typography": "Invitation-style serif label; functional state copy beside the envelope"
+    },
+    "interactive_mechanics": [
+      "Drag-over opens the flap; drag-leave closes it (affordance state, not decoration)",
+      "Upload progress rendered as rising fill inside the envelope body",
+      "Completion wax-seal stamp with checkmark as the terminal reward state",
+      "File drop/slide-in animation into the pocket"
+    ],
+    "usability_notes": "The strongest argument in the library for metaphor-as-function: every state of a mundane file upload maps to a physical mail stage, so the drop target's affordance is unmistakable. Implementation notes that transfer: hinge-on-separate-plane solves the flap z-order without z-index; staged transitions belong to the state being entered (flap first, letter delayed 0.45s); keyboard equivalents and tabindex focus must exist for the drop target, and the wax-seal completion must also be announced to AT (role=status). Sibling implementations: James Frewin's drag-to-crack seal envelope and a pure-CSS hinge variant documented down to the transform math."
+  },
+  {
+    "id": "ref-023",
+    "title": "Southern Lifts - Sliding Elevator Doors as Menu & 3D Lift Hero",
+    "tags": {
+      "metaphors": [
+        "elevator-doors",
+        "lift-cabin",
+        "door-swing"
+      ],
+      "art_styles": [
+        "industrial-hardware",
+        "swiss-minimalist"
+      ],
+      "ui_components": [
+        "navigation",
+        "modal",
+        "cta"
+      ],
+      "materials": [
+        "metal",
+        "glass"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "Elevator doors part in the middle to admit you; the cabin itself travels between floors; a door swings on hinges with an arc you can trace.",
+      "digital_mechanic": "For a lift company whose product IS the metaphor: the menu icon opens a menu animated as elevator doors sliding apart; a scroll-driven 3D lift hero carries the user through the product; an interactive door-swing diagram demonstrates installation geometry on hover. The brand's physical product is the navigation system."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#1A1A1A",
+        "#C0C5CC",
+        "#8A939E",
+        "#E8E4DC",
+        "#B5442E"
+      ],
+      "borders": "Metal panel seams and brushed-steel door parting lines; minimal chrome elsewhere",
+      "elevation": "3D cabin lighting and reflections; UI panels flat",
+      "typography": "Engineered grotesque; spec-sheet style labels for the door diagram"
+    },
+    "interactive_mechanics": [
+      "Menu opens as sliding elevator doors (icon = door state)",
+      "Scroll-driven 3D lift ride as hero narrative",
+      "Hover-driven interactive door swing diagram for install geometry"
+    ],
+    "usability_notes": "The rare case where a physical metaphor is literally the product - the door-menu is brand logic, not decoration. Keep the doors animation under ~600ms and always reveal a static menu fallback for AT users; 3D hero needs mobile LOD. Source: Awwwards nominee element listing (itsy-bytesy)."
+  },
+  {
+    "id": "ref-024",
+    "title": "Rise of Digital - Elevator Ride Through Six Floors of Craft",
+    "tags": {
+      "metaphors": [
+        "elevator",
+        "floor-guide",
+        "building-storeys",
+        "express-ride"
+      ],
+      "art_styles": [
+        "industrial-hardware",
+        "playful-brutalist"
+      ],
+      "ui_components": [
+        "navigation",
+        "gallery",
+        "modal"
+      ],
+      "materials": [
+        "glass",
+        "metal"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A building's elevator: a floor guide panel, a cabin ride between storeys, an express ride skipping floors, and hands-on exhibits waiting on each floor.",
+      "digital_mechanic": "Site IA IS the building: six floors of craft navigated by an elevator ride; a floor menu doubles as wayfinding and supports an express ride that skips intermediate floors; each floor holds playable exhibits (draggable Newton's cradle, a Galton board that fills the brand's 'R', an AI desk on the night shift); the closing scene folds the night city into a motherboard."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#0E0E10",
+        "#F2C200",
+        "#3B7DDD",
+        "#E8E4DC",
+        "#1C1C1E"
+      ],
+      "borders": "Elevator panel framing and floor-number plates; glass exhibit vitrines",
+      "elevation": "Full 3D environments with per-floor lighting scenes (day exhibits, night-shift desk)",
+      "typography": "Floor-plate numerals as section markers; exhibit placard labels"
+    },
+    "interactive_mechanics": [
+      "Elevator ride as primary navigation between six floors",
+      "Floor menu with express-ride skip (direct jump = holding a door-close button)",
+      "Playable floor exhibits: draggable Newton's cradle, Galton board filling a glyph",
+      "Scene transition folding 3D city into circuit board"
+    ],
+    "usability_notes": "Elevator-as-IA gives every page an unambiguous spatial position (floor number = section index) and makes wayfinding diegetic - the express ride is just deep linking. Floor rides must be skippable (express, menu) or deep content becomes a chore; physics exhibits must pause off-screen and respect reduced motion. Source: Awwwards nominee element listing (self-descriptive)."
+  },
+  {
+    "id": "ref-025",
+    "title": "The Turn of the Screw (Lusion) - Curtain Overlay Menu for Opera",
+    "tags": {
+      "metaphors": [
+        "theatre-curtain",
+        "stage-drape",
+        "opera-house"
+      ],
+      "art_styles": [
+        "editorial-print",
+        "theatrical-gothic"
+      ],
+      "ui_components": [
+        "navigation",
+        "modal"
+      ],
+      "materials": [
+        "velvet-fabric"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "An opera house: the house lights dim, the velvet main drape parts, and the stage is revealed for the performance.",
+      "digital_mechanic": "The overlay menu opens as a curtain effect - velvet panels sweep across to reveal navigation, framing site sections as acts of the production. The whole site is an immersive trailer for Opera North's 2020 production, built as WebGL with a sound-art score (James Bulley, Audiolab), so the curtain framing extends to scene transitions."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#000000",
+        "#7A1024",
+        "#C9A227",
+        "#F2EAD3"
+      ],
+      "borders": "Drape folds rendered as velvet shading rather than lines; no UI chrome",
+      "elevation": "WebGL fabric folds with theatrical rim lighting; depth is staged like scenography",
+      "typography": "Playbill-style serif titles; act/scene numbering for sections"
+    },
+    "interactive_mechanics": [
+      "Overlay menu as animated curtain sweep (open = drape parting)",
+      "Scene transitions staged as curtain resets between acts",
+      "WebGL immersive trailer environment with scored sound design"
+    ],
+    "usability_notes": "Curtain menus fit performance brands (opera, theatre, film festivals) where anticipation is the product. The curtain must never trap users: menu open/close has to be keyboard operable, the animation brief, and the underlying page still reachable. Heavy WebGL trailer needs a lightweight poster fallback. Awwwards SOTD 7.59 (creativity 8.17); palette single-black plus accent per Awwwards data."
+  },
+  {
+    "id": "ref-026",
+    "title": "Fernet-Branca US - Slot Machine Serve Randomizer",
+    "tags": {
+      "metaphors": [
+        "slot-machine",
+        "spinning-reels",
+        "lever-ritual"
+      ],
+      "art_styles": [
+        "retro-tactile-modern",
+        "playful-brutalist"
+      ],
+      "ui_components": [
+        "cta",
+        "modal"
+      ],
+      "materials": [
+        "metal",
+        "glass"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A slot machine: pull, reels spin with staggered deceleration, symbols lock one by one, and the final reel lands last for maximum suspense.",
+      "digital_mechanic": "A scroll-based slot machine that randomizes the answer to 'How will you have Fernet-Branca?' - reels spin through serve options (Beer + Shot, 'with Brian', ...) and land on a recipe pairing. The brand's bar-culture ritual of chance becomes the product chooser."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#1A5E3A",
+        "#E8E4DC",
+        "#C8102E",
+        "#FFC400",
+        "#111111"
+      ],
+      "borders": "Machine cabinet framing, reel windows with inner shadow rims, symbol cards",
+      "elevation": "Reels with cylindrical curvature shading; cabinet chrome flat",
+      "typography": "Casino-card symbol type; bold serve names as the 'payline'"
+    },
+    "interactive_mechanics": [
+      "Scroll velocity drives reel spin and staggered reel lock-up",
+      "Final reel lands last for suspense; result is a randomized serve pairing",
+      "Footer/bottle-roll animations extend the bar-counter frame"
+    ],
+    "usability_notes": "Slot-machine randomization suits low-stakes choosers (recipes, playlists, promos) where variable reward is the fun - but never use it where users need to reach a specific item deterministically; always provide a browsable list as the serious path. Respect reduced motion (show the result directly) and gate any real-money associations. Source: Awwwards element listing; live site partially verified (serve options visible)."
+  },
+  {
+    "id": "ref-027",
+    "title": "Aralesk Collages & Motion - Draggable Fabric Sheets with Video Reveal",
+    "tags": {
+      "metaphors": [
+        "fabric-sheet",
+        "collage-paper",
+        "curtain-scrap"
+      ],
+      "art_styles": [
+        "collage-editorial",
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "gallery",
+        "modal"
+      ],
+      "materials": [
+        "fabric",
+        "paper"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "Loose sheets of fabric and collage paper lying on a table; you drag one aside and what it covered is revealed underneath.",
+      "digital_mechanic": "Portfolio work presented under draggable fabric sheets (GSAP): grabbing a sheet and pulling it aside reveals the video piece beneath; sheets animate with cloth-like weight and settle at new angles, turning a video grid into an archaeology of the desk. Sibling elements include falling letters with fabric-sheet animation and a thread-ball cursor."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#14100C",
+        "#D9CFC0",
+        "#B5442E",
+        "#4A6741",
+        "#FFC400"
+      ],
+      "borders": "Torn/cut fabric edges; collage layering without frames",
+      "elevation": "Sheet shadows scale with lift height; revealed video sits flat beneath",
+      "typography": "Cut-and-paste collage type; handwritten annotations"
+    },
+    "interactive_mechanics": [
+      "Drag fabric sheets aside to uncover video work (drag = reveal affordance)",
+      "Cloth-weight animation: sheets settle with residual angle after release",
+      "Falling-letter and thread-ball cursor siblings extend the tactile system"
+    ],
+    "usability_notes": "Hiding work under draggable sheets trades scanability for discovery - acceptable for a motion designer's showreel where every item is worth the dig, dangerous for content that must be found. Cap the sheet count, keep one sheet per item (never layered hiding), and provide a grid/list view toggle. Drag targets need large hit areas and keyboard-reachable equivalents. Source: Awwwards element listing (self-tagged GSAP)."
   }
 ]

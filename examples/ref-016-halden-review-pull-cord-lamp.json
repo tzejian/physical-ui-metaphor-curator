@@ -1,0 +1,46 @@
+{
+  "id": "ref-016",
+  "title": "Halden Review Lamp - Pull-Cord Theme Toggle with Radial Reveal",
+  "tags": {
+    "metaphors": [
+      "pendant-lamp",
+      "pull-cord-switch",
+      "bead-pull"
+    ],
+    "art_styles": [
+      "editorial-print",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "form-input",
+      "navigation"
+    ],
+    "materials": [
+      "brass",
+      "glass"
+    ]
+  },
+  "affordance_translation": {
+    "physical_behavior": "A brass reading lamp hung from the ceiling: tug the beaded pull cord a short distance with springy resistance; the bulb lights and pools amber glow under the shade.",
+    "digital_mechanic": "The theme toggle is a hanging lamp button: clicking tugs the cord 14px with a spring, then the new theme spreads from the bulb as a growing clip-path circle (640ms) on the View Transitions root snapshot instead of a global fade. Night mode lights the bulb, pools glow, and shifts accents rust to lamp-yellow. The circle origin is measured from the bulb's actual bounding box at click time, so the reveal is always anchored correctly at any viewport."
+  },
+  "design_tokens": {
+    "dominant_colors": [
+      "#F5F0E6",
+      "#8A6D3B",
+      "#B5442E",
+      "#E8A13C",
+      "#141414"
+    ],
+    "borders": "Editorial hairlines (masthead rules); lamp drawn as SVG line work with a shade path, collar, bulb circle",
+    "elevation": "Glow ellipse and pooled light under the shade as the only depth cues",
+    "typography": "Serif headline with one italic word, rust drop cap, newspaper-style masthead (volume/number, evening edition)"
+  },
+  "interactive_mechanics": [
+    "Cord tug spring animation on click; Enter/Space perform the same pull for keyboard users",
+    "Radial clip-path circle theme reveal originating at the bulb (View Transitions API)",
+    "Fallbacks: 400ms crossfade for browsers without View Transitions and for prefers-reduced-motion",
+    "aria-pressed state with label describing the RESULT of the next press"
+  ],
+  "usability_notes": "The accessibility spec is the reason to keep this entry: button semantics, result-oriented aria-label, keyboard-equivalent pull, motion fallbacks - while the physics stays purely visual (SVG aria-hidden). Copy this pattern's discipline wherever a physical control replaces a settings toggle. Source: design-lounge.live component writeup with full behavior spec."
+}
