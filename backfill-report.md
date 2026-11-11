@@ -1,6 +1,6 @@
 # Backfill report: WROTE
 
-26 entries read: 26 updated, 0 already had evidence.
+26 entries read: 0 updated, 26 already had evidence.
 
 ## Colors shared by many entries
 
@@ -34,31 +34,31 @@ These may be copied or invented values. Check them against the real sites; clear
 
 | Entry | Guessed tier | Guessed source | Needs `sources` | Action |
 |---|---|---|---|---|
-| ref-001 | ? | none stated | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-002 | ? | none stated | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-003 | C | Communication Arts coverage | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-004 | ? | none stated | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-005 | ? | none stated | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-006 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-007 | ? | none stated | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-008 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-009 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-010 | C | Devpost project page | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-011 | C | Devpost project page | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-012 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-013 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-014 | A | author's own page | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-015 | C | design-review article | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-016 | C | component write-up (check for code) | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-017 | A | component docs | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-018 | A | author's own page | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-019 | A | source walkthrough (web.dev) | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-021 | A | author's own page | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-022 | ? | none stated | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-023 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-024 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-025 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
-| ref-026 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'unknown'} |
-| ref-027 | C | Awwwards listing | yes | add evidence {'palette': 'inferred', 'tokens': 'inferred', 'interactions': 'inferred', 'stack': 'inferred'} |
+| ref-001 | ? | none stated | yes | already has evidence (unchanged) |
+| ref-002 | ? | none stated | yes | already has evidence (unchanged) |
+| ref-003 | C | Communication Arts coverage | yes | already has evidence (unchanged) |
+| ref-004 | ? | none stated | yes | already has evidence (unchanged) |
+| ref-005 | ? | none stated | yes | already has evidence (unchanged) |
+| ref-006 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-007 | ? | none stated | yes | already has evidence (unchanged) |
+| ref-008 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-009 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-010 | C | Devpost project page | yes | already has evidence (unchanged) |
+| ref-011 | C | Devpost project page | yes | already has evidence (unchanged) |
+| ref-012 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-013 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-014 | A | author's own page | yes | already has evidence (unchanged) |
+| ref-015 | C | design-review article | yes | already has evidence (unchanged) |
+| ref-016 | C | component write-up (check for code) | yes | already has evidence (unchanged) |
+| ref-017 | A | component docs | yes | already has evidence (unchanged) |
+| ref-018 | A | author's own page | yes | already has evidence (unchanged) |
+| ref-019 | A | source walkthrough (web.dev) | yes | already has evidence (unchanged) |
+| ref-021 | A | author's own page | yes | already has evidence (unchanged) |
+| ref-022 | ? | none stated | yes | already has evidence (unchanged) |
+| ref-023 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-024 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-025 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-026 | C | Awwwards listing | yes | already has evidence (unchanged) |
+| ref-027 | C | Awwwards listing | yes | already has evidence (unchanged) |
 
 Tier is a guess from the entry's own text (A = code or docs, B = live site, C = showcase or article). A live-site visit (tier B) is not detectable from the text, so confirm each one.

@@ -49,5 +49,5 @@
     "Optional synthesized snap sound, gated to start only after first user touch (autoplay-safe)",
     "Page-finish integration: pull sets data-finish (aluminium/graphite) and persists the choice"
   ],
-  "usability_notes": "The most complete published spec for cord-physics as UI: explicit lag/snap/spring-back states distinguish 'tried but not enough' from 'done' - a crucial but rarely modeled affordance. Ships as an installable component with aria label, keyboard pull(), and reduced-motion-friendly design. Use as the reference implementation when the pull-cord metaphor needs to be real UI, not illustration. Source: tactileui.dev component documentation."
+  "usability_notes": "Specifies the cord’s force curve explicitly: explicit lag/snap/spring-back states distinguish 'tried but not enough' from 'done' - a crucial but rarely modeled affordance. Ships as an installable component with aria label, keyboard pull(), and reduced-motion-friendly design. Use as the reference implementation when the pull-cord metaphor needs to be real UI, not illustration. Source: tactileui.dev component documentation."
 }
