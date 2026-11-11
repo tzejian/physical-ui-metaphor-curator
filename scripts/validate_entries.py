@@ -15,7 +15,7 @@ Warnings:
   - art_styles / ui_components tags outside schemas/vocabulary.json (aliases are hinted)
   - a hex color shared by many entries (palette values may be copied or invented)
   - promotional wording in usability_notes
-  - new-format entries whose usability_notes lack "Tested" / "Not tested"
+  - fully new-format entries (sources and evidence) whose usability_notes lack "Tested" / "Not tested"
   - all sources are tier C but interactions or stack are marked inspected
 
 Gaps in id numbering are fine; numbers are never reused.
@@ -43,11 +43,9 @@ IGNORED_HEX = {"#000000", "#FFFFFF"}
 
 
 def parse_args():
-    script_dir = Path(__file__).resolve().parent
-    # If located in repo root (where schemas/ exists), use script_dir; otherwise parent (e.g. scripts/)
-    default_root = script_dir if (script_dir / "schemas").exists() else script_dir.parent
+    default_root = Path(__file__).resolve().parent.parent
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--root", type=Path, default=default_root, help="repo root (default: repo root directory)")
+    p.add_argument("--root", type=Path, default=default_root, help="repo root (default: parent of scripts/)")
     p.add_argument("--strict", action="store_true", help="treat warnings as errors")
     return p.parse_args()
 
@@ -156,7 +154,7 @@ def main():
             for w in PROMO_WORDS:
                 if w in low:
                     warnings.append(f"{name}: promotional wording in usability_notes ('{w}')")
-            if has_evidence and "tested" not in low:
+            if has_sources and has_evidence and "tested" not in low:
                 warnings.append(f"{name}: usability_notes should say 'Tested: ...' or 'Not tested'")
 
         # tier C consistency
