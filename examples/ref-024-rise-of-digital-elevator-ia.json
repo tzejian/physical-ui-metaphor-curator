@@ -1,6 +1,12 @@
 {
   "id": "ref-024",
   "title": "Rise of Digital - Elevator Ride Through Six Floors of Craft",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "elevator",

@@ -43,9 +43,11 @@ IGNORED_HEX = {"#000000", "#FFFFFF"}
 
 
 def parse_args():
-    default_root = Path(__file__).resolve().parent.parent
+    script_dir = Path(__file__).resolve().parent
+    # If located in repo root (where schemas/ exists), use script_dir; otherwise parent (e.g. scripts/)
+    default_root = script_dir if (script_dir / "schemas").exists() else script_dir.parent
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--root", type=Path, default=default_root, help="repo root (default: parent of scripts/)")
+    p.add_argument("--root", type=Path, default=default_root, help="repo root (default: repo root directory)")
     p.add_argument("--strict", action="store_true", help="treat warnings as errors")
     return p.parse_args()
 

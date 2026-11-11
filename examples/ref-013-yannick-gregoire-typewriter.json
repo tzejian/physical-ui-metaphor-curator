@@ -1,6 +1,12 @@
 {
   "id": "ref-013",
   "title": "Yannick Gregoire Portfolio - Typewriter & Command Line Grid",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "typewriter",

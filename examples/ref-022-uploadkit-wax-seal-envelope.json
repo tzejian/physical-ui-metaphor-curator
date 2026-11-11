@@ -1,6 +1,12 @@
 {
   "id": "ref-022",
   "title": "UploadEnvelope - Wax-Sealed Envelope as Drop Target",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "envelope",

@@ -1,6 +1,12 @@
 {
   "id": "ref-010",
   "title": "Silicon & Sepia - The Vintage Desk Writing Environment",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "office-desk",

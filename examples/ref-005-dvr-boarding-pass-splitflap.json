@@ -1,6 +1,12 @@
 {
   "id": "ref-005",
   "title": "DVR Labs Boarding Pass - Split-Flap Ticker & Perforated Tear-Off Stub",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "boarding-pass",

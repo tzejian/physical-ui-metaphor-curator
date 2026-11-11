@@ -1,11 +1,32 @@
 {
   "id": "ref-001",
   "title": "FREAK MAG - Bookshelf Spine Navigation",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
-    "metaphors": ["bookshelf", "book-spine", "library-shelf"],
-    "art_styles": ["japanese-editorial", "neo-brutalist", "flat-skeuomorphic"],
-    "ui_components": ["navigation", "category-filter", "accordion"],
-    "materials": ["paper-jacket", "matte-surface"]
+    "metaphors": [
+      "bookshelf",
+      "book-spine",
+      "library-shelf"
+    ],
+    "art_styles": [
+      "japanese-editorial",
+      "neo-brutalist",
+      "flat-skeuomorphic"
+    ],
+    "ui_components": [
+      "navigation",
+      "category-filter",
+      "accordion"
+    ],
+    "materials": [
+      "paper-jacket",
+      "matte-surface"
+    ]
   },
   "affordance_translation": {
     "physical_behavior": "Books leaning against gravity on a shelf, vertical spine typography, colored dust jackets.",
@@ -31,4 +52,3 @@
   ],
   "usability_notes": "High visual memorability and strong editorial personality. Best suited for small curated collections under 15–20 items; vertical text can introduce legibility friction for non-CJK alphabets."
 }
-

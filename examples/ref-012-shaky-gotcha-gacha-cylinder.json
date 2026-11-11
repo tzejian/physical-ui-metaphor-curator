@@ -1,6 +1,12 @@
 {
   "id": "ref-012",
   "title": "Shaky Gotcha - Rotating Gacha Capsule Cylinder",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "gacha-capsule-toy",

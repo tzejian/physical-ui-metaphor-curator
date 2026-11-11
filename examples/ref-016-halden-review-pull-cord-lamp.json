@@ -1,6 +1,12 @@
 {
   "id": "ref-016",
   "title": "Halden Review Lamp - Pull-Cord Theme Toggle with Radial Reveal",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "pendant-lamp",

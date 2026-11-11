@@ -1,6 +1,12 @@
 {
   "id": "ref-003",
   "title": "Madeline's Mobile - Kitchen Ticket Scroll Layout",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "kitchen-ticket",

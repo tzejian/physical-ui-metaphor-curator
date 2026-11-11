@@ -2,6 +2,12 @@
   {
     "id": "ref-001",
     "title": "FREAK MAG - Bookshelf Spine Navigation",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "bookshelf",
@@ -50,6 +56,12 @@
   {
     "id": "ref-002",
     "title": "Mosby's Files - Filing Cabinet & Index Tab Navigation",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "filing-cabinet",
@@ -103,6 +115,12 @@
   {
     "id": "ref-003",
     "title": "Madeline's Mobile - Kitchen Ticket Scroll Layout",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "kitchen-ticket",
@@ -146,6 +164,12 @@
   {
     "id": "ref-004",
     "title": "Press Play On Tape - Cassette Deck & VHS Packaging Interface",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "audio-cassette",
@@ -197,6 +221,12 @@
   {
     "id": "ref-005",
     "title": "DVR Labs Boarding Pass - Split-Flap Ticker & Perforated Tear-Off Stub",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "boarding-pass",
@@ -244,6 +274,12 @@
   {
     "id": "ref-006",
     "title": "Polaroid I-2 - Physical Camera Dials & Instant Photo Frame",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "instant-camera",
@@ -291,6 +327,12 @@
   {
     "id": "ref-007",
     "title": "DVR Labs Playful 404 - Numbers Hanging on Threads",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "hanging-sign",
@@ -336,6 +378,12 @@
   {
     "id": "ref-008",
     "title": "XO Festival - Rotary Knob as Slider Control",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "control-knob",
@@ -378,6 +426,12 @@
   {
     "id": "ref-009",
     "title": "Wonderful Weekends - Physics-Based 3D Gumball Machine",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "gumball-machine",
@@ -424,6 +478,12 @@
   {
     "id": "ref-010",
     "title": "Silicon & Sepia - The Vintage Desk Writing Environment",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "office-desk",
@@ -474,6 +534,12 @@
   {
     "id": "ref-011",
     "title": "Silicon & Sepia - The Corkboard Pin Wall",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "corkboard",
@@ -521,6 +587,12 @@
   {
     "id": "ref-012",
     "title": "Shaky Gotcha - Rotating Gacha Capsule Cylinder",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "gacha-capsule-toy",
@@ -568,6 +640,12 @@
   {
     "id": "ref-013",
     "title": "Yannick Gregoire Portfolio - Typewriter & Command Line Grid",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "typewriter",
@@ -614,6 +692,12 @@
   {
     "id": "ref-014",
     "title": "Achraf Kassioui Keyboard - Romantic Skeuomorphism of Mechanical Input",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "mechanical-keyboard",
@@ -660,6 +744,12 @@
   {
     "id": "ref-015",
     "title": "ERA Residence - Day-Night Light Switch as Hero Control",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "light-switch",
@@ -705,6 +795,12 @@
   {
     "id": "ref-016",
     "title": "Halden Review Lamp - Pull-Cord Theme Toggle with Radial Reveal",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "pendant-lamp",
@@ -751,6 +847,12 @@
   {
     "id": "ref-017",
     "title": "Tactile UI Pull-Cord Bulb - Detent & Snap Toggle Component",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "pendant-lamp",
@@ -798,6 +900,12 @@
   {
     "id": "ref-018",
     "title": "James Frewin Matchbox - Slide-Out Tray & Strike-to-Ignite",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "matchbox",
@@ -845,6 +953,12 @@
   {
     "id": "ref-019",
     "title": "20 Things I Learned - Canvas Book Page Flip",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "hardcover-book",
@@ -889,6 +1003,12 @@
   {
     "id": "ref-021",
     "title": "DVR Labs Polaroid Stack - Fling-to-Shuffle Photo Pile",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "polaroid-photo",
@@ -933,6 +1053,12 @@
   {
     "id": "ref-022",
     "title": "UploadEnvelope - Wax-Sealed Envelope as Drop Target",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "envelope",
@@ -979,6 +1105,12 @@
   {
     "id": "ref-023",
     "title": "Southern Lifts - Sliding Elevator Doors as Menu & 3D Lift Hero",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "elevator-doors",
@@ -1025,6 +1157,12 @@
   {
     "id": "ref-024",
     "title": "Rise of Digital - Elevator Ride Through Six Floors of Craft",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "elevator",
@@ -1073,6 +1211,12 @@
   {
     "id": "ref-025",
     "title": "The Turn of the Screw (Lusion) - Curtain Overlay Menu for Opera",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "theatre-curtain",
@@ -1080,8 +1224,7 @@
         "opera-house"
       ],
       "art_styles": [
-        "editorial-print",
-        "theatrical-gothic"
+        "editorial-print"
       ],
       "ui_components": [
         "navigation",
@@ -1116,6 +1259,12 @@
   {
     "id": "ref-026",
     "title": "Fernet-Branca US - Slot Machine Serve Randomizer",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "unknown"
+    },
     "tags": {
       "metaphors": [
         "slot-machine",
@@ -1161,6 +1310,12 @@
   {
     "id": "ref-027",
     "title": "Aralesk Collages & Motion - Draggable Fabric Sheets with Video Reveal",
+    "evidence": {
+      "palette": "inferred",
+      "tokens": "inferred",
+      "interactions": "inferred",
+      "stack": "inferred"
+    },
     "tags": {
       "metaphors": [
         "fabric-sheet",

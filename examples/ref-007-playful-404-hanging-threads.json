@@ -1,6 +1,12 @@
 {
   "id": "ref-007",
   "title": "DVR Labs Playful 404 - Numbers Hanging on Threads",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "hanging-sign",

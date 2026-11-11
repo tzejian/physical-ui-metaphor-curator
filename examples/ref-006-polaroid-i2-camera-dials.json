@@ -1,6 +1,12 @@
 {
   "id": "ref-006",
   "title": "Polaroid I-2 - Physical Camera Dials & Instant Photo Frame",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "instant-camera",

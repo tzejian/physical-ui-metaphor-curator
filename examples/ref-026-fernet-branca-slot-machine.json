@@ -1,6 +1,12 @@
 {
   "id": "ref-026",
   "title": "Fernet-Branca US - Slot Machine Serve Randomizer",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "slot-machine",

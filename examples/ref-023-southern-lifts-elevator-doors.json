@@ -1,6 +1,12 @@
 {
   "id": "ref-023",
   "title": "Southern Lifts - Sliding Elevator Doors as Menu & 3D Lift Hero",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "elevator-doors",

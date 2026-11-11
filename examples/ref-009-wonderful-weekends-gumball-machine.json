@@ -1,6 +1,12 @@
 {
   "id": "ref-009",
   "title": "Wonderful Weekends - Physics-Based 3D Gumball Machine",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "gumball-machine",

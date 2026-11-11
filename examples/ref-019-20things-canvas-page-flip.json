@@ -1,6 +1,12 @@
 {
   "id": "ref-019",
   "title": "20 Things I Learned - Canvas Book Page Flip",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "hardcover-book",

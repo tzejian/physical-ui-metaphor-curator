@@ -1,6 +1,12 @@
 {
   "id": "ref-004",
   "title": "Press Play On Tape - Cassette Deck & VHS Packaging Interface",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "audio-cassette",

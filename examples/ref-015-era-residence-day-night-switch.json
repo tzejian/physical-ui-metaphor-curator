@@ -1,6 +1,12 @@
 {
   "id": "ref-015",
   "title": "ERA Residence - Day-Night Light Switch as Hero Control",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "light-switch",

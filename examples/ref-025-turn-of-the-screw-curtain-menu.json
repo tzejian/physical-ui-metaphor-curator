@@ -1,6 +1,12 @@
 {
   "id": "ref-025",
   "title": "The Turn of the Screw (Lusion) - Curtain Overlay Menu for Opera",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "theatre-curtain",
@@ -8,8 +14,7 @@
       "opera-house"
     ],
     "art_styles": [
-      "editorial-print",
-      "theatrical-gothic"
+      "editorial-print"
     ],
     "ui_components": [
       "navigation",

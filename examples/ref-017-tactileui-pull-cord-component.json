@@ -1,6 +1,12 @@
 {
   "id": "ref-017",
   "title": "Tactile UI Pull-Cord Bulb - Detent & Snap Toggle Component",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "pendant-lamp",

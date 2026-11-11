@@ -1,6 +1,12 @@
 {
   "id": "ref-011",
   "title": "Silicon & Sepia - The Corkboard Pin Wall",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "corkboard",

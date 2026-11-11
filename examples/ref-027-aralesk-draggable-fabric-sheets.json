@@ -1,6 +1,12 @@
 {
   "id": "ref-027",
   "title": "Aralesk Collages & Motion - Draggable Fabric Sheets with Video Reveal",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "inferred"
+  },
   "tags": {
     "metaphors": [
       "fabric-sheet",

@@ -1,6 +1,12 @@
 {
   "id": "ref-021",
   "title": "DVR Labs Polaroid Stack - Fling-to-Shuffle Photo Pile",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "polaroid-photo",

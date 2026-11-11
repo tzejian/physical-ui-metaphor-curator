@@ -1,6 +1,12 @@
 {
   "id": "ref-002",
   "title": "Mosby's Files - Filing Cabinet & Index Tab Navigation",
+  "evidence": {
+    "palette": "inferred",
+    "tokens": "inferred",
+    "interactions": "inferred",
+    "stack": "unknown"
+  },
   "tags": {
     "metaphors": [
       "filing-cabinet",
