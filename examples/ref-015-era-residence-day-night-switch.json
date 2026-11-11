@@ -47,5 +47,13 @@
     "Single dominant control in the first viewport - nothing competes for the click",
     "Scene re-lighting rather than overlay dimming"
   ],
-  "usability_notes": "Uses one metaphor and one control, placed where the decision lives. Works because the physical switch maps directly to the product's core value (light). Generalizes to any product with a day/night or before/after axis (real estate, lighting, hospitality). Travel should stay short and the label explicit; photography swap must be preloaded to avoid flash. Source: design-review writeup (dokle.design); live site not fetched."
+  "usability_notes": "Uses one metaphor and one control, placed where the decision lives. Works because the physical switch maps directly to the product's core value (light). Generalizes to any product with a day/night or before/after axis (real estate, lighting, hospitality). Travel should stay short and the label explicit; photography swap must be preloaded to avoid flash. Source: design-review writeup (dokle.design); live site not fetched.",
+  "sources": [
+    {
+      "url": "https://dokle.design/awards/era-residence-day-night-toggle-wordmark",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

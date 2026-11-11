@@ -48,5 +48,13 @@
     "Dispensed ball resolves into a reward/prize reveal",
     "Rigid-body bounce and settle for every sphere"
   ],
-  "usability_notes": "Gumball dispensing is a jackpot-loop metaphor  - suits one-shot campaigns and promotions where a single delight moment is the goal. Cost: WebGL + physics payloads, mobile performance risk, and the reward must be reachable without the toy (respect reduced-motion and provide a plain reveal path). Source: Awwwards SOTD summary; live-site verification pending."
+  "usability_notes": "Gumball dispensing is a jackpot-loop metaphor  - suits one-shot campaigns and promotions where a single delight moment is the goal. Cost: WebGL + physics payloads, mobile performance risk, and the reward must be reachable without the toy (respect reduced-motion and provide a plain reveal path). Source: Awwwards SOTD summary; live-site verification pending.",
+  "sources": [
+    {
+      "url": "https://awwwards.com/sites/wonderful-weekends",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

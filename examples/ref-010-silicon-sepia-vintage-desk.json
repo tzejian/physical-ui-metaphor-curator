@@ -52,5 +52,13 @@
     "Polaroids lift under the true cursor pixel, not a bounding box",
     "Tea cup drains as a playful session/progress indicator"
   ],
-  "usability_notes": "Strong for personal writing portfolios where editorial warmth is the brand. Navigation via scattered props is inherently low-scanability - pair with a conventional index or strong category labels. Wide 3D scenes compress poorly on mobile; needs a list-mode fallback. Source: Devpost project documentation (self-reported mechanics)."
+  "usability_notes": "Strong for personal writing portfolios where editorial warmth is the brand. Navigation via scattered props is inherently low-scanability - pair with a conventional index or strong category labels. Wide 3D scenes compress poorly on mobile; needs a list-mode fallback. Source: Devpost project documentation (self-reported mechanics).",
+  "sources": [
+    {
+      "url": "https://devpost.com/software/silicon-sepia-portfolio-site",
+      "tier": "C",
+      "type": "case-study",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

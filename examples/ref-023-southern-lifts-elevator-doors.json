@@ -48,5 +48,13 @@
     "Scroll-driven 3D lift ride as hero narrative",
     "Hover-driven interactive door swing diagram for install geometry"
   ],
-  "usability_notes": "The rare case where a physical metaphor is literally the product - the door-menu is brand logic, not decoration. Keep the doors animation under ~600ms and always reveal a static menu fallback for AT users; 3D hero needs mobile LOD. Source: Awwwards nominee element listing (itsy-bytesy)."
+  "usability_notes": "The rare case where a physical metaphor is literally the product - the door-menu is brand logic, not decoration. Keep the doors animation under ~600ms and always reveal a static menu fallback for AT users; 3D hero needs mobile LOD. Source: Awwwards nominee element listing (itsy-bytesy).",
+  "sources": [
+    {
+      "url": "https://www.awwwards.com/sites/southern-lifts",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

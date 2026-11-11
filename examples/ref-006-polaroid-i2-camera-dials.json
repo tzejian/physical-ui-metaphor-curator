@@ -49,5 +49,13 @@
     "Homepage intro animation of film ejecting into the hero photo frame",
     "Gallery photos presented as freshly developed instants"
   ],
-  "usability_notes": "E-commerce with education: dial-explorer converts spec-sheet features into muscle memory, ideal for prosumer cameras. Two-color palette keeps photography dominant. Risks: 3D interactivity needs mobile fallbacks and clear rotate affordances; dial controls must not gate purchase paths. Awwwards SOTD 7.48; dev award animation 8.0."
+  "usability_notes": "E-commerce with education: dial-explorer converts spec-sheet features into muscle memory, ideal for prosumer cameras. Two-color palette keeps photography dominant. Risks: 3D interactivity needs mobile fallbacks and clear rotate affordances; dial controls must not gate purchase paths. Awwwards SOTD 7.48; dev award animation 8.0.",
+  "sources": [
+    {
+      "url": "https://awwwards.com/sites/polaroid-i-2",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

@@ -48,5 +48,13 @@
     "Project video drawn to background canvas for several frames on open, then reset",
     "Dark mode via CSS variables and a body class toggle"
   ],
-  "usability_notes": "Monospace-as-grid gives unusual alignment discipline and strong technical identity - ideal for designers/engineers. Typewriter effects must never delay critical text beyond a beat (screen readers and impatient users); ASCII intro needs a skip. Awwwards SOTD + Developer Award 2022 (Loonatiks Design Crew, Gatsby). Palette approximated from project imagery."
+  "usability_notes": "Monospace-as-grid gives unusual alignment discipline and strong technical identity - ideal for designers/engineers. Typewriter effects must never delay critical text beyond a beat (screen readers and impatient users); ASCII intro needs a skip. Awwwards SOTD + Developer Award 2022 (Loonatiks Design Crew, Gatsby). Palette approximated from project imagery.",
+  "sources": [
+    {
+      "url": "https://loonatiks.gr/project/yannick-gregoire",
+      "tier": "C",
+      "type": "case-study",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

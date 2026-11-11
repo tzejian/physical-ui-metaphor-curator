@@ -47,5 +47,13 @@
     "Cloth-weight animation: sheets settle with residual angle after release",
     "Falling-letter and thread-ball cursor siblings extend the tactile system"
   ],
-  "usability_notes": "Hiding work under draggable sheets trades scanability for discovery - acceptable for a motion designer's showreel where every item is worth the dig, dangerous for content that must be found. Cap the sheet count, keep one sheet per item (never layered hiding), and provide a grid/list view toggle. Drag targets need large hit areas and keyboard-reachable equivalents. Source: Awwwards element listing (self-tagged GSAP)."
+  "usability_notes": "Hiding work under draggable sheets trades scanability for discovery - acceptable for a motion designer's showreel where every item is worth the dig, dangerous for content that must be found. Cap the sheet count, keep one sheet per item (never layered hiding), and provide a grid/list view toggle. Drag targets need large hit areas and keyboard-reachable equivalents. Source: Awwwards element listing (self-tagged GSAP).",
+  "sources": [
+    {
+      "url": "https://www.awwwards.com/inspiration/curtain-reveal-hover-video-grid-aralesk-collages-motion",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

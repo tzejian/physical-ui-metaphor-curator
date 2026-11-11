@@ -53,5 +53,13 @@
     "Infinite scroll illusion: identical component at page start/end matching scale and color state for seamless loop",
     "WebGL (Curtains.js) shader plane for the worn-tape 404 page"
   ],
-  "usability_notes": "Every interaction emits sound, so audio must be opt-in and fully muteable (accessibility + autoplay policy). Best for audio/sound studios where audio-reactivity is the brand. Rainbow-stripe palette and mechanical animations can overwhelm; content hierarchy depends on restraining stripes to structural bands. Strong delight and memorability; heavier CPU/GPU cost on low-end devices."
+  "usability_notes": "Every interaction emits sound, so audio must be opt-in and fully muteable (accessibility + autoplay policy). Best for audio/sound studios where audio-reactivity is the brand. Rainbow-stripe palette and mechanical animations can overwhelm; content hierarchy depends on restraining stripes to structural bands. Strong delight and memorability; heavier CPU/GPU cost on low-end devices.",
+  "sources": [
+    {
+      "url": "https://www.awwwards.com/press-play-on-tape-behind-the-scenes.html",
+      "tier": "C",
+      "type": "case-study",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

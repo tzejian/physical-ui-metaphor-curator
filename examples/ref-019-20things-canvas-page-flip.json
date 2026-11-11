@@ -46,5 +46,14 @@
     "Canvas-drawn curl: page masked at foldX with animated fold shadow",
     "Arrow-key page turns as the keyboard equivalent"
   ],
-  "usability_notes": "The canonical reference implementation (web.dev full source walkthrough). Page flip earns its cost only for linear, chapter-like content (guides, annual reports, lookbooks); for arbitrary navigation it impedes scanning - always pair with a persistent index or progress bar, keep flip animation under ~500ms, and support swipe plus arrows. Text must stay selectable/accessible outside the canvas-rendered fold frames."
+  "usability_notes": "The canonical reference implementation (web.dev full source walkthrough). Page flip earns its cost only for linear, chapter-like content (guides, annual reports, lookbooks); for arbitrary navigation it impedes scanning - always pair with a persistent index or progress bar, keep flip animation under ~500ms, and support swipe plus arrows. Text must stay selectable/accessible outside the canvas-rendered fold frames.",
+  "url": "http://www.20thingsilearned.com",
+  "sources": [
+    {
+      "url": "https://web.dev/case-studies/20things-pageflip",
+      "tier": "A",
+      "type": "case-study",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

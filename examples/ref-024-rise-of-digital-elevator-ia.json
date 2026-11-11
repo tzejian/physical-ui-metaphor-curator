@@ -50,5 +50,13 @@
     "Playable floor exhibits: draggable Newton's cradle, Galton board filling a glyph",
     "Scene transition folding 3D city into circuit board"
   ],
-  "usability_notes": "Elevator-as-IA gives every page an unambiguous spatial position (floor number = section index) and makes wayfinding diegetic - the express ride is just deep linking. Floor rides must be skippable (express, menu) or deep content becomes a chore; physics exhibits must pause off-screen and respect reduced motion. Source: Awwwards nominee element listing (self-descriptive)."
+  "usability_notes": "Elevator-as-IA gives every page an unambiguous spatial position (floor number = section index) and makes wayfinding diegetic - the express ride is just deep linking. Floor rides must be skippable (express, menu) or deep content becomes a chore; physics exhibits must pause off-screen and respect reduced motion. Source: Awwwards nominee element listing (self-descriptive).",
+  "sources": [
+    {
+      "url": "https://www.awwwards.com/sites/rise-of-digital",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

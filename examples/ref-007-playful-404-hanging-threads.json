@@ -47,5 +47,14 @@
     "Snapped digit auto re-hangs after a delay or instantly via replay button",
     "Beneath: real search combobox with suggestions and a way home"
   ],
-  "usability_notes": "Error pages are the safest sandbox for physics metaphors - nothing transactional is at stake, so delight is pure win. The pattern still works because the functional layer (search + home link) stays fully independent of the toy. Must honor prefers-reduced-motion (digits simply hang), pause the rAF loop off-screen, and keep the digits decorative only (aria-hidden). Same-author sibling to ref-005 (DVR Labs)."
+  "usability_notes": "Error pages are the safest sandbox for physics metaphors - nothing transactional is at stake, so delight is pure win. The pattern still works because the functional layer (search + home link) stays fully independent of the toy. Must honor prefers-reduced-motion (digits simply hang), pause the rAF loop off-screen, and keep the digits decorative only (aria-hidden). Same-author sibling to ref-005 (DVR Labs).",
+  "url": "https://dvrdesign.com/labs/playful-404",
+  "sources": [
+    {
+      "url": "https://dvrdesign.com/labs/playful-404",
+      "tier": "A",
+      "type": "live-site",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

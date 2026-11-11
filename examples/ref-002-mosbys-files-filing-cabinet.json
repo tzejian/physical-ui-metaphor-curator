@@ -55,5 +55,19 @@
     "Comparison mode rotates tabs 90 degrees onto the right margin as a vertical tab rail for non-linear navigation",
     "Playable embedded artifacts (waveform cards, audio spools, video buttons) styled as physical desk objects"
   ],
-  "usability_notes": "Color-coded drawers create strong spatial memory and editorial personality; best for curated archives of 5-15 top-level categories. Overlapping desk-clutter collage risks legibility friction on mobile and needs careful contrast management; tab-rotation pattern requires orientation cues for screen readers."
+  "usability_notes": "Color-coded drawers create strong spatial memory and editorial personality; best for curated archives of 5-15 top-level categories. Overlapping desk-clutter collage risks legibility friction on mobile and needs careful contrast management; tab-rotation pattern requires orientation cues for screen readers.",
+  "sources": [
+    {
+      "url": "https://abduzeedo.com/mosbys-files-archival-web-design-tubik-studio",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    },
+    {
+      "url": "https://www.behance.net/gallery/257301831/Mosbys-Files",
+      "tier": "C",
+      "type": "case-study",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

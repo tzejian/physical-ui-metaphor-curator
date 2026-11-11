@@ -47,5 +47,20 @@
     "Final reel lands last for suspense; result is a randomized serve pairing",
     "Footer/bottle-roll animations extend the bar-counter frame"
   ],
-  "usability_notes": "Slot-machine randomization suits low-stakes choosers (recipes, playlists, promos) where variable reward is the fun - but never use it where users need to reach a specific item deterministically; always provide a browsable list as the serious path. Respect reduced motion (show the result directly) and gate any real-money associations. Source: Awwwards element listing; live site partially verified (serve options visible)."
+  "usability_notes": "Slot-machine randomization suits low-stakes choosers (recipes, playlists, promos) where variable reward is the fun - but never use it where users need to reach a specific item deterministically; always provide a browsable list as the serious path. Respect reduced motion (show the result directly) and gate any real-money associations. Source: Awwwards element listing; live site partially verified (serve options visible).",
+  "url": "https://us.fernetbranca.com/entertainment/slot-machine",
+  "sources": [
+    {
+      "url": "https://us.fernetbranca.com/entertainment/slot-machine",
+      "tier": "B",
+      "type": "live-site",
+      "accessed": "2026-11-09"
+    },
+    {
+      "url": "https://www.awwwards.com/inspiration/slot-machine-fernet-branca-us",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

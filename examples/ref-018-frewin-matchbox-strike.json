@@ -49,5 +49,14 @@
     "Living flame animation that burns down the stick over session time",
     "Full keyboard equivalent: Enter opens tray, Enter again strikes"
   ],
-  "usability_notes": "A model two-step ritual component: each physical sub-action maps to one gesture AND one key, so the metaphor never blocks input. The velocity gate teaches the 'quick strike' through failure (a lazy drag just scuffs) - keep a visible hint so users connect drag speed to ignition. Flame states could serve as session or progress indicators. Source: component page self-documentation."
+  "usability_notes": "A model two-step ritual component: each physical sub-action maps to one gesture AND one key, so the metaphor never blocks input. The velocity gate teaches the 'quick strike' through failure (a lazy drag just scuffs) - keep a visible hint so users connect drag speed to ignition. Flame states could serve as session or progress indicators. Source: component page self-documentation.",
+  "url": "https://www.jamesfrewin.com/components/matchbox",
+  "sources": [
+    {
+      "url": "https://www.jamesfrewin.com/components/matchbox",
+      "tier": "A",
+      "type": "live-site",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

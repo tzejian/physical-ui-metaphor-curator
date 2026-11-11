@@ -49,5 +49,13 @@
     "Radar minimap shows current viewport within the whole board",
     "Pin/pack new photos via auto-placement without overlap; drag to re-pin"
   ],
-  "usability_notes": "Corkboard suits galleries of memory-like content (photos, milestones). The infinite canvas is powerful but disorienting: the minimap and a 'reset view' affordance are mandatory; keyboard users need a list alternative to spatial navigation. Performance: viewport-cull pinned items. Source: Devpost project documentation (self-reported mechanics)."
+  "usability_notes": "Corkboard suits galleries of memory-like content (photos, milestones). The infinite canvas is powerful but disorienting: the minimap and a 'reset view' affordance are mandatory; keyboard users need a list alternative to spatial navigation. Performance: viewport-cull pinned items. Source: Devpost project documentation (self-reported mechanics).",
+  "sources": [
+    {
+      "url": "https://devpost.com/software/silicon-sepia-portfolio-site",
+      "tier": "C",
+      "type": "case-study",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

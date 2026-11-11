@@ -48,5 +48,13 @@
     "Fallbacks: 400ms crossfade for browsers without View Transitions and for prefers-reduced-motion",
     "aria-pressed state with label describing the RESULT of the next press"
   ],
-  "usability_notes": "The accessibility spec is the reason to keep this entry: button semantics, result-oriented aria-label, keyboard-equivalent pull, motion fallbacks - while the physics stays purely visual (SVG aria-hidden). Copy this pattern's discipline wherever a physical control replaces a settings toggle. Source: design-lounge.live component writeup with full behavior spec."
+  "usability_notes": "The accessibility spec is the reason to keep this entry: button semantics, result-oriented aria-label, keyboard-equivalent pull, motion fallbacks - while the physics stays purely visual (SVG aria-hidden). Copy this pattern's discipline wherever a physical control replaces a settings toggle. Source: design-lounge.live component writeup with full behavior spec.",
+  "sources": [
+    {
+      "url": "https://designlounge.live/p/lamp-theme-toggle",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

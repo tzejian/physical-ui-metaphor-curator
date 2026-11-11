@@ -48,5 +48,14 @@
     "Hover wobble, mousedown depress, hold-drag piano effect",
     "Keyboard-shortcut display mode reusing the same key objects"
   ],
-  "usability_notes": "The decisive pattern is bidirectional sync - the skeuomorph responds to the user's REAL device, which makes the metaphor feel alive rather than decorative. Best as a settings/shortcut surface or a delight moment. Weaknesses are documented by the author honestly: heavy image assets, poor touch optimization, limited functionality - a desktop-first experiment. Accessibility: keys must remain real buttons; visual travel is decoration only. Author's own 2017 experiment page, self-documented."
+  "usability_notes": "The decisive pattern is bidirectional sync - the skeuomorph responds to the user's REAL device, which makes the metaphor feel alive rather than decorative. Best as a settings/shortcut surface or a delight moment. Weaknesses are documented by the author honestly: heavy image assets, poor touch optimization, limited functionality - a desktop-first experiment. Accessibility: keys must remain real buttons; visual travel is decoration only. Author's own 2017 experiment page, self-documented.",
+  "url": "https://achrafkassioui.com/keyboard",
+  "sources": [
+    {
+      "url": "https://achrafkassioui.com/keyboard",
+      "tier": "A",
+      "type": "live-site",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

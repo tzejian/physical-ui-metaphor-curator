@@ -1,12 +1,6 @@
 {
   "id": "ref-001",
   "title": "FREAK MAG - Bookshelf Spine Navigation",
-  "evidence": {
-    "palette": "inferred",
-    "tokens": "inferred",
-    "interactions": "inferred",
-    "stack": "unknown"
-  },
   "tags": {
     "metaphors": [
       "bookshelf",
@@ -50,5 +44,14 @@
     "Hover triggers a slight Y-axis lift or forward translation",
     "Clicking a spine expands the column into an article archive drawer"
   ],
-  "usability_notes": "High visual memorability and strong editorial personality. Best suited for small curated collections under 15–20 items; vertical text can introduce legibility friction for non-CJK alphabets."
+  "usability_notes": "High visual memorability and strong editorial personality. Best suited for small curated collections under 15–20 items; vertical text can introduce legibility friction for non-CJK alphabets.",
+  "url": "https://freak.daytonajp.com/freakmag/",
+  "sources": [
+    {
+      "url": "https://freak.daytonajp.com/freakmag/",
+      "tier": "B",
+      "type": "live-site",
+      "accessed": "2026-11-11"
+    }
+  ]
 }

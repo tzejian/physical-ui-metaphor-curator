@@ -48,5 +48,14 @@
     "Completion wax-seal stamp with checkmark as the terminal reward state",
     "File drop/slide-in animation into the pocket"
   ],
-  "usability_notes": "Every state of a file upload maps to a physical mail stage, which makes the drop target's affordance easy to read. Implementation notes that transfer: hinge-on-separate-plane solves the flap z-order without z-index; staged transitions belong to the state being entered (flap first, letter delayed 0.45s); keyboard equivalents and tabindex focus must exist for the drop target, and the wax-seal completion must also be announced to AT (role=status). Sibling implementations: James Frewin's drag-to-crack seal envelope and a pure-CSS hinge variant documented down to the transform math."
+  "usability_notes": "Every state of a file upload maps to a physical mail stage, which makes the drop target's affordance easy to read. Implementation notes that transfer: hinge-on-separate-plane solves the flap z-order without z-index; staged transitions belong to the state being entered (flap first, letter delayed 0.45s); keyboard equivalents and tabindex focus must exist for the drop target, and the wax-seal completion must also be announced to AT (role=status). Sibling implementations: James Frewin's drag-to-crack seal envelope and a pure-CSS hinge variant documented down to the transform math.",
+  "url": "https://docs.uploadkit.dev/docs/sdk/react/upload-envelope",
+  "sources": [
+    {
+      "url": "https://docs.uploadkit.dev/docs/sdk/react/upload-envelope",
+      "tier": "A",
+      "type": "code",
+      "accessed": "2026-11-11"
+    }
+  ]
 }

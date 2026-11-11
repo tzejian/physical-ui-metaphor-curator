@@ -49,5 +49,14 @@
     "Settings panel re-generates route/gate and replays flips; live QR code encoded from route/seat/gate as one SVG path",
     "Auto-play flips until first user touch"
   ],
-  "usability_notes": "Shows micro-interactions suited to travel and booking components; the tear-off affordance doubles as a satisfying 'confirm/done' gesture. Risks: tear gesture needs a visible affordance hint and a keyboard/reduced-motion fallback; split-flap animations must respect prefers-reduced-motion; notches and ragged edges reduce scan-column alignment, so keep data rows outside the perforation zone."
+  "usability_notes": "Shows micro-interactions suited to travel and booking components; the tear-off affordance doubles as a satisfying 'confirm/done' gesture. Risks: tear gesture needs a visible affordance hint and a keyboard/reduced-motion fallback; split-flap animations must respect prefers-reduced-motion; notches and ragged edges reduce scan-column alignment, so keep data rows outside the perforation zone.",
+  "url": "https://dvrdesign.com/labs/boarding-pass",
+  "sources": [
+    {
+      "url": "https://dvrdesign.com/labs/boarding-pass",
+      "tier": "A",
+      "type": "live-site",
+      "accessed": "2026-11-11"
+    }
+  ]
 }

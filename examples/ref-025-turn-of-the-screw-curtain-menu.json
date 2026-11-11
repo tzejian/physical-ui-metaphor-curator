@@ -44,5 +44,13 @@
     "Scene transitions staged as curtain resets between acts",
     "WebGL immersive trailer environment with scored sound design"
   ],
-  "usability_notes": "Curtain menus fit performance brands (opera, theatre, film festivals) where anticipation is the product. The curtain must never trap users: menu open/close has to be keyboard operable, the animation brief, and the underlying page still reachable. Heavy WebGL trailer needs a lightweight poster fallback. Awwwards SOTD 7.59 (creativity 8.17); palette single-black plus accent per Awwwards data."
+  "usability_notes": "Curtain menus fit performance brands (opera, theatre, film festivals) where anticipation is the product. The curtain must never trap users: menu open/close has to be keyboard operable, the animation brief, and the underlying page still reachable. Heavy WebGL trailer needs a lightweight poster fallback. Awwwards SOTD 7.59 (creativity 8.17); palette single-black plus accent per Awwwards data.",
+  "sources": [
+    {
+      "url": "https://www.awwwards.com/sites/the-turn-of-the-screw",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

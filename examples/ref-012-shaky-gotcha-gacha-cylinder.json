@@ -49,5 +49,13 @@
     "DJ console with 22 tracks as interactive diegetic audio",
     "3D gallery acts as the collected-prizes shelf"
   ],
-  "usability_notes": "Gacha/drum rotation gives browsing a tactile 'one draw per spin' pacing that fits collectibles and merch drops. Mobile-first 3D is demanding: keep poly counts low, gate Rage Mode audio, and ensure the collect action never depends on 3D precision. Source: Awwwards nominee summary (solo-developed 3D web arcade); live-site verification pending."
+  "usability_notes": "Gacha/drum rotation gives browsing a tactile 'one draw per spin' pacing that fits collectibles and merch drops. Mobile-first 3D is demanding: keep poly counts low, gate Rage Mode audio, and ensure the collect action never depends on 3D precision. Source: Awwwards nominee summary (solo-developed 3D web arcade); live-site verification pending.",
+  "sources": [
+    {
+      "url": "https://www.awwwards.com/sites/shaky-gotcha",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-11"
+    }
+  ]
 }

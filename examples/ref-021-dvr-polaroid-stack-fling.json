@@ -46,5 +46,14 @@
     "Per-photo resting rotation for a naturally untidy pile",
     "Replay control resets the stack"
   ],
-  "usability_notes": "Fling-to-cycle replaces prev/next buttons with one gesture that reads as reshuffling rather than navigation - good for small personal galleries where serendipity beats completeness. Keep piles short (the stack hides content depth; a counter or thumbnails preserve orientation), mirror the fling for RTL locales, and give keyboard/AT users a plain list alternative. Same-author sibling to ref-005/ref-007 (DVR Labs); source: component page description."
+  "usability_notes": "Fling-to-cycle replaces prev/next buttons with one gesture that reads as reshuffling rather than navigation - good for small personal galleries where serendipity beats completeness. Keep piles short (the stack hides content depth; a counter or thumbnails preserve orientation), mirror the fling for RTL locales, and give keyboard/AT users a plain list alternative. Same-author sibling to ref-005/ref-007 (DVR Labs); source: component page description.",
+  "url": "https://dvrdesign.com/labs/polaroid-stack",
+  "sources": [
+    {
+      "url": "https://dvrdesign.com/labs/polaroid-stack",
+      "tier": "A",
+      "type": "live-site",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

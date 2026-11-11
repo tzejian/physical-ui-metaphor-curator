@@ -44,5 +44,13 @@
     "Arc/tick marks show travel range and current position",
     "Touch and pointer supported as one continuous rotational gesture"
   ],
-  "usability_notes": "A knob suits music/audio festival brands where the metaphor IS the product domain, but it is objectively worse than a slider for precise input (NN/g: precise value entry via rotary control needs high motor skill). Provide an accompanying numeric readout and a plain slider fallback; keep knob for low-precision, fun-only controls. Awwwards Honorable Mention (Gewest13, 2017)."
+  "usability_notes": "A knob suits music/audio festival brands where the metaphor IS the product domain, but it is objectively worse than a slider for precise input (NN/g: precise value entry via rotary control needs high motor skill). Provide an accompanying numeric readout and a plain slider fallback; keep knob for low-precision, fun-only controls. Awwwards Honorable Mention (Gewest13, 2017).",
+  "sources": [
+    {
+      "url": "https://www.awwwards.com/sites/xo-festival",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }

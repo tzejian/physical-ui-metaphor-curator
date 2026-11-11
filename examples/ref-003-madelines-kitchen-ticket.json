@@ -45,5 +45,14 @@
     "Sticky top dropdown menu transforms into a single highlighted line tracking scroll position",
     "Long-form vertical scroll reads as one continuously printing receipt"
   ],
-  "usability_notes": "Fits hospitality brands. Single typeface and one weight enforce simplicity; seekers can jump via the sticky menu. Constraints: the 300px frame sacrifices horizontal content richness, and decorative scribbles must never carry wayfinding meaning. Approximated tokens - live site could not be fetched, details sourced from Communication Arts project coverage."
+  "usability_notes": "Fits hospitality brands. Single typeface and one weight enforce simplicity; seekers can jump via the sticky menu. Constraints: the 300px frame sacrifices horizontal content richness, and decorative scribbles must never carry wayfinding meaning. Approximated tokens - live site could not be fetched, details sourced from Communication Arts project coverage.",
+  "url": "https://madelinesbrooklyn.com",
+  "sources": [
+    {
+      "url": "https://www.commarts.com/project/37559/madeline-s-mobile",
+      "tier": "C",
+      "type": "article",
+      "accessed": "2026-11-09"
+    }
+  ]
 }
