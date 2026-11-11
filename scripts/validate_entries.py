@@ -17,6 +17,8 @@ Warnings:
   - promotional wording in usability_notes
   - fully new-format entries (sources and evidence) whose usability_notes lack "Tested" / "Not tested"
   - all sources are tier C but interactions or stack are marked inspected
+  - an entry that has sources but no url
+  - a url that points at a showcase or article site (it should be the reference's own page)
 
 Gaps in id numbering are fine; numbers are never reused.
 """
@@ -40,6 +42,8 @@ PROMO_WORDS = [
 ]
 REPEATED_HEX_THRESHOLD = 4
 IGNORED_HEX = {"#000000", "#FFFFFF"}
+# Sites that list or write about references; a `url` should not point at these.
+NON_REFERENCE_HOSTS = ("awwwards.com", "communicationarts.com", "dokle.design")
 
 
 def parse_args():
@@ -121,6 +125,15 @@ def main():
         if not has_sources or not has_evidence:
             missing = [k for k, ok in (("sources", has_sources), ("evidence", has_evidence)) if not ok]
             warnings.append(f"{name}: legacy entry, missing {' and '.join(missing)}")
+
+        # url
+        url = data.get("url")
+        if has_sources and url is None:
+            warnings.append(f"{name}: has sources but no url (the reference's own page)")
+        elif isinstance(url, str):
+            host = re.sub(r"^https?://", "", url).split("/")[0].lower()
+            if any(host == h or host.endswith("." + h) for h in NON_REFERENCE_HOSTS):
+                warnings.append(f"{name}: url points at {host}, a showcase or article site; use the reference's own page")
 
         # vocabulary
         if vocab and isinstance(data.get("tags"), dict):

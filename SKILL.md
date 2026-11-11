@@ -137,12 +137,19 @@ For multiple references, return one breakdown and one record per reference. Neve
 - The file is `examples/ref-NNN-short-slug.json`.
 - Do not add a near-duplicate. Add the new source to the existing entry's `sources` instead.
 
+### URL Rules
+- `url` is the reference itself: the live site or component page someone opens to see the design. It is not an article, listing, or showcase page about it.
+- `sources` is the evidence: where each claim came from. Often the best source is an article or listing, so `url` and `sources` can differ. When the live site is also a source, list it in both.
+- Required for every new entry. If the site is gone, keep the original address in `url` and add an `archive` entry to `sources`.
+- If you cannot find the reference's own page, omit `url` and say so in the report. Do not fill it with a showcase or article link.
+
 ### Schema Template
 
 ```json
 {
   "id": "ref-NNN",
   "title": "<Reference Title>",
+  "url": "<the reference's own page, not an article about it>",
   "sources": [
     { "url": "<URL>", "tier": "<A | B | C>", "type": "<code | live-site | case-study | article | archive>", "accessed": "<YYYY-MM-DD>" }
   ],
