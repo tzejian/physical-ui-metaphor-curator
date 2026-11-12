@@ -1,226 +1,126 @@
 ---
 name: physical-ui-metaphor-curator
-description: Discovers, researches, deconstructs, and indexes UI/UX patterns that adapt physical real-world objects, tactile ephemera, and industrial hardware (bookshelf spines, receipts, ticket stubs, cassettes, dials, folders) into digital components. Trigger when asked to research physical UI metaphors, analyze a website or screenshot for a physical-object metaphor, curate design aesthetics, or produce schema-compliant entries for a UI reference library. Do not use for general UI critique, or for generic skeuomorphism (glossy buttons, drop shadows) that does not reference a specific physical object.
+description: Finds and records UI/UX designs that borrow from a specific physical thing, such as an object, material, space or layout (bookshelf spines, receipts, cassettes, dials, floor tiling, signage) as inspiration for designers. Trigger when asked to find, research, or analyze physical-object UI metaphors, or to add entries to the reference library. Do not use for general UI critique, or for generic skeuomorphism (glossy buttons, drop shadows) that does not reference a specific object.
 ---
 
-# Physical UI Metaphor & Art Style Curator
+# Physical UI Metaphor Curator
 
-Researches and deconstructs how physical artifacts, print ephemera, and mechanical affordances translate into interactive digital interfaces, then records each finding as a library entry. An entry is only as valuable as its evidence, so every entry must show what was observed and what was only read about. A smaller library of verified entries beats a larger one of plausible guesses.
+Builds an inspiration library: designs where something physical (an object, a material, a space, a layout) shapes the interface. The goal is not to recreate sites but to give a designer a good idea and a place to look at it. Each entry says what the physical thing is, what the interaction idea is, and where to see it. Variety and quality of finds matter more than depth on any one entry.
 
-## Research Protocol
+## Workflow
 
-### 1. Know your tools and their limits
-Note which of these you have before researching:
+1. **Orient.** Read the existing entries in `examples/` to see what is covered, and `coverage.md` (if present) for candidates already rejected. Skip both.
+2. **Find.** Look for 5 or so new candidates per run (see Finding designs).
+3. **Look.** Open each candidate live when you can (see Looking at a site). Reject the ones that are only skin: a paper texture on an ordinary button is styling, not a metaphor.
+4. **Write.** One entry per reference (see Entry). Show a short breakdown in the reply, then the JSON.
+5. **Report.** Entries added, candidates rejected and why, tools used or blocked, object types still uncovered.
 
-- **Search:** finds leads. Results are not evidence.
-- **Fetch/extract (HTTP to text):** reads static HTML, source code, docs, and articles. It does not run JavaScript, so it cannot see canvas, WebGL, scroll-driven or script-driven behavior, or anything rendered client-side.
-- **Headless browser:** renders the real page, takes screenshots, runs JS, reads computed styles, and tests interactions. This is the only tool that verifies how a site looks and behaves.
-- **Vision:** reads layout and rough color from images. Output is approximate.
+## Finding designs
 
-Name the tools you actually used in the final report. If the browser is unavailable or blocked, say so, and do not try to bypass network restrictions.
+**Anything physical can be a source.** The lists below are starting examples, not limits. Objects, materials, surfaces, spaces, patterns and the way things are laid out all count: a tiled floor (a square grid with grout-width padding and a centered image acting as the CTA), a pegboard, a shop signboard, a train departure board, a mosaic, a window blind, a bus-stop map. If you can say what the physical thing does or how it is arranged, and a design borrows that, it belongs. Do not pass over a good find because it is not on a list.
 
-### 2. Discovery
-- Read the existing entries and `research-log.md` first. Find gaps in object type and component type, and skip anything already added or already rejected.
-- Broaden beyond paper and print where entries cluster: dials, switches, vinyl, instant film, luggage tags, card catalogs, passports, keyboards, hardware controls.
-- Use showcase listings and case studies to find leads, then trace each lead to a better source (below).
-- Prefer references where the metaphor shapes the interaction, not just the skin.
+**Aim for spread.** Cover many families, not one favorite. Keep at most 2 entries per object type and 2 per studio or author. Examples of families:
 
-### 3. Source tiers
-Rank every candidate by the best source you can reach, and prefer higher tiers.
+- paper and print: receipts, tickets, tags, labels, envelopes, folders, index cards, catalog drawers, newspapers, posters
+- books and media: spines, bookmarks, vinyl, cassettes, VHS, film strips, instant photos, CDs
+- hardware controls: dials, knobs, switches, sliders, keys, patch cables, dip switches, displays
+- devices and instruments: calculators, radios, cameras, typewriters, synths, gauges
+- containers and packaging: boxes, cans, bottles, drawers, luggage, passports
+- surfaces and materials: fabric, wood, metal, glass, stone, tile, mesh
+- built environment and signage: floors, walls, windows, shelving, boards, maps, signs, storefronts
+- layouts and patterns: grids, tiling, stacking, overlap, perforation, weaving, folding
 
-- **Tier A, code or docs:** source code, component docs, a technical write-up with code. Fetch can fully verify these. Prefer them.
-- **Tier B, live site:** the real site, rendered in a browser. Needed for anything visual or interactive.
-- **Tier C, showcase or article only:** an awards listing, a case-study summary, or a design-review blog. Use it only as a lead. Any entry resting on Tier C alone has `inferred` interactions and `inferred` or `unknown` stack.
+**Where to look**, in this order of usefulness:
+1. Places that show working code: CodePen, Codrops tutorials, GitHub repos and demos, component libraries.
+2. Studio and author sites.
+3. Showcase sites (Awwwards, SiteInspire, Godly, Dribbble). Good for leads; follow each to the real site.
 
-No more than about a third of the library should come from any single showcase site. If you are about to exceed that, find Tier A or B sources instead.
+**Search by what the object does** as well as its name: "tear-off", "flip", "stack", "drag to rotate", "peel", "slide-in drawer", "perforated", "stamp". Different verbs surface different designs.
 
-### 4. Acceptance bar
-Accept a candidate only if all of these hold:
-- The physical object is specific and identifiable.
-- At least one real affordance survives into the interaction (tear, flip, stack, pull, turn).
-- It is meaningfully different from an existing entry. If it adds only a new brand to an existing pattern, reject it or fold it into the existing entry as an additional source.
-- The live site loads, or an archived copy exists.
+**Reverse mode.** If asked for ideas for a UI need (for example "a settings screen" or "a pricing table"), name physical objects, materials or layouts that fit that need, then find examples of each.
 
-Reject the rest. Append each to `research-log.md` with the date, a URL or name, and a one-line reason.
+Do not add a near-duplicate of an existing entry. Note it in the report instead.
 
-### 5. Verification and evidence
-Verify with the browser whenever possible: render the page, take a screenshot, read computed styles for key elements, try the interaction. Use fetch for markup, code, and articles.
+## Looking at a site
 
-Mark each of these four evidence fields as `inspected`, `published`, or `inferred` (plus `none` for palette and `unknown` for stack):
+Plain fetch reads static HTML, docs and code. It cannot see what happens in the browser: scroll effects, WebGL, canvas, GSAP. A real browser can.
 
-- **inspected:** you saw it yourself in the rendered page, its code, or a test.
-- **published:** stated by the creators or a showcase site, such as a palette listed on an awards page.
-- **inferred:** derived from descriptions, articles, or images.
+- `python3 scripts/capture.py <url>` opens the page in headless Chromium and saves screenshots plus a `report.json` (libraries, WebGL/shaders, colors, fonts, shadows, motion during a real scroll, accessibility checks). Use it to see how a design looks and moves, and to take colors and fonts from the page itself instead of estimating from an image.
+- Screenshots stay in `captures/` on the local machine, which is not committed. They are other people's work; the entry's `url` is how they are credited.
+- Capture is for JS-heavy or motion-driven designs where plain fetch would miss the idea. It is optional for static pages.
+- Read the screenshots. If the page is a cookie wall, a bot block, or an error, the capture describes that, not the design.
+- No absence claims from the report alone. "No GSAP global found" does not mean GSAP is not used; bundled libraries are invisible there. Say "not detected" unless you checked the bundle.
+- If no browser is available or it is blocked, say so and do not try to get around network limits.
 
-Rules:
-- **Palette:** use only values you inspected or that were published. If you have neither, set `dominant_colors` to `[]` and `evidence.palette` to `none`. Do not estimate colors from memory or description, and do not reuse hex values from another entry. A missing palette is acceptable; an invented one is not.
-- **No embellishment:** never turn a prose description into a mechanical specific. "Photos can be flung" is not "throw physics with momentum" unless you observed it. Report the original claim.
-- **Tech stack:** WebGL, Web Audio, a named library, and similar claims need code or network inspection, or must be labeled `published` or `inferred`.
-- **JS-heavy sites:** if you cannot render a WebGL, canvas, or scroll-driven page, set interactions to `inferred` and say the motion was not seen.
-- **Unreachable site:** try an archived copy. If that fails, record the entry from its secondary sources, mark the evidence, and do not fill gaps with plausible detail.
-- **Statistics:** include none without a cited source.
+## Entry
 
-### 6. Testing (when a browser is available)
-For `usability_notes`, test; do not speculate:
-- keyboard-only navigation
-- `prefers-reduced-motion` emulation
-- a 375px mobile viewport
-- text contrast on key elements
+Each entry is one JSON file, `examples/ref-NNN-short-slug.json`, valid against `schemas/entry.schema.json`.
 
-Write "Tested: ..." with what you found, or "Not tested". Every entry names at least one weakness you observed. If nothing was tested, say so instead of listing generic recommendations.
+Fields:
+- `title`, `url` (the reference's own page, not an article about it; this is also its credit)
+- `tags`: the physical `metaphors`, `art_styles` (max 3), `ui_components`, `materials`
+- `affordance_translation`: `physical_behavior` (what the real object does) and `digital_mechanic` (how the site turns that into layout and interaction)
+- `design_tokens`: colors, borders, elevation, typography
+- `interactive_mechanics`: what happens on hover, click, scroll, drag
+- `usability_notes`: where it works, where it does not, at least one weakness
 
-### 6a. Inspecting JS-heavy sites (GSAP, WebGL, canvas)
-Plain fetch returns an empty shell for these sites. Run the capture script instead of guessing:
+Honesty rules, kept short:
+- **Do not invent.** If you did not open the site, start `usability_notes` with "Not opened." and mark interactions you only read about with `Reported:`.
+- **Colors only from the page.** Use values read from CSS or computed styles, or leave `dominant_colors` empty. Never copy hex codes from another entry.
+- **No superlatives** ("masterclass", "strongest", "stunning"). One to three plain sentences per field.
+- **Separate function from decoration.** A tear-off that works as a CTA is a metaphor. Say which parts of the physical behavior the digital version keeps and which it loses.
 
-```
-python3 scripts/capture.py <url> --out captures
-```
-
-It loads the page in headless Chromium and writes `captures/<slug>/report.json`, `stylesheets.txt`, and `screens/`. Read `report.json` as text. It records:
-- **Stack:** GSAP / ScrollTrigger / three.js / Lenis and similar when they are exposed as globals, plus WebGL contexts and shader source (works for bundled code too).
-- **Motion:** GSAP tweens and ScrollTrigger settings when GSAP is global; `gsap_element_state` (live x, y, rotation) when it is bundled; `motion_log`, a library-agnostic log of style changes seen during a real wheel scroll, with first and last values.
-- **Tokens:** computed colors by area, type usage, CSS variables, shadows, radii, keyframes.
-- **Checks:** contrast, targets under 24px, removed focus outlines, horizontal overflow, and whether animation stops under `prefers-reduced-motion`. Use these for "Tested:" in `usability_notes`.
-
-How to use it honestly:
-- Values read from computed styles, tween vars, shader source, or CSS are `inspected`. `rendered_pixel_grid_6x4` is sampled from a screenshot, so it is a rendered blend and not a shader constant; never use it as a palette value without saying so.
-- Finished tweens leave the GSAP timeline, so an empty `gsap_tweens` does not mean no animation. Check `motion_log`.
-- If `notes` says the page looks blocked, or the screenshots show a cookie wall or error page, the bundle describes that page, not the site. Do not mark evidence `inspected`.
-- `evidence_hint` is a starting point only. Look at `screens/` before claiming `inspected`.
-- `captures/` holds third-party screenshots. Keep it out of the repo (`.gitignore`) and out of entries.
-- If the browser or the script cannot run, say so in the report and mark the entry's evidence `inferred`.
-
-### 7. Report back
-After the entries, return:
-- entries added
-- rejected candidates, with reasons
-- tools used, and any tool that was blocked or unavailable
-- claims left unverified, by entry
-- object types still uncovered
-
-## Analysis Framework
-
-Analyze these four dimensions for every reference.
-
-### 1. The Physical Metaphor & Affordance
-- **Source Object:** The real-world item referenced, and the specific part of it.
-- **Physical Affordance Preserved:** Gravity, leaning, perforation, tear-off, rotational drag, insertion slots, spine reading, tab stacking. Say which survives in the digital version and which is lost.
-- **Digital Component Mapping:** How the object functions digitally (spine = category navigation accordion; ticket stub = voucher CTA; receipt = order summary).
-
-### 2. Aesthetic & Visual Style Archetype
-- **Primary Style:** Choose the most specific style that fits (see Tag Rules). Generic labels such as `flat-skeuomorphic` apply only when nothing more specific does.
-- **Secondary Influences:** Print ephemera, packaging design, brutalist web, audio hardware.
-
-### 3. Materiality & Design Tokens
-- **Palette:** 3 to 7 representative hex colors, neutrals included, following the palette rule above.
-- **Material & Texture:** Paper grain, matte plastic, brushed aluminum, frosted acrylic, clear polycarbonate. List every material present, not only the dominant one.
-- **Borders & Edges:** Hairlines, heavy solid lines, dashed perforations, jagged zig-zags, stamped bevels. Include corner radius. Perforations and tears are usually built with `radial-gradient`, `mask`, `clip-path`, or SVG filters, so check those.
-- **Typography & Layout:** Vertical text (tategaki, `writing-mode: vertical-rl`), upright digits inside vertical text (tate-chu-yoko), monospaced serials, thermal dot-matrix, stamped serifs, rotated numerals. Technique labels belong here, not in `art_styles`.
-
-### 4. Interactive Dynamics & Usability
-- **Micro-interactions:** Hover, active, and focus transitions. Be specific about the transform: `translateY` for a lift, `rotateY` for a flip.
-- **Usability evaluation:** Strengths (delight, brand recall, spatial memory) against tradeoffs (legibility, mobile limits, scalability, recommended item count).
-- **Accessibility:** Note contrast, focus order, reduced-motion handling, touch target size, and screen-reader order for rotated or vertical text, or state that it is unknown.
-
-## Output Format
-
-For each reference, return two parts:
-
-1. **Curator Breakdown:** A concise narrative of the object metaphor, visual mechanics, and interactive qualities.
-2. **Library JSON Record:** Ready to commit, and valid against `schemas/entry.schema.json`.
-
-For multiple references, return one breakdown and one record per reference. Never merge them.
-
-### Voice
-- Write critically and plainly. No superlatives or rankings ("masterclass", "strongest", "most complete", "extremely strong").
-- Keep each text field to one to three sentences.
-- Prefix any interaction you did not observe with `Reported:`.
-- Put provenance and uncertainty in `sources` and `evidence`, not in `usability_notes`.
-
-### Tag Rules
-- All tags are lowercase kebab-case.
-- Reuse existing tags before inventing one. Read the existing entries first.
-- Use at most 3 `art_styles`, and only visual styles. Technique labels such as `thermal-dot-matrix` go in `typography`.
-- Prefer the specific style over `flat-skeuomorphic`. Use it only when no better one fits.
-- Use `navigation` for menus and navigation, and `gallery` for image collections.
-- Preferred vocabulary:
-  - **art_styles:** `flat-skeuomorphic`, `neo-brutalist`, `playful-brutalist`, `japanese-editorial`, `swiss-minimalist`, `retro-tactile-modern`, `neo-retro-80s`, `archival-editorial`, `editorial-print`, `industrial-hardware`, `collage-editorial`
-  - **materials:** `paper`, `card-stock`, `plastic`, `metal`, `glass`, `wood`, `fabric`, `cork`, `ceramic`, `wax`. Add materials freely when they are accurate.
-  - **ui_components:** `navigation`, `cta`, `modal`, `form-input`, `data-table`, `accordion`, `drawer`, `category-filter`, `gallery`
-- Aliases to normalize on sight:
-  - `print-ephemera`, `monospace-editorial`, `theatrical-gothic` → pick the closest preferred style
-  - `thermal-dot-matrix` → typography text
-  - `menu` → `navigation`
-  - `flat-design` → `flat-skeuomorphic` (only if a physical object is present)
-
-### ID and File Rules
-- `id` is `ref-NNN`, where NNN is the highest existing number plus one. Gaps are fine (entries get removed); never reuse a number.
-- The file is `examples/ref-NNN-short-slug.json`.
-- Do not add a near-duplicate. Add the new source to the existing entry's `sources` instead.
-
-### URL Rules
-- `url` is the reference itself: the live site or component page someone opens to see the design. It is not an article, listing, or showcase page about it.
-- `sources` is the evidence: where each claim came from. Often the best source is an article or listing, so `url` and `sources` can differ. When the live site is also a source, list it in both.
-- Required for every new entry. If the site is gone, keep the original address in `url` and add an `archive` entry to `sources`.
-- If you cannot find the reference's own page, omit `url` and say so in the report. Do not fill it with a showcase or article link.
-
-### Schema Template
+### Template
 
 ```json
 {
   "id": "ref-NNN",
-  "title": "<Reference Title>",
-  "url": "<the reference's own page, not an article about it>",
-  "sources": [
-    { "url": "<URL>", "tier": "<A | B | C>", "type": "<code | live-site | case-study | article | archive>", "accessed": "<YYYY-MM-DD>" }
-  ],
-  "evidence": {
-    "palette": "<inspected | published | inferred | none>",
-    "tokens": "<inspected | published | inferred>",
-    "interactions": "<inspected | published | inferred>",
-    "stack": "<inspected | published | inferred | unknown>"
-  },
+  "title": "<Reference title>",
+  "url": "<the reference's own page>",
   "tags": {
-    "metaphors": ["<source-object>", "<specific-part>"],
-    "art_styles": ["<primary-style>", "<secondary-style>"],
-    "ui_components": ["<navigation | cta | modal | form-input | data-table | gallery | etc.>"],
-    "materials": ["<paper | metal | plastic | glass | etc.>"]
+    "metaphors": ["<object>", "<specific part>"],
+    "art_styles": ["<style>"],
+    "ui_components": ["<navigation | cta | gallery | ...>"],
+    "materials": ["<paper | metal | plastic | ...>"]
   },
   "affordance_translation": {
-    "physical_behavior": "<Real-world behavior or physical cue>",
-    "digital_mechanic": "<How it translates to digital layout and user actions>"
+    "physical_behavior": "<what the real object does>",
+    "digital_mechanic": "<how it becomes layout and interaction>"
   },
   "design_tokens": {
-    "dominant_colors": ["#...", "#...", "#..."],
-    "borders": "<Keyline weight, style, and corner radius>",
-    "elevation": "<Shadow type, offset, or flat transformation>",
-    "typography": "<Font classifications, orientation, and weights>"
+    "dominant_colors": ["#..."],
+    "borders": "<keyline weight, style, corner radius>",
+    "elevation": "<shadow or flat>",
+    "typography": "<classification, orientation, weights>"
   },
-  "interactive_mechanics": [
-    "<State 1: hover behavior, or 'Reported: ...'>",
-    "<State 2: click/activation behavior>"
-  ],
-  "usability_notes": "<Best context, item limits, 'Tested: ...' or 'Not tested', at least one observed weakness>"
+  "interactive_mechanics": ["<hover ...>", "<click ...>", "Reported: <seen elsewhere, not tested>"],
+  "usability_notes": "<where it works, item limits, one observed weakness>"
 }
 ```
 
-## After Writing an Entry
+Older entries also have `sources` and `evidence`. They are still valid and are left as they are. New entries do not need them.
 
-1. Run `python scripts/validate_entries.py` and fix any `[ERROR]`.
-2. Run `python scripts/build_manifest.py` to rebuild the gallery manifest.
-3. A gallery preview in `frontend_library/assets/js/previews/` is optional. If you build one:
-   - Bind it to the entry's tokens only when `evidence.tokens` is `inspected` or `published`.
-   - Label it "Illustrative recreation, sample content" so it is not mistaken for the original site.
-   - Fall back to the default token card when the evidence is `inferred`.
-4. Update `research-log.md` with anything rejected or left unverified.
+### Tags
+- Lowercase kebab-case. Reuse existing tags before inventing one; read the existing entries first.
+- `art_styles`: at most 3, visual styles only. Prefer a specific style over `flat-skeuomorphic`. Preferred list is in `schemas/vocabulary.json`.
+- `materials` is open. List every material present.
+- Technique labels (vertical text, dot-matrix) go in the `typography` text, not in tags.
+
+### IDs and files
+- `id` is `ref-NNN`: the highest existing number plus one. Gaps are fine; never reuse a number.
+- Filename is `ref-NNN-short-slug.json`.
+
+## After writing
+
+1. Run `python scripts/validate_entries.py` and fix any `[ERROR]`. Ignore warnings.
+2. Run `python scripts/build_manifest.py` so the gallery shows the new entries.
+3. Add rejected candidates, with a one-line reason, to `coverage.md`, so the next run does not re-propose them.
 
 ## Gotchas
 
-- Do not reduce designs to generic labels like "modern" or "minimal". Identify the concrete physical archetype and tactile technique.
-- Separate a functional affordance from decoration. A tear-off that works as a CTA is a metaphor; a paper texture on an ordinary button is styling.
-- Do not anchor on one example. Describe each object on its own terms.
-- Do not invent references, URLs, colors, or behavior. If something cannot be verified, say so.
-- Do not silently continue when a tool fails. Report it, and downgrade the evidence.
-- For non-standard typography (vertical text, rotated numbers), note accessibility and legibility tradeoffs.
-- Do not reproduce a site's copyrighted imagery or full copy. Describe it and link to it.
+- Do not reduce a design to "modern" or "minimal". Name the physical thing and the technique.
+- Do not anchor on the examples in this file. Describe each find on its own terms.
+- For vertical or rotated text, note legibility and accessibility tradeoffs.
+- Do not reproduce a site's imagery or copy. Describe it and link to it.
+- Do not silently continue when a tool fails. Say what was blocked and what that leaves unchecked.
 - Respect `robots.txt` and site terms, and rate-limit requests.
