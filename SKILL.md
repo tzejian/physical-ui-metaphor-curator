@@ -69,6 +69,27 @@ For `usability_notes`, test; do not speculate:
 
 Write "Tested: ..." with what you found, or "Not tested". Every entry names at least one weakness you observed. If nothing was tested, say so instead of listing generic recommendations.
 
+### 6a. Inspecting JS-heavy sites (GSAP, WebGL, canvas)
+Plain fetch returns an empty shell for these sites. Run the capture script instead of guessing:
+
+```
+python3 scripts/capture.py <url> --out captures
+```
+
+It loads the page in headless Chromium and writes `captures/<slug>/report.json`, `stylesheets.txt`, and `screens/`. Read `report.json` as text. It records:
+- **Stack:** GSAP / ScrollTrigger / three.js / Lenis and similar when they are exposed as globals, plus WebGL contexts and shader source (works for bundled code too).
+- **Motion:** GSAP tweens and ScrollTrigger settings when GSAP is global; `gsap_element_state` (live x, y, rotation) when it is bundled; `motion_log`, a library-agnostic log of style changes seen during a real wheel scroll, with first and last values.
+- **Tokens:** computed colors by area, type usage, CSS variables, shadows, radii, keyframes.
+- **Checks:** contrast, targets under 24px, removed focus outlines, horizontal overflow, and whether animation stops under `prefers-reduced-motion`. Use these for "Tested:" in `usability_notes`.
+
+How to use it honestly:
+- Values read from computed styles, tween vars, shader source, or CSS are `inspected`. `rendered_pixel_grid_6x4` is sampled from a screenshot, so it is a rendered blend and not a shader constant; never use it as a palette value without saying so.
+- Finished tweens leave the GSAP timeline, so an empty `gsap_tweens` does not mean no animation. Check `motion_log`.
+- If `notes` says the page looks blocked, or the screenshots show a cookie wall or error page, the bundle describes that page, not the site. Do not mark evidence `inspected`.
+- `evidence_hint` is a starting point only. Look at `screens/` before claiming `inspected`.
+- `captures/` holds third-party screenshots. Keep it out of the repo (`.gitignore`) and out of entries.
+- If the browser or the script cannot run, say so in the report and mark the entry's evidence `inferred`.
+
 ### 7. Report back
 After the entries, return:
 - entries added
