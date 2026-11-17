@@ -3,8 +3,11 @@ import glob
 import sys
 from pathlib import Path
 
-examples_dir = Path("examples")
-output_dir = Path("frontend_library/assets/data")
+script_dir = Path(__file__).resolve().parent
+repo_root = script_dir if (script_dir / "examples").exists() else script_dir.parent
+
+examples_dir = repo_root / "examples"
+output_dir = repo_root / "frontend_library" / "assets" / "data"
 output_file = output_dir / "manifest.json"
 
 if not examples_dir.exists():

@@ -2,12 +2,6 @@
   {
     "id": "ref-001",
     "title": "FREAK MAG - Bookshelf Spine Navigation",
-    "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
-      "interactions": "inferred",
-      "stack": "unknown"
-    },
     "tags": {
       "metaphors": [
         "bookshelf",
@@ -51,7 +45,16 @@
       "Hover triggers a slight Y-axis lift or forward translation",
       "Clicking a spine expands the column into an article archive drawer"
     ],
-    "usability_notes": "High visual memorability and strong editorial personality. Best suited for small curated collections under 15–20 items; vertical text can introduce legibility friction for non-CJK alphabets."
+    "usability_notes": "High visual memorability and strong editorial personality. Best suited for small curated collections under 15–20 items; vertical text can introduce legibility friction for non-CJK alphabets.",
+    "url": "https://freak.daytonajp.com/freakmag/",
+    "sources": [
+      {
+        "url": "https://freak.daytonajp.com/freakmag/",
+        "tier": "B",
+        "type": "live-site",
+        "accessed": "2026-11-11"
+      }
+    ]
   },
   {
     "id": "ref-002",
@@ -110,7 +113,21 @@
       "Comparison mode rotates tabs 90 degrees onto the right margin as a vertical tab rail for non-linear navigation",
       "Playable embedded artifacts (waveform cards, audio spools, video buttons) styled as physical desk objects"
     ],
-    "usability_notes": "Color-coded drawers create strong spatial memory and editorial personality; best for curated archives of 5-15 top-level categories. Overlapping desk-clutter collage risks legibility friction on mobile and needs careful contrast management; tab-rotation pattern requires orientation cues for screen readers."
+    "usability_notes": "Color-coded drawers create strong spatial memory and editorial personality; best for curated archives of 5-15 top-level categories. Overlapping desk-clutter collage risks legibility friction on mobile and needs careful contrast management; tab-rotation pattern requires orientation cues for screen readers.",
+    "sources": [
+      {
+        "url": "https://abduzeedo.com/mosbys-files-archival-web-design-tubik-studio",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      },
+      {
+        "url": "https://www.behance.net/gallery/257301831/Mosbys-Files",
+        "tier": "C",
+        "type": "case-study",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-003",
@@ -159,7 +176,16 @@
       "Sticky top dropdown menu transforms into a single highlighted line tracking scroll position",
       "Long-form vertical scroll reads as one continuously printing receipt"
     ],
-    "usability_notes": "Extremely strong brand concept for hospitality (half of users browse on-site for menus). Single typeface and one weight enforce simplicity; seekers can jump via the sticky menu. Constraints: the 300px frame sacrifices horizontal content richness, and decorative scribbles must never carry wayfinding meaning. Approximated tokens - live site could not be fetched, details sourced from Communication Arts project coverage."
+    "usability_notes": "Fits hospitality brands. Single typeface and one weight enforce simplicity; seekers can jump via the sticky menu. Constraints: the 300px frame sacrifices horizontal content richness, and decorative scribbles must never carry wayfinding meaning. Approximated tokens - live site could not be fetched, details sourced from Communication Arts project coverage.",
+    "url": "https://madelinesbrooklyn.com",
+    "sources": [
+      {
+        "url": "https://www.commarts.com/project/37559/madeline-s-mobile",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-004",
@@ -216,7 +242,15 @@
       "Infinite scroll illusion: identical component at page start/end matching scale and color state for seamless loop",
       "WebGL (Curtains.js) shader plane for the worn-tape 404 page"
     ],
-    "usability_notes": "Every interaction emits sound, so audio must be opt-in and fully muteable (accessibility + autoplay policy). Best for audio/sound studios where audio-reactivity is the brand. Rainbow-stripe palette and mechanical animations can overwhelm; content hierarchy depends on restraining stripes to structural bands. Strong delight and memorability; heavier CPU/GPU cost on low-end devices."
+    "usability_notes": "Every interaction emits sound, so audio must be opt-in and fully muteable (accessibility + autoplay policy). Best for audio/sound studios where audio-reactivity is the brand. Rainbow-stripe palette and mechanical animations can overwhelm; content hierarchy depends on restraining stripes to structural bands. Strong delight and memorability; heavier CPU/GPU cost on low-end devices.",
+    "sources": [
+      {
+        "url": "https://www.awwwards.com/press-play-on-tape-behind-the-scenes.html",
+        "tier": "C",
+        "type": "case-study",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-005",
@@ -269,7 +303,16 @@
       "Settings panel re-generates route/gate and replays flips; live QR code encoded from route/seat/gate as one SVG path",
       "Auto-play flips until first user touch"
     ],
-    "usability_notes": "Excellent micro-interaction showcase for travel/booking components; the tear-off affordance doubles as a satisfying 'confirm/done' gesture. Risks: tear gesture needs a visible affordance hint and a keyboard/reduced-motion fallback; split-flap animations must respect prefers-reduced-motion; notches and ragged edges reduce scan-column alignment, so keep data rows outside the perforation zone."
+    "usability_notes": "Shows micro-interactions suited to travel and booking components; the tear-off affordance doubles as a satisfying 'confirm/done' gesture. Risks: tear gesture needs a visible affordance hint and a keyboard/reduced-motion fallback; split-flap animations must respect prefers-reduced-motion; notches and ragged edges reduce scan-column alignment, so keep data rows outside the perforation zone.",
+    "url": "https://dvrdesign.com/labs/boarding-pass",
+    "sources": [
+      {
+        "url": "https://dvrdesign.com/labs/boarding-pass",
+        "tier": "A",
+        "type": "live-site",
+        "accessed": "2026-11-11"
+      }
+    ]
   },
   {
     "id": "ref-006",
@@ -322,7 +365,15 @@
       "Homepage intro animation of film ejecting into the hero photo frame",
       "Gallery photos presented as freshly developed instants"
     ],
-    "usability_notes": "E-commerce with education: dial-explorer converts spec-sheet features into muscle memory, ideal for prosumer cameras. Two-color palette keeps photography dominant. Risks: 3D interactivity needs mobile fallbacks and clear rotate affordances; dial controls must not gate purchase paths. Awwwards SOTD 7.48; dev award animation 8.0."
+    "usability_notes": "E-commerce with education: dial-explorer converts spec-sheet features into muscle memory, ideal for prosumer cameras. Two-color palette keeps photography dominant. Risks: 3D interactivity needs mobile fallbacks and clear rotate affordances; dial controls must not gate purchase paths. Awwwards SOTD 7.48; dev award animation 8.0.",
+    "sources": [
+      {
+        "url": "https://awwwards.com/sites/polaroid-i-2",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-007",
@@ -373,7 +424,16 @@
       "Snapped digit auto re-hangs after a delay or instantly via replay button",
       "Beneath: real search combobox with suggestions and a way home"
     ],
-    "usability_notes": "Error pages are the safest sandbox for physics metaphors - nothing transactional is at stake, so delight is pure win. The pattern still works because the functional layer (search + home link) stays fully independent of the toy. Must honor prefers-reduced-motion (digits simply hang), pause the rAF loop off-screen, and keep the digits decorative only (aria-hidden). Same-author sibling to ref-005 (DVR Labs)."
+    "usability_notes": "Error pages are the safest sandbox for physics metaphors - nothing transactional is at stake, so delight is pure win. The pattern still works because the functional layer (search + home link) stays fully independent of the toy. Must honor prefers-reduced-motion (digits simply hang), pause the rAF loop off-screen, and keep the digits decorative only (aria-hidden). Same-author sibling to ref-005 (DVR Labs).",
+    "url": "https://dvrdesign.com/labs/playful-404",
+    "sources": [
+      {
+        "url": "https://dvrdesign.com/labs/playful-404",
+        "tier": "A",
+        "type": "live-site",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-008",
@@ -421,7 +481,15 @@
       "Arc/tick marks show travel range and current position",
       "Touch and pointer supported as one continuous rotational gesture"
     ],
-    "usability_notes": "A knob suits music/audio festival brands where the metaphor IS the product domain, but it is objectively worse than a slider for precise input (NN/g: precise value entry via rotary control needs high motor skill). Provide an accompanying numeric readout and a plain slider fallback; keep knob for low-precision, fun-only controls. Awwwards Honorable Mention (Gewest13, 2017)."
+    "usability_notes": "A knob suits music/audio festival brands where the metaphor IS the product domain, but it is objectively worse than a slider for precise input (NN/g: precise value entry via rotary control needs high motor skill). Provide an accompanying numeric readout and a plain slider fallback; keep knob for low-precision, fun-only controls. Awwwards Honorable Mention (Gewest13, 2017).",
+    "sources": [
+      {
+        "url": "https://www.awwwards.com/sites/xo-festival",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-009",
@@ -473,7 +541,15 @@
       "Dispensed ball resolves into a reward/prize reveal",
       "Rigid-body bounce and settle for every sphere"
     ],
-    "usability_notes": "Gumball dispensing is a jackpot-loop metaphor - perfect for one-shot campaigns and promotions where a single delight moment is the goal. Cost: WebGL + physics payloads, mobile performance risk, and the reward must be reachable without the toy (respect reduced-motion and provide a plain reveal path). Source: Awwwards SOTD summary; live-site verification pending."
+    "usability_notes": "Gumball dispensing is a jackpot-loop metaphor  - suits one-shot campaigns and promotions where a single delight moment is the goal. Cost: WebGL + physics payloads, mobile performance risk, and the reward must be reachable without the toy (respect reduced-motion and provide a plain reveal path). Source: Awwwards SOTD summary; live-site verification pending.",
+    "sources": [
+      {
+        "url": "https://awwwards.com/sites/wonderful-weekends",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-010",
@@ -529,7 +605,15 @@
       "Polaroids lift under the true cursor pixel, not a bounding box",
       "Tea cup drains as a playful session/progress indicator"
     ],
-    "usability_notes": "Strong for personal writing portfolios where editorial warmth is the brand. Navigation via scattered props is inherently low-scanability - pair with a conventional index or strong category labels. Wide 3D scenes compress poorly on mobile; needs a list-mode fallback. Source: Devpost project documentation (self-reported mechanics)."
+    "usability_notes": "Strong for personal writing portfolios where editorial warmth is the brand. Navigation via scattered props is inherently low-scanability - pair with a conventional index or strong category labels. Wide 3D scenes compress poorly on mobile; needs a list-mode fallback. Source: Devpost project documentation (self-reported mechanics).",
+    "sources": [
+      {
+        "url": "https://devpost.com/software/silicon-sepia-portfolio-site",
+        "tier": "C",
+        "type": "case-study",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-011",
@@ -582,7 +666,15 @@
       "Radar minimap shows current viewport within the whole board",
       "Pin/pack new photos via auto-placement without overlap; drag to re-pin"
     ],
-    "usability_notes": "Corkboard suits galleries of memory-like content (photos, milestones). The infinite canvas is powerful but disorienting: the minimap and a 'reset view' affordance are mandatory; keyboard users need a list alternative to spatial navigation. Performance: viewport-cull pinned items. Source: Devpost project documentation (self-reported mechanics)."
+    "usability_notes": "Corkboard suits galleries of memory-like content (photos, milestones). The infinite canvas is powerful but disorienting: the minimap and a 'reset view' affordance are mandatory; keyboard users need a list alternative to spatial navigation. Performance: viewport-cull pinned items. Source: Devpost project documentation (self-reported mechanics).",
+    "sources": [
+      {
+        "url": "https://devpost.com/software/silicon-sepia-portfolio-site",
+        "tier": "C",
+        "type": "case-study",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-012",
@@ -635,7 +727,15 @@
       "DJ console with 22 tracks as interactive diegetic audio",
       "3D gallery acts as the collected-prizes shelf"
     ],
-    "usability_notes": "Gacha/drum rotation gives browsing a tactile 'one draw per spin' pacing that fits collectibles and merch drops. Mobile-first 3D is demanding: keep poly counts low, gate Rage Mode audio, and ensure the collect action never depends on 3D precision. Source: Awwwards nominee summary (solo-developed 3D web arcade); live-site verification pending."
+    "usability_notes": "Gacha/drum rotation gives browsing a tactile 'one draw per spin' pacing that fits collectibles and merch drops. Mobile-first 3D is demanding: keep poly counts low, gate Rage Mode audio, and ensure the collect action never depends on 3D precision. Source: Awwwards nominee summary (solo-developed 3D web arcade); live-site verification pending.",
+    "sources": [
+      {
+        "url": "https://www.awwwards.com/sites/shaky-gotcha",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-11"
+      }
+    ]
   },
   {
     "id": "ref-013",
@@ -687,7 +787,15 @@
       "Project video drawn to background canvas for several frames on open, then reset",
       "Dark mode via CSS variables and a body class toggle"
     ],
-    "usability_notes": "Monospace-as-grid gives unusual alignment discipline and strong technical identity - ideal for designers/engineers. Typewriter effects must never delay critical text beyond a beat (screen readers and impatient users); ASCII intro needs a skip. Awwwards SOTD + Developer Award 2022 (Loonatiks Design Crew, Gatsby). Palette approximated from project imagery."
+    "usability_notes": "Monospace-as-grid gives unusual alignment discipline and strong technical identity - ideal for designers/engineers. Typewriter effects must never delay critical text beyond a beat (screen readers and impatient users); ASCII intro needs a skip. Awwwards SOTD + Developer Award 2022 (Loonatiks Design Crew, Gatsby). Palette approximated from project imagery.",
+    "sources": [
+      {
+        "url": "https://loonatiks.gr/project/yannick-gregoire",
+        "tier": "C",
+        "type": "case-study",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-014",
@@ -739,7 +847,16 @@
       "Hover wobble, mousedown depress, hold-drag piano effect",
       "Keyboard-shortcut display mode reusing the same key objects"
     ],
-    "usability_notes": "The decisive pattern is bidirectional sync - the skeuomorph responds to the user's REAL device, which makes the metaphor feel alive rather than decorative. Best as a settings/shortcut surface or a delight moment. Weaknesses are documented by the author honestly: heavy image assets, poor touch optimization, limited functionality - a desktop-first experiment. Accessibility: keys must remain real buttons; visual travel is decoration only. Author's own 2017 experiment page, self-documented."
+    "usability_notes": "The decisive pattern is bidirectional sync - the skeuomorph responds to the user's REAL device, which makes the metaphor feel alive rather than decorative. Best as a settings/shortcut surface or a delight moment. Weaknesses are documented by the author honestly: heavy image assets, poor touch optimization, limited functionality - a desktop-first experiment. Accessibility: keys must remain real buttons; visual travel is decoration only. Author's own 2017 experiment page, self-documented.",
+    "url": "https://achrafkassioui.com/keyboard",
+    "sources": [
+      {
+        "url": "https://achrafkassioui.com/keyboard",
+        "tier": "A",
+        "type": "live-site",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-015",
@@ -790,7 +907,15 @@
       "Single dominant control in the first viewport - nothing competes for the click",
       "Scene re-lighting rather than overlay dimming"
     ],
-    "usability_notes": "A masterclass in restraint: one metaphor, one control, placed where the decision lives. Works because the physical switch maps directly to the product's core value (light). Generalizes to any product with a day/night or before/after axis (real estate, lighting, hospitality). Travel should stay short and the label explicit; photography swap must be preloaded to avoid flash. Source: design-review writeup (dokle.design); live site not fetched."
+    "usability_notes": "Uses one metaphor and one control, placed where the decision lives. Works because the physical switch maps directly to the product's core value (light). Generalizes to any product with a day/night or before/after axis (real estate, lighting, hospitality). Travel should stay short and the label explicit; photography swap must be preloaded to avoid flash. Source: design-review writeup (dokle.design); live site not fetched.",
+    "sources": [
+      {
+        "url": "https://dokle.design/awards/era-residence-day-night-toggle-wordmark",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-016",
@@ -842,7 +967,15 @@
       "Fallbacks: 400ms crossfade for browsers without View Transitions and for prefers-reduced-motion",
       "aria-pressed state with label describing the RESULT of the next press"
     ],
-    "usability_notes": "The accessibility spec is the reason to keep this entry: button semantics, result-oriented aria-label, keyboard-equivalent pull, motion fallbacks - while the physics stays purely visual (SVG aria-hidden). Copy this pattern's discipline wherever a physical control replaces a settings toggle. Source: design-lounge.live component writeup with full behavior spec."
+    "usability_notes": "The accessibility spec is the reason to keep this entry: button semantics, result-oriented aria-label, keyboard-equivalent pull, motion fallbacks - while the physics stays purely visual (SVG aria-hidden). Copy this pattern's discipline wherever a physical control replaces a settings toggle. Source: design-lounge.live component writeup with full behavior spec.",
+    "sources": [
+      {
+        "url": "https://designlounge.live/p/lamp-theme-toggle",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-017",
@@ -895,7 +1028,16 @@
       "Optional synthesized snap sound, gated to start only after first user touch (autoplay-safe)",
       "Page-finish integration: pull sets data-finish (aluminium/graphite) and persists the choice"
     ],
-    "usability_notes": "The most complete published spec for cord-physics as UI: explicit lag/snap/spring-back states distinguish 'tried but not enough' from 'done' - a crucial but rarely modeled affordance. Ships as an installable component with aria label, keyboard pull(), and reduced-motion-friendly design. Use as the reference implementation when the pull-cord metaphor needs to be real UI, not illustration. Source: tactileui.dev component documentation."
+    "usability_notes": "Specifies the cord’s force curve explicitly: explicit lag/snap/spring-back states distinguish 'tried but not enough' from 'done' - a crucial but rarely modeled affordance. Ships as an installable component with aria label, keyboard pull(), and reduced-motion-friendly design. Use as the reference implementation when the pull-cord metaphor needs to be real UI, not illustration. Source: tactileui.dev component documentation.",
+    "url": "https://tactileui.dev/objects/pull-cord",
+    "sources": [
+      {
+        "url": "https://tactileui.dev/objects/pull-cord",
+        "tier": "A",
+        "type": "code",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-018",
@@ -948,7 +1090,16 @@
       "Living flame animation that burns down the stick over session time",
       "Full keyboard equivalent: Enter opens tray, Enter again strikes"
     ],
-    "usability_notes": "A model two-step ritual component: each physical sub-action maps to one gesture AND one key, so the metaphor never blocks input. The velocity gate teaches the 'quick strike' through failure (a lazy drag just scuffs) - keep a visible hint so users connect drag speed to ignition. Flame states make excellent session/progress indicators. Source: component page self-documentation."
+    "usability_notes": "A model two-step ritual component: each physical sub-action maps to one gesture AND one key, so the metaphor never blocks input. The velocity gate teaches the 'quick strike' through failure (a lazy drag just scuffs) - keep a visible hint so users connect drag speed to ignition. Flame states could serve as session or progress indicators. Source: component page self-documentation.",
+    "url": "https://www.jamesfrewin.com/components/matchbox",
+    "sources": [
+      {
+        "url": "https://www.jamesfrewin.com/components/matchbox",
+        "tier": "A",
+        "type": "live-site",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-019",
@@ -998,7 +1149,16 @@
       "Canvas-drawn curl: page masked at foldX with animated fold shadow",
       "Arrow-key page turns as the keyboard equivalent"
     ],
-    "usability_notes": "The canonical reference implementation (web.dev full source walkthrough). Page flip earns its cost only for linear, chapter-like content (guides, annual reports, lookbooks); for arbitrary navigation it impedes scanning - always pair with a persistent index or progress bar, keep flip animation under ~500ms, and support swipe plus arrows. Text must stay selectable/accessible outside the canvas-rendered fold frames."
+    "usability_notes": "The canonical reference implementation (web.dev full source walkthrough). Page flip earns its cost only for linear, chapter-like content (guides, annual reports, lookbooks); for arbitrary navigation it impedes scanning - always pair with a persistent index or progress bar, keep flip animation under ~500ms, and support swipe plus arrows. Text must stay selectable/accessible outside the canvas-rendered fold frames.",
+    "url": "http://www.20thingsilearned.com",
+    "sources": [
+      {
+        "url": "https://web.dev/case-studies/20things-pageflip",
+        "tier": "A",
+        "type": "case-study",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-021",
@@ -1048,7 +1208,16 @@
       "Per-photo resting rotation for a naturally untidy pile",
       "Replay control resets the stack"
     ],
-    "usability_notes": "Fling-to-cycle replaces prev/next buttons with one gesture that reads as reshuffling rather than navigation - good for small personal galleries where serendipity beats completeness. Keep piles short (the stack hides content depth; a counter or thumbnails preserve orientation), mirror the fling for RTL locales, and give keyboard/AT users a plain list alternative. Same-author sibling to ref-005/ref-007 (DVR Labs); source: component page description."
+    "usability_notes": "Fling-to-cycle replaces prev/next buttons with one gesture that reads as reshuffling rather than navigation - good for small personal galleries where serendipity beats completeness. Keep piles short (the stack hides content depth; a counter or thumbnails preserve orientation), mirror the fling for RTL locales, and give keyboard/AT users a plain list alternative. Same-author sibling to ref-005/ref-007 (DVR Labs); source: component page description.",
+    "url": "https://dvrdesign.com/labs/polaroid-stack",
+    "sources": [
+      {
+        "url": "https://dvrdesign.com/labs/polaroid-stack",
+        "tier": "A",
+        "type": "live-site",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-022",
@@ -1100,7 +1269,16 @@
       "Completion wax-seal stamp with checkmark as the terminal reward state",
       "File drop/slide-in animation into the pocket"
     ],
-    "usability_notes": "The strongest argument in the library for metaphor-as-function: every state of a mundane file upload maps to a physical mail stage, so the drop target's affordance is unmistakable. Implementation notes that transfer: hinge-on-separate-plane solves the flap z-order without z-index; staged transitions belong to the state being entered (flap first, letter delayed 0.45s); keyboard equivalents and tabindex focus must exist for the drop target, and the wax-seal completion must also be announced to AT (role=status). Sibling implementations: James Frewin's drag-to-crack seal envelope and a pure-CSS hinge variant documented down to the transform math."
+    "usability_notes": "Every state of a file upload maps to a physical mail stage, which makes the drop target's affordance easy to read. Implementation notes that transfer: hinge-on-separate-plane solves the flap z-order without z-index; staged transitions belong to the state being entered (flap first, letter delayed 0.45s); keyboard equivalents and tabindex focus must exist for the drop target, and the wax-seal completion must also be announced to AT (role=status). Sibling implementations: James Frewin's drag-to-crack seal envelope and a pure-CSS hinge variant documented down to the transform math.",
+    "url": "https://docs.uploadkit.dev/docs/sdk/react/upload-envelope",
+    "sources": [
+      {
+        "url": "https://docs.uploadkit.dev/docs/sdk/react/upload-envelope",
+        "tier": "A",
+        "type": "code",
+        "accessed": "2026-11-11"
+      }
+    ]
   },
   {
     "id": "ref-023",
@@ -1152,7 +1330,15 @@
       "Scroll-driven 3D lift ride as hero narrative",
       "Hover-driven interactive door swing diagram for install geometry"
     ],
-    "usability_notes": "The rare case where a physical metaphor is literally the product - the door-menu is brand logic, not decoration. Keep the doors animation under ~600ms and always reveal a static menu fallback for AT users; 3D hero needs mobile LOD. Source: Awwwards nominee element listing (itsy-bytesy)."
+    "usability_notes": "The rare case where a physical metaphor is literally the product - the door-menu is brand logic, not decoration. Keep the doors animation under ~600ms and always reveal a static menu fallback for AT users; 3D hero needs mobile LOD. Source: Awwwards nominee element listing (itsy-bytesy).",
+    "sources": [
+      {
+        "url": "https://www.awwwards.com/sites/southern-lifts",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-024",
@@ -1206,7 +1392,15 @@
       "Playable floor exhibits: draggable Newton's cradle, Galton board filling a glyph",
       "Scene transition folding 3D city into circuit board"
     ],
-    "usability_notes": "Elevator-as-IA gives every page an unambiguous spatial position (floor number = section index) and makes wayfinding diegetic - the express ride is just deep linking. Floor rides must be skippable (express, menu) or deep content becomes a chore; physics exhibits must pause off-screen and respect reduced motion. Source: Awwwards nominee element listing (self-descriptive)."
+    "usability_notes": "Elevator-as-IA gives every page an unambiguous spatial position (floor number = section index) and makes wayfinding diegetic - the express ride is just deep linking. Floor rides must be skippable (express, menu) or deep content becomes a chore; physics exhibits must pause off-screen and respect reduced motion. Source: Awwwards nominee element listing (self-descriptive).",
+    "sources": [
+      {
+        "url": "https://www.awwwards.com/sites/rise-of-digital",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-025",
@@ -1254,7 +1448,15 @@
       "Scene transitions staged as curtain resets between acts",
       "WebGL immersive trailer environment with scored sound design"
     ],
-    "usability_notes": "Curtain menus fit performance brands (opera, theatre, film festivals) where anticipation is the product. The curtain must never trap users: menu open/close has to be keyboard operable, the animation brief, and the underlying page still reachable. Heavy WebGL trailer needs a lightweight poster fallback. Awwwards SOTD 7.59 (creativity 8.17); palette single-black plus accent per Awwwards data."
+    "usability_notes": "Curtain menus fit performance brands (opera, theatre, film festivals) where anticipation is the product. The curtain must never trap users: menu open/close has to be keyboard operable, the animation brief, and the underlying page still reachable. Heavy WebGL trailer needs a lightweight poster fallback. Awwwards SOTD 7.59 (creativity 8.17); palette single-black plus accent per Awwwards data.",
+    "sources": [
+      {
+        "url": "https://www.awwwards.com/sites/the-turn-of-the-screw",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-026",
@@ -1305,7 +1507,22 @@
       "Final reel lands last for suspense; result is a randomized serve pairing",
       "Footer/bottle-roll animations extend the bar-counter frame"
     ],
-    "usability_notes": "Slot-machine randomization suits low-stakes choosers (recipes, playlists, promos) where variable reward is the fun - but never use it where users need to reach a specific item deterministically; always provide a browsable list as the serious path. Respect reduced motion (show the result directly) and gate any real-money associations. Source: Awwwards element listing; live site partially verified (serve options visible)."
+    "usability_notes": "Slot-machine randomization suits low-stakes choosers (recipes, playlists, promos) where variable reward is the fun - but never use it where users need to reach a specific item deterministically; always provide a browsable list as the serious path. Respect reduced motion (show the result directly) and gate any real-money associations. Source: Awwwards element listing; live site partially verified (serve options visible).",
+    "url": "https://us.fernetbranca.com/entertainment/slot-machine",
+    "sources": [
+      {
+        "url": "https://us.fernetbranca.com/entertainment/slot-machine",
+        "tier": "B",
+        "type": "live-site",
+        "accessed": "2026-11-09"
+      },
+      {
+        "url": "https://www.awwwards.com/inspiration/slot-machine-fernet-branca-us",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   },
   {
     "id": "ref-027",
@@ -1356,6 +1573,14 @@
       "Cloth-weight animation: sheets settle with residual angle after release",
       "Falling-letter and thread-ball cursor siblings extend the tactile system"
     ],
-    "usability_notes": "Hiding work under draggable sheets trades scanability for discovery - acceptable for a motion designer's showreel where every item is worth the dig, dangerous for content that must be found. Cap the sheet count, keep one sheet per item (never layered hiding), and provide a grid/list view toggle. Drag targets need large hit areas and keyboard-reachable equivalents. Source: Awwwards element listing (self-tagged GSAP)."
+    "usability_notes": "Hiding work under draggable sheets trades scanability for discovery - acceptable for a motion designer's showreel where every item is worth the dig, dangerous for content that must be found. Cap the sheet count, keep one sheet per item (never layered hiding), and provide a grid/list view toggle. Drag targets need large hit areas and keyboard-reachable equivalents. Source: Awwwards element listing (self-tagged GSAP).",
+    "sources": [
+      {
+        "url": "https://www.awwwards.com/inspiration/curtain-reveal-hover-video-grid-aralesk-collages-motion",
+        "tier": "C",
+        "type": "article",
+        "accessed": "2026-11-09"
+      }
+    ]
   }
 ]
