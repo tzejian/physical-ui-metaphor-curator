@@ -23,11 +23,12 @@ export function mount(entry, stageEl) {
   const tokens = entry.design_tokens ?? {};
   const colors = tokens.dominant_colors ?? ['#1C1C1E', '#3A3A3C', '#B3122F', '#5B2A86', '#F2F2F0'];
 
-  const plate     = colors[0] ?? '#1C1C1E';
-  const capGrey   = colors[1] ?? '#3A3A3C';
-  const redEsc    = colors[2] ?? '#B3122F';
-  const purpleWasd= colors[3] ?? '#5B2A86';
-  const legends   = colors[4] ?? '#F2F2F0';
+  const isLightPlate = colors[0]?.toLowerCase().startsWith('#fa') || colors[0]?.toLowerCase().startsWith('#f0');
+  const plate     = isLightPlate ? (colors[1] ?? '#f0ede6') : (colors[0] ?? '#1C1C1E');
+  const capGrey   = isLightPlate ? (colors[2] ?? '#1f1e1d') : (colors[1] ?? '#3A3A3C');
+  const redEsc    = isLightPlate ? (colors[4] ?? '#d97736') : (colors[2] ?? '#B3122F');
+  const purpleWasd= isLightPlate ? (colors[4] ?? '#d97736') : (colors[3] ?? '#5B2A86');
+  const legends   = isLightPlate ? '#f0ede6' : (colors[4] ?? '#F2F2F0');
 
   stageEl.innerHTML = buildStageHtml(plate, capGrey, redEsc, purpleWasd, legends);
   attachInteractions(stageEl, plate, capGrey, redEsc, purpleWasd, legends);

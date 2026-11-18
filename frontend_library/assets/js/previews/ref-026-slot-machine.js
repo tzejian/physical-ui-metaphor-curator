@@ -4,14 +4,19 @@
  */
 
 export function mount(entry, stageEl) {
+  const domColors = entry.design_tokens?.dominant_colors ?? [];
+  const nearBlack = domColors[0] ?? '#1c1b1b';
+  const white     = domColors[1] ?? '#ffffff';
+  const gold      = domColors[3] ?? '#e6a700';
+
   const colors = {
     green: '#1A5E3A',
     greenDark: '#0e3822',
-    cream: '#E8E4DC',
+    cream: white,
     red: '#C8102E',
-    gold: '#FFC400',
-    dark: '#111111',
-    brass: '#b89035'
+    gold: gold,
+    dark: nearBlack,
+    brass: gold
   };
 
   const reel1Items = ['BEER + SHOT', 'FERNET & COLA', 'ON THE ROCKS', 'FERNET SOUR', 'NEAT SHOT', 'HOT TODDY'];

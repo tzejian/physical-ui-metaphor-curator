@@ -2,8 +2,8 @@
   "id": "ref-014",
   "title": "Achraf Kassioui Keyboard - Romantic Skeuomorphism of Mechanical Input",
   "evidence": {
-    "palette": "inferred",
-    "tokens": "inferred",
+    "palette": "inspected",
+    "tokens": "inspected",
     "interactions": "inferred",
     "stack": "unknown"
   },
@@ -32,15 +32,16 @@
   },
   "design_tokens": {
     "dominant_colors": [
-      "#1C1C1E",
-      "#3A3A3C",
-      "#B3122F",
-      "#5B2A86",
-      "#F2F2F0"
+      "#ffffff",
+      "#f7f7f7",
+      "#171c18",
+      "#bb1d1d",
+      "#bbaacc",
+      "#49494d"
     ],
     "borders": "Keycap silhouettes with 3D top faces and side walls; legends engraved-style",
     "elevation": "Per-key cast shadows that deepen on actuation - the shadow IS the key travel indicator",
-    "typography": "Compact keycap legends in two stacked rows (symbol + fn label) like real doubleshot caps"
+    "typography": "Verified font: Merriweather. Compact keycap legends in two stacked rows (symbol + fn label) like real doubleshot caps [Inspected 2026-11-17: white page #ffffff/#f7f7f7, keycaps #171c18/#49494d, red Esc #bb1d1d, lavender WASD #bbaacc.]"
   },
   "interactive_mechanics": [
     "Two-way key state sync: onscreen keys depress from real keyboard input",

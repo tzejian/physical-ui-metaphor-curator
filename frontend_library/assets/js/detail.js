@@ -72,7 +72,15 @@ function renderDetail(entry) {
   main.innerHTML = `
     <!-- Header -->
     <div class="detail-header detail-layout__full">
-      <div class="detail-header__id">${escapeHtml(entry.id)}</div>
+      <div class="detail-header__meta">
+        <div class="detail-header__id">${escapeHtml(entry.id)}</div>
+        ${entry.url ? `
+          <a class="detail-header__link" href="${escapeHtml(entry.url)}" target="_blank" rel="noopener noreferrer" title="Open original reference in a new tab">
+            <span>Visit Reference</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        ` : ''}
+      </div>
       <h1 class="detail-header__title">${escapeHtml(entry.title)}</h1>
       <div class="detail-header__tags">${badgesHtml}</div>
     </div>

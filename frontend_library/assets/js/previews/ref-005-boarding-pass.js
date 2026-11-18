@@ -24,13 +24,15 @@ export function mount(entry, stageEl) {
   const tokens = entry.design_tokens ?? {};
   const colors = tokens.dominant_colors ?? [];
 
-  const paper  = colors[0] ?? '#F6F3EC';
-  const ink    = colors[1] ?? '#1A1A1A';
-  const accent = colors[2] ?? '#FF3D1F';
-  const muted  = colors[3] ?? '#D8D2C4';
+  const isDarkChrome = colors[0]?.toLowerCase().startsWith('#0') || colors[0]?.toLowerCase().startsWith('#1');
+  const paper  = isDarkChrome ? (colors[2] ?? '#ece8e1') : (colors[0] ?? '#F6F3EC');
+  const ink    = colors[1] ?? '#151210';
+  const accent = colors[4] ?? colors[2] ?? '#ff3d1f';
+  const muted  = isDarkChrome ? (colors[3] ?? '#ece6dc') : (colors[3] ?? '#D8D2C4');
+  const chrome = isDarkChrome ? colors[0] : 'transparent';
 
   const route = generateRoute();
-  stageEl.innerHTML = buildStageHtml(paper, ink, accent, muted, route);
+  stageEl.innerHTML = buildStageHtml(paper, ink, accent, muted, route, chrome);
   attachInteractions(stageEl, paper, ink, accent, muted);
 }
 
@@ -48,10 +50,10 @@ function generateRoute() {
 
 // ── HTML ──────────────────────────────────────────────────────────────────────
 
-function buildStageHtml(paper, ink, accent, muted, route) {
+function buildStageHtml(paper, ink, accent, muted, route, chrome = 'transparent') {
   return `
     <style>
-      .bp-scene        { display:flex; flex-direction:column; align-items:center; width:100%; }
+      .bp-scene        { display:flex; flex-direction:column; align-items:center; width:100%; background:${chrome}; padding:${chrome !== 'transparent' ? '16px' : '0'}; border-radius:8px; box-sizing:border-box; }
       .bp-label        { font-size:.6875rem; font-weight:700; letter-spacing:.1em;
                          text-transform:uppercase; color:var(--text-muted); margin-bottom:14px;
                          align-self:flex-start; }

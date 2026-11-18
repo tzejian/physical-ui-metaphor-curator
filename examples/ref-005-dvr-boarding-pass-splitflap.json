@@ -2,8 +2,8 @@
   "id": "ref-005",
   "title": "DVR Labs Boarding Pass - Split-Flap Ticker & Perforated Tear-Off Stub",
   "evidence": {
-    "palette": "inferred",
-    "tokens": "inferred",
+    "palette": "inspected",
+    "tokens": "inspected",
     "interactions": "inferred",
     "stack": "inferred"
   },
@@ -34,14 +34,15 @@
   },
   "design_tokens": {
     "dominant_colors": [
-      "#F6F3EC",
-      "#1A1A1A",
-      "#FF3D1F",
-      "#D8D2C4"
+      "#050505",
+      "#151210",
+      "#ece8e1",
+      "#ece6dc",
+      "#ff3d1f"
     ],
     "borders": "Paper perforation via radial-gradient notch masks; hairline ticket rules; ragged clip-path tear edge",
     "elevation": "Subtle paper depth (slight shadow/flex on drag), tiles flat; on tall screens the pass rotates upright",
-    "typography": "Monospaced condensed ticket type with per-letter split-flap tiles; bold seat/gate numerals; functional label-value rows like printed ticket fields"
+    "typography": "Verified font: Geologica. Monospaced condensed ticket type with per-letter split-flap tiles; bold seat/gate numerals; functional label-value rows like printed ticket fields [Inspected 2026-11-17: dark site chrome #050505, cream pass #ece8e1/#ece6dc, ink tiles #151210, accent #ff3d1f; font Geologica.]"
   },
   "interactive_mechanics": [
     "Drag the stub along the perforation - elastic paper give, ragged tear, stub falls away with throw physics",

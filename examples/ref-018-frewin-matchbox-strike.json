@@ -2,8 +2,8 @@
   "id": "ref-018",
   "title": "James Frewin Matchbox - Slide-Out Tray & Strike-to-Ignite",
   "evidence": {
-    "palette": "inferred",
-    "tokens": "inferred",
+    "palette": "inspected",
+    "tokens": "inspected",
     "interactions": "inferred",
     "stack": "unknown"
   },
@@ -33,15 +33,16 @@
   },
   "design_tokens": {
     "dominant_colors": [
-      "#C8A15A",
-      "#E8DCC0",
-      "#1A1A1A",
-      "#FF7A00",
-      "#B5442E"
+      "#f7f7f4",
+      "#4a4a46",
+      "#22221f",
+      "#3b2a1f",
+      "#6c6b66",
+      "#9b9a95"
     ],
     "borders": "Cardboard tray edges with printed label face; striker strip as a dark speckled band",
     "elevation": "Drawer-slide parallax between tray and sleeve; flame glow as the only volumetric element",
-    "typography": "Letterpress-style matchbox label type"
+    "typography": "Letterpress-style matchbox label type [Inspected 2026-11-17: background #f7f7f4, ink #4a4a46/#22221f, sleeve #3b2a1f (converted from published CIELab).]"
   },
   "interactive_mechanics": [
     "Slide-out tray drag with drawer physics",

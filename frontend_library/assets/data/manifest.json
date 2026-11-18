@@ -176,7 +176,7 @@
       "Sticky top dropdown menu transforms into a single highlighted line tracking scroll position",
       "Long-form vertical scroll reads as one continuously printing receipt"
     ],
-    "usability_notes": "Fits hospitality brands. Single typeface and one weight enforce simplicity; seekers can jump via the sticky menu. Constraints: the 300px frame sacrifices horizontal content richness, and decorative scribbles must never carry wayfinding meaning. Approximated tokens - live site could not be fetched, details sourced from Communication Arts project coverage.",
+    "usability_notes": "Fits hospitality brands. Single typeface and one weight enforce simplicity; seekers can jump via the sticky menu. Constraints: the 300px frame sacrifices horizontal content richness, and decorative scribbles must never carry wayfinding meaning. Approximated tokens - live site could not be fetched, details sourced from Communication Arts project coverage. Verification note: madelinesbrooklyn.com is blocked from this research environment (private-address filter); tokens remain inferred from press coverage. A live screenshot from the user would enable verification.",
     "url": "https://madelinesbrooklyn.com",
     "sources": [
       {
@@ -256,8 +256,8 @@
     "id": "ref-005",
     "title": "DVR Labs Boarding Pass - Split-Flap Ticker & Perforated Tear-Off Stub",
     "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
+      "palette": "inspected",
+      "tokens": "inspected",
       "interactions": "inferred",
       "stack": "inferred"
     },
@@ -288,14 +288,15 @@
     },
     "design_tokens": {
       "dominant_colors": [
-        "#F6F3EC",
-        "#1A1A1A",
-        "#FF3D1F",
-        "#D8D2C4"
+        "#050505",
+        "#151210",
+        "#ece8e1",
+        "#ece6dc",
+        "#ff3d1f"
       ],
       "borders": "Paper perforation via radial-gradient notch masks; hairline ticket rules; ragged clip-path tear edge",
       "elevation": "Subtle paper depth (slight shadow/flex on drag), tiles flat; on tall screens the pass rotates upright",
-      "typography": "Monospaced condensed ticket type with per-letter split-flap tiles; bold seat/gate numerals; functional label-value rows like printed ticket fields"
+      "typography": "Verified font: Geologica. Monospaced condensed ticket type with per-letter split-flap tiles; bold seat/gate numerals; functional label-value rows like printed ticket fields [Inspected 2026-11-17: dark site chrome #050505, cream pass #ece8e1/#ece6dc, ink tiles #151210, accent #ff3d1f; font Geologica.]"
     },
     "interactive_mechanics": [
       "Drag the stub along the perforation - elastic paper give, ragged tear, stub falls away with throw physics",
@@ -379,8 +380,8 @@
     "id": "ref-007",
     "title": "DVR Labs Playful 404 - Numbers Hanging on Threads",
     "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
+      "palette": "inspected",
+      "tokens": "inspected",
       "interactions": "inferred",
       "stack": "inferred"
     },
@@ -410,13 +411,14 @@
     },
     "design_tokens": {
       "dominant_colors": [
-        "#F6F3EC",
-        "#1A1A1A",
-        "#FF3D1F"
+        "#050505",
+        "#0b0a0a",
+        "#ece8e1",
+        "#ff3d1f"
       ],
       "borders": "Thread rendered as 1-2px SVG strokes with sag curves; digits as solid heavy glyphs, no decorative borders",
       "elevation": "Flat page; depth implied only by swing amplitude and thread sag",
-      "typography": "Oversized display digits as physical objects; compact functional type for search and recovery actions"
+      "typography": "Verified font: Geologica. Oversized display digits as physical objects; compact functional type for search and recovery actions [Inspected 2026-11-17: dark chrome #050505/#0b0a0a, bone text #ece8e1, accent #ff3d1f; font Geologica.]"
     },
     "interactive_mechanics": [
       "Sweeping pointer pushes hanging digits proportionally to cursor speed",
@@ -801,8 +803,8 @@
     "id": "ref-014",
     "title": "Achraf Kassioui Keyboard - Romantic Skeuomorphism of Mechanical Input",
     "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
+      "palette": "inspected",
+      "tokens": "inspected",
       "interactions": "inferred",
       "stack": "unknown"
     },
@@ -831,15 +833,16 @@
     },
     "design_tokens": {
       "dominant_colors": [
-        "#1C1C1E",
-        "#3A3A3C",
-        "#B3122F",
-        "#5B2A86",
-        "#F2F2F0"
+        "#ffffff",
+        "#f7f7f7",
+        "#171c18",
+        "#bb1d1d",
+        "#bbaacc",
+        "#49494d"
       ],
       "borders": "Keycap silhouettes with 3D top faces and side walls; legends engraved-style",
       "elevation": "Per-key cast shadows that deepen on actuation - the shadow IS the key travel indicator",
-      "typography": "Compact keycap legends in two stacked rows (symbol + fn label) like real doubleshot caps"
+      "typography": "Verified font: Merriweather. Compact keycap legends in two stacked rows (symbol + fn label) like real doubleshot caps [Inspected 2026-11-17: white page #ffffff/#f7f7f7, keycaps #171c18/#49494d, red Esc #bb1d1d, lavender WASD #bbaacc.]"
     },
     "interactive_mechanics": [
       "Two-way key state sync: onscreen keys depress from real keyboard input",
@@ -981,8 +984,8 @@
     "id": "ref-017",
     "title": "Tactile UI Pull-Cord Bulb - Detent & Snap Toggle Component",
     "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
+      "palette": "inspected",
+      "tokens": "inspected",
       "interactions": "inferred",
       "stack": "inferred"
     },
@@ -1012,15 +1015,16 @@
     },
     "design_tokens": {
       "dominant_colors": [
-        "#181818",
-        "#F5F1E8",
-        "#FFB65C",
-        "#8A8A8A",
-        "#C8102E"
+        "#d8d7d2",
+        "#e6e6e2",
+        "#f2f2ef",
+        "#cbccc8",
+        "#1b1c1e",
+        "#f29f05"
       ],
       "borders": "Spun-dome shade silhouette; acorn pull knob as the sole decorative element",
       "elevation": "Light-direction-aware highlight/shadow system that follows one configurable light angle",
-      "typography": "Component-label minimal; state announced to assistive tech, not drawn"
+      "typography": "Verified font: Instrument Sans. Component-label minimal; state announced to assistive tech, not drawn [Inspected 2026-11-17: desk #d8d7d2, face #e6e6e2 (hi #f2f2ef, lo #cbccc8), ink #1b1c1e, glow #f29f05; font Instrument Sans.]"
     },
     "interactive_mechanics": [
       "Pointer-lag under detent, force-drop snap at trip point, spring-back on incomplete pulls",
@@ -1043,8 +1047,8 @@
     "id": "ref-018",
     "title": "James Frewin Matchbox - Slide-Out Tray & Strike-to-Ignite",
     "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
+      "palette": "inspected",
+      "tokens": "inspected",
       "interactions": "inferred",
       "stack": "unknown"
     },
@@ -1074,15 +1078,16 @@
     },
     "design_tokens": {
       "dominant_colors": [
-        "#C8A15A",
-        "#E8DCC0",
-        "#1A1A1A",
-        "#FF7A00",
-        "#B5442E"
+        "#f7f7f4",
+        "#4a4a46",
+        "#22221f",
+        "#3b2a1f",
+        "#6c6b66",
+        "#9b9a95"
       ],
       "borders": "Cardboard tray edges with printed label face; striker strip as a dark speckled band",
       "elevation": "Drawer-slide parallax between tray and sleeve; flame glow as the only volumetric element",
-      "typography": "Letterpress-style matchbox label type"
+      "typography": "Letterpress-style matchbox label type [Inspected 2026-11-17: background #f7f7f4, ink #4a4a46/#22221f, sleeve #3b2a1f (converted from published CIELab).]"
     },
     "interactive_mechanics": [
       "Slide-out tray drag with drawer physics",
@@ -1149,7 +1154,7 @@
       "Canvas-drawn curl: page masked at foldX with animated fold shadow",
       "Arrow-key page turns as the keyboard equivalent"
     ],
-    "usability_notes": "The canonical reference implementation (web.dev full source walkthrough). Page flip earns its cost only for linear, chapter-like content (guides, annual reports, lookbooks); for arbitrary navigation it impedes scanning - always pair with a persistent index or progress bar, keep flip animation under ~500ms, and support swipe plus arrows. Text must stay selectable/accessible outside the canvas-rendered fold frames.",
+    "usability_notes": "The canonical reference implementation (web.dev full source walkthrough). Page flip earns its cost only for linear, chapter-like content (guides, annual reports, lookbooks); for arbitrary navigation it impedes scanning - always pair with a persistent index or progress bar, keep flip animation under ~500ms, and support swipe plus arrows. Text must stay selectable/accessible outside the canvas-rendered fold frames. Verification note: 20thingsilearned.com is no longer live (checked 2026-11-17, connection error); tokens remain inferred from archived knowledge and could not be re-inspected.",
     "url": "http://www.20thingsilearned.com",
     "sources": [
       {
@@ -1164,8 +1169,8 @@
     "id": "ref-021",
     "title": "DVR Labs Polaroid Stack - Fling-to-Shuffle Photo Pile",
     "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
+      "palette": "inspected",
+      "tokens": "inspected",
       "interactions": "inferred",
       "stack": "unknown"
     },
@@ -1194,14 +1199,16 @@
     },
     "design_tokens": {
       "dominant_colors": [
-        "#F2EAD3",
-        "#1A1A1A",
-        "#B5442E",
-        "#4A6741"
+        "#050505",
+        "#0b0a0a",
+        "#ece8e1",
+        "#efe9df",
+        "#111111",
+        "#2b2520"
       ],
       "borders": "White instant-photo frames with slight per-item rotation",
       "elevation": "Stacked depth via rotation offsets and small shadow separation between layers",
-      "typography": "Handwritten captions under photos; minimal supporting UI type"
+      "typography": "Handwritten captions under photos; minimal supporting UI type [Inspected 2026-11-17: dark chrome #050505/#0b0a0a, bone text #ece8e1, polaroid frames #efe9df, caption ink #2b2520; font Geologica.]"
     },
     "interactive_mechanics": [
       "Fling the top photo - velocity carries it off and it tucks behind the stack",
@@ -1223,8 +1230,8 @@
     "id": "ref-022",
     "title": "UploadEnvelope - Wax-Sealed Envelope as Drop Target",
     "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
+      "palette": "inspected",
+      "tokens": "inspected",
       "interactions": "inferred",
       "stack": "inferred"
     },
@@ -1254,14 +1261,16 @@
     },
     "design_tokens": {
       "dominant_colors": [
-        "#F2EAD3",
-        "#B3165E",
-        "#8A5A2B",
-        "#1A1A1A"
+        "#000000",
+        "#0a0a0a",
+        "#171717",
+        "#ededed",
+        "#a1a1a1",
+        "#262626"
       ],
       "borders": "Envelope pocket cut to a V via clip-path; wax seal as a radial-gradient disc with embossed rim highlight",
       "elevation": "True CSS 3D: back panel, letter and pocket layered on separate translateZ planes; flap hinges so it renders in front when closed and behind the letter when open - depth sorting replaces z-index",
-      "typography": "Invitation-style serif label; functional state copy beside the envelope"
+      "typography": "Verified font: Geist. Invitation-style serif label; functional state copy beside the envelope [Inspected 2026-11-17: dark docs theme #000000/#0a0a0a/#171717, ink #ededed, muted #a1a1a1, hairline #262626; font Geist.]"
     },
     "interactive_mechanics": [
       "Drag-over opens the flap; drag-leave closes it (affordance state, not decoration)",
@@ -1462,8 +1471,8 @@
     "id": "ref-026",
     "title": "Fernet-Branca US - Slot Machine Serve Randomizer",
     "evidence": {
-      "palette": "inferred",
-      "tokens": "inferred",
+      "palette": "inspected",
+      "tokens": "inspected",
       "interactions": "inferred",
       "stack": "unknown"
     },
@@ -1492,15 +1501,15 @@
     },
     "design_tokens": {
       "dominant_colors": [
-        "#1A5E3A",
-        "#E8E4DC",
-        "#C8102E",
-        "#FFC400",
-        "#111111"
+        "#1c1b1b",
+        "#ffffff",
+        "#000000",
+        "#e6a700",
+        "#efefef"
       ],
       "borders": "Machine cabinet framing, reel windows with inner shadow rims, symbol cards",
       "elevation": "Reels with cylindrical curvature shading; cabinet chrome flat",
-      "typography": "Casino-card symbol type; bold serve names as the 'payline'"
+      "typography": "Verified font: Interstate. Casino-card symbol type; bold serve names as the 'payline' [Inspected 2026-11-17: near-black #1c1b1b, white #ffffff, gold #e6a700, gray #efefef; font Interstate.]"
     },
     "interactive_mechanics": [
       "Scroll velocity drives reel spin and staggered reel lock-up",

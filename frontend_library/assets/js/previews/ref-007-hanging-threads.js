@@ -26,9 +26,10 @@ export function mount(entry, stageEl) {
   const tokens = entry.design_tokens ?? {};
   const colors = tokens.dominant_colors ?? ['#F6F3EC', '#1A1A1A', '#FF3D1F'];
 
+  const isDarkBg = colors[0]?.toLowerCase().startsWith('#0') || colors[0]?.toLowerCase().startsWith('#1');
   const pageBg = colors[0] ?? '#F6F3EC';
-  const ink    = colors[1] ?? '#1A1A1A';
-  const accent = colors[2] ?? '#FF3D1F';
+  const ink    = isDarkBg ? (colors[2] ?? '#ece8e1') : (colors[1] ?? '#1A1A1A');
+  const accent = isDarkBg ? (colors[4] ?? '#ff3d1f') : (colors[2] ?? '#FF3D1F');
 
   stageEl.innerHTML = buildStageHtml(pageBg, ink, accent);
   initPhysics(stageEl, pageBg, ink, accent);

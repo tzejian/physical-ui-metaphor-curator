@@ -22,10 +22,11 @@ export function mount(entry, stageEl) {
   const tokens = entry.design_tokens ?? {};
   const colors = tokens.dominant_colors ?? ['#F2EAD3', '#1A1A1A', '#B5442E', '#4A6741'];
 
-  const cream   = colors[0] ?? '#F2EAD3';
-  const dark    = colors[1] ?? '#1A1A1A';
-  const red     = colors[2] ?? '#B5442E';
-  const green   = colors[3] ?? '#4A6741';
+  const isDarkChrome = colors[0]?.toLowerCase().startsWith('#0');
+  const cream   = isDarkChrome ? (colors[3] ?? '#efe9df') : (colors[0] ?? '#F2EAD3');
+  const dark    = isDarkChrome ? (colors[5] ?? '#2b2520') : (colors[1] ?? '#1A1A1A');
+  const red     = isDarkChrome ? (colors[2] ?? '#ece8e1') : (colors[2] ?? '#B5442E');
+  const green   = isDarkChrome ? (colors[4] ?? '#111111') : (colors[3] ?? '#4A6741');
 
   stageEl.innerHTML = buildStageHtml(cream, dark, red, green);
   attachInteractions(stageEl, cream, dark, red, green);

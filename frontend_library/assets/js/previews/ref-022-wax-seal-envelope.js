@@ -23,10 +23,11 @@ export function mount(entry, stageEl) {
   const tokens = entry.design_tokens ?? {};
   const colors = tokens.dominant_colors ?? ['#F2EAD3', '#B3165E', '#8A5A2B', '#1A1A1A'];
 
-  const linen    = colors[0] ?? '#F2EAD3';
-  const waxSeal  = colors[1] ?? '#B3165E';
-  const pocketBg = colors[2] ?? '#8A5A2B';
-  const ink      = colors[3] ?? '#1A1A1A';
+  const isDarkDocs = colors[0] === '#000000' || colors[0]?.toLowerCase().startsWith('#0');
+  const linen    = isDarkDocs ? (colors[3] ?? '#ededed') : (colors[0] ?? '#F2EAD3');
+  const waxSeal  = '#B3165E';
+  const pocketBg = isDarkDocs ? (colors[2] ?? '#171717') : (colors[2] ?? '#8A5A2B');
+  const ink      = isDarkDocs ? (colors[3] ?? '#ededed') : (colors[3] ?? '#1A1A1A');
 
   stageEl.innerHTML = buildStageHtml(linen, waxSeal, pocketBg, ink);
   attachInteractions(stageEl, linen, waxSeal, pocketBg, ink);

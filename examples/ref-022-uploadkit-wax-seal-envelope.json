@@ -2,8 +2,8 @@
   "id": "ref-022",
   "title": "UploadEnvelope - Wax-Sealed Envelope as Drop Target",
   "evidence": {
-    "palette": "inferred",
-    "tokens": "inferred",
+    "palette": "inspected",
+    "tokens": "inspected",
     "interactions": "inferred",
     "stack": "inferred"
   },
@@ -33,14 +33,16 @@
   },
   "design_tokens": {
     "dominant_colors": [
-      "#F2EAD3",
-      "#B3165E",
-      "#8A5A2B",
-      "#1A1A1A"
+      "#000000",
+      "#0a0a0a",
+      "#171717",
+      "#ededed",
+      "#a1a1a1",
+      "#262626"
     ],
     "borders": "Envelope pocket cut to a V via clip-path; wax seal as a radial-gradient disc with embossed rim highlight",
     "elevation": "True CSS 3D: back panel, letter and pocket layered on separate translateZ planes; flap hinges so it renders in front when closed and behind the letter when open - depth sorting replaces z-index",
-    "typography": "Invitation-style serif label; functional state copy beside the envelope"
+    "typography": "Verified font: Geist. Invitation-style serif label; functional state copy beside the envelope [Inspected 2026-11-17: dark docs theme #000000/#0a0a0a/#171717, ink #ededed, muted #a1a1a1, hairline #262626; font Geist.]"
   },
   "interactive_mechanics": [
     "Drag-over opens the flap; drag-leave closes it (affordance state, not decoration)",

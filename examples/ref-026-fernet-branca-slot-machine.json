@@ -2,8 +2,8 @@
   "id": "ref-026",
   "title": "Fernet-Branca US - Slot Machine Serve Randomizer",
   "evidence": {
-    "palette": "inferred",
-    "tokens": "inferred",
+    "palette": "inspected",
+    "tokens": "inspected",
     "interactions": "inferred",
     "stack": "unknown"
   },
@@ -32,15 +32,15 @@
   },
   "design_tokens": {
     "dominant_colors": [
-      "#1A5E3A",
-      "#E8E4DC",
-      "#C8102E",
-      "#FFC400",
-      "#111111"
+      "#1c1b1b",
+      "#ffffff",
+      "#000000",
+      "#e6a700",
+      "#efefef"
     ],
     "borders": "Machine cabinet framing, reel windows with inner shadow rims, symbol cards",
     "elevation": "Reels with cylindrical curvature shading; cabinet chrome flat",
-    "typography": "Casino-card symbol type; bold serve names as the 'payline'"
+    "typography": "Verified font: Interstate. Casino-card symbol type; bold serve names as the 'payline' [Inspected 2026-11-17: near-black #1c1b1b, white #ffffff, gold #e6a700, gray #efefef; font Interstate.]"
   },
   "interactive_mechanics": [
     "Scroll velocity drives reel spin and staggered reel lock-up",
