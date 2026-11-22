@@ -4,8 +4,7 @@
  */
 
 import {
-  buildAllBadges,
-  buildColorStrip,
+  buildCardBadges,
   buildBadge,
   escapeHtml,
 } from './utils.js';
@@ -239,8 +238,8 @@ function renderGallery() {
   if (!filtered.length) {
     gallery.innerHTML = `
       <div class="empty-state">
-        <div class="empty-state__icon">🔍</div>
-        <p class="empty-state__message">No references match your filter criteria.</p>
+        <p class="empty-state__title">No matching metaphors found</p>
+        <p class="empty-state__message">Try adjusting your search terms or clearing active filters.</p>
       </div>`;
     return;
   }
@@ -249,9 +248,7 @@ function renderGallery() {
 }
 
 function buildCardHTML(entry) {
-  const colors   = entry.design_tokens?.dominant_colors || [];
-  const strip    = buildColorStrip(colors);
-  const badges   = buildAllBadges(entry.tags || {}, 2);
+  const badges   = buildCardBadges(entry.tags || {});
   const mechanic = escapeHtml(entry.affordance_translation?.digital_mechanic || '');
 
   return `
@@ -259,9 +256,11 @@ function buildCardHTML(entry) {
        href="detail.html?id=${escapeHtml(entry.id)}"
        tabindex="0"
        aria-label="View details for ${escapeHtml(entry.title)}">
-      <div class="ref-card__swatch-strip" aria-hidden="true">${strip}</div>
       <div class="ref-card__body">
-        <span class="ref-card__id">${escapeHtml(entry.id)}</span>
+        <div class="ref-card__meta">
+          <span class="ref-card__id">${escapeHtml(entry.id)}</span>
+          <span class="ref-card__arrow" aria-hidden="true">→</span>
+        </div>
         <h2 class="ref-card__title">${escapeHtml(entry.title)}</h2>
         <p class="ref-card__affordance">${mechanic}</p>
         <div class="ref-card__tags">${badges}</div>
@@ -273,7 +272,7 @@ function renderError(message) {
   if (!gallery) return;
   gallery.innerHTML = `
     <div class="empty-state">
-      <div class="empty-state__icon">⚠️</div>
+      <p class="empty-state__title">Unable to load catalog</p>
       <p class="empty-state__message">${escapeHtml(message)}</p>
     </div>`;
 }

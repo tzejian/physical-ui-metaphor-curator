@@ -1591,5 +1591,53 @@
         "accessed": "2026-11-09"
       }
     ]
+  },
+  {
+    "id": "ref-028",
+    "title": "Dutch Oven Lid Reveal (concept illustration)",
+    "url": "https://x.com/noa1008xx/status/2123258618229424208",
+    "tags": {
+      "metaphors": [
+        "cooking-pot",
+        "dutch-oven",
+        "pot-lid",
+        "world-inside-an-object"
+      ],
+      "art_styles": [
+        "flat-skeuomorphic"
+      ],
+      "ui_components": [
+        "accordion",
+        "modal"
+      ],
+      "materials": [
+        "enamel",
+        "cast-iron"
+      ]
+    },
+    "affordance_translation": {
+      "physical_behavior": "A heavy pot lid lifts off, and from above you look down into the open pot and see what is inside. The oval rim frames the contents like a window.",
+      "digital_mechanic": "Drawn from a raised three-quarter view, so the opening is an oval you look down into, not a side silhouette. A closed card (lid on) lifts its lid to reveal a content panel sitting inside the oval, with a thick inner rim and soft inner shadow so it reads as inside the pot. The small pot holding a whole panel of content is part of the idea."
+    },
+    "design_tokens": {
+      "dominant_colors": [
+        "#E2583E",
+        "#2C3539",
+        "#F8F5EE",
+        "#1E2326",
+        "#C88A35"
+      ],
+      "borders": "No outlines. Shapes are separated by flat tone steps, with a thin lighter rim line on the pot opening. Handles and lid are rounded.",
+      "elevation": "Flat fills with a soft gradient on the pot body and one long, hard-edged cast shadow on the ground. The lid sits above the pot, so the gap and its shadow carry the depth.",
+      "typography": "None in the source image. Use a plain geometric sans for titles inside the panel."
+    },
+    "interactive_mechanics": [
+      "Proposed: on hover or focus the closed lid lifts a few pixels and tilts slightly, as a cue that it opens.",
+      "Proposed: on click or Enter the lid lifts up and sideways away from the opening (about 300 to 400 ms, ease-out) while the interior content fades and scales up from about 0.96. Cropping the lid at the edge of the stage is acceptable.",
+      "Proposed: while open, keep the lid hovering above the opening with a shadow, so the opening stays visible as the frame for the content.",
+      "Proposed: use a real button with aria-expanded, close on a second click or Escape, and replace the motion with an instant swap when prefers-reduced-motion is set.",
+      "Proposed: add a light grain with an SVG feTurbulence filter over the flat fills for the printed look of the source image."
+    ],
+    "usability_notes": "Not opened: this is an illustration from a social media post, not a live interface, so every interaction here is proposed and none was observed. Works for a small number of expandable cards, and the metaphor reads best when the closed state is clearly a container. Weaknesses to plan for: a lid that moves out of the frame can leave the open panel without an obvious way to close it, and the lift animation needs a reduced-motion fallback."
   }
 ]

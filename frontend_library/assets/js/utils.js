@@ -20,21 +20,40 @@ export function categoryToModifier(category) {
 /**
  * Build an HTML string for a single tag badge.
  * @param {string} label
- * @param {string} category — one of the tag category keys
+ * @param {string} [category] — one of the tag category keys
  * @returns {string}
  */
-export function buildBadge(label, category) {
+export function buildBadge(label, category = 'metaphors') {
   const mod = categoryToModifier(category);
-  return `<span class="badge badge--${mod}">${escapeHtml(label)}</span>`;
+  return `<span class="badge badge--${mod}" data-category="${escapeHtml(category)}">${escapeHtml(label)}</span>`;
 }
 
 /**
- * Build all badge HTML for all tag categories in a record.
+ * Build primary badges for gallery card (strictly capped to avoid clutter).
+ * Shows primary metaphor + primary material/style.
  * @param {object} tags
- * @param {number} [maxPerCategory=2] — max badges shown per category
  * @returns {string}
  */
-export function buildAllBadges(tags, maxPerCategory = 2) {
+export function buildCardBadges(tags) {
+  const badges = [];
+  if (tags.metaphors?.[0]) {
+    badges.push(buildBadge(tags.metaphors[0], 'metaphors'));
+  }
+  if (tags.materials?.[0]) {
+    badges.push(buildBadge(tags.materials[0], 'materials'));
+  } else if (tags.art_styles?.[0]) {
+    badges.push(buildBadge(tags.art_styles[0], 'art_styles'));
+  }
+  return badges.join('');
+}
+
+/**
+ * Build all badge HTML for all tag categories in a record (for detail page).
+ * @param {object} tags
+ * @param {number} [maxPerCategory=3] — max badges shown per category
+ * @returns {string}
+ */
+export function buildAllBadges(tags, maxPerCategory = 3) {
   const categories = ['metaphors', 'art_styles', 'ui_components', 'materials'];
   return categories
     .flatMap(cat => (tags[cat] || []).slice(0, maxPerCategory).map(label => buildBadge(label, cat)))

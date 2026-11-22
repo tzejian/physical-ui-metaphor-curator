@@ -35,6 +35,7 @@ const REGISTRY = {
   'ref-025': () => import('./ref-025-curtain-menu.js'),
   'ref-026': () => import('./ref-026-slot-machine.js'),
   'ref-027': () => import('./ref-027-fabric-sheets.js'),
+  'ref-028': () => import('./ref-028-pot-lid-reveal.js'),
 };
 
 /**

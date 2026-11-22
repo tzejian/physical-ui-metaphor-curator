@@ -21,15 +21,12 @@
   --border-focus:    #d4a84b;
   --border-card:     #242428;
 
-  /* Tag category colors */
-  --tag-metaphor:    #2a3a2e;
-  --tag-metaphor-fg: #7ec88a;
-  --tag-style:       #2d2a3e;
-  --tag-style-fg:    #a08ce8;
-  --tag-component:   #2e2a2a;
-  --tag-component-fg:#e88c8c;
-  --tag-material:    #2a2d3e;
-  --tag-material-fg: #8cb4e8;
+  /* Tag category colors (Neutralized monochrome hierarchy) */
+  --badge-bg:        #18181c;
+  --badge-border:    rgba(255, 255, 255, 0.08);
+  --badge-fg:        #a8a49e;
+  --badge-hover-bg:  #222228;
+  --badge-hover-fg:  #f0eee9;
 
   /* Spacing */
   --space-xs:  4px;

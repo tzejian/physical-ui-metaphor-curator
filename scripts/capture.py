@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Capture an evidence bundle from a live page, for JS-heavy sites (GSAP, WebGL, canvas).
+"""Capture a live-page telemetry bundle for JS-heavy sites (GSAP, WebGL, canvas).
 
 Plain fetch sees an empty shell on these sites. This script loads the page in headless
 Chromium, instruments it, and writes files the agent can read as text:
@@ -8,9 +8,7 @@ Chromium, instruments it, and writes files the agent can read as text:
   captures/<slug>/stylesheets.txt  authored CSS (same-origin and CORS-readable)
   captures/<slug>/screens/*.png    viewport screenshots at scroll positions (keep out of the repo)
 
-What report.json is evidence for:
-  inspected -> values read from the live page (computed styles, GSAP tween vars, shader source, CSS)
-  rendered pixel samples are what the screen showed, not shader constants; label them that way.
+Note: rendered_pixel_grid_6x4 is sampled from a screenshot (rendered blend), not shader constants.
 
 Usage:
   python3 scripts/capture.py URL [--out captures] [--scroll-steps 6] [--hover N] [--no-screens]
@@ -183,124 +181,140 @@ PAGE_JS = r"""
 """
 
 def slugify(url):
-    p = urlparse(url); s = (p.netloc + p.path).strip('/')
-    return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')[:60] or 'page'
+  p = urlparse(url); s = (p.netloc + p.path).strip('/')
+  return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')[:60] or 'page'
 
 def anim_probe(page):
-    """Reduced-motion check: does the page's CSS animation change under prefers-reduced-motion?"""
-    return page.evaluate("() => document.getAnimations().filter(a => a.playState==='running').length")
+  """Reduced-motion check: does the page's CSS animation change under prefers-reduced-motion?"""
+  return page.evaluate("() => document.getAnimations().filter(a => a.playState==='running').length")
 
 def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('url'); ap.add_argument('--out', default='captures')
-    ap.add_argument('--scroll-steps', type=int, default=6)
-    ap.add_argument('--hover', type=int, default=3, help='hover this many interactive elements and log what changes')
-    ap.add_argument('--no-screens', action='store_true')
-    ap.add_argument('--wait', type=float, default=2.5, help='seconds to settle after load')
-    ap.add_argument('--viewport', default='1440x900')
-    a = ap.parse_args()
+  ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+  ap.add_argument('url'); ap.add_argument('--out', default='captures')
+  ap.add_argument('--scroll-steps', type=int, default=6)
+  ap.add_argument('--hover', type=int, default=3, help='hover this many interactive elements and log what changes')
+  ap.add_argument('--no-screens', action='store_true')
+  ap.add_argument('--wait', type=float, default=2.5, help='seconds to settle after load')
+  ap.add_argument('--viewport', default='1440x900')
+  a = ap.parse_args()
+  try:
+    from playwright.sync_api import sync_playwright
+  except ImportError:
+    print('playwright not installed: pip install playwright && playwright install chromium'); return 2
+  vw, vh = map(int, a.viewport.split('x'))
+  out = Path(a.out) / slugify(a.url); (out / 'screens').mkdir(parents=True, exist_ok=True)
+  report = {'url': a.url, 'captured': time.strftime('%Y-%m-%d'), 'viewport': a.viewport, 'notes': []}
+  with sync_playwright() as p:
+    b = p.chromium.launch(args=['--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'])
+    ctx = b.new_context(viewport={'width': vw, 'height': vh})
+    ctx.add_init_script(INIT_JS)
+    page = ctx.new_page()
+    sheets, console_err, failed = {}, [], []
+    page.on('console', lambda m: console_err.append(m.text[:200]) if m.type == 'error' and len(console_err) < 8 else None)
+    page.on('requestfailed', lambda r: failed.append(r.url[:120]) if len(failed) < 8 else None)
+    page.on('response', lambda r: sheets.__setitem__(r.url, r) if 'text/css' in (r.headers.get('content-type') or '') else None)
     try:
-        from playwright.sync_api import sync_playwright
-    except ImportError:
-        print('playwright not installed: pip install playwright && playwright install chromium'); return 2
-    vw, vh = map(int, a.viewport.split('x'))
-    out = Path(a.out) / slugify(a.url); (out / 'screens').mkdir(parents=True, exist_ok=True)
-    report = {'url': a.url, 'captured': time.strftime('%Y-%m-%d'), 'viewport': a.viewport, 'notes': []}
-    with sync_playwright() as p:
-        b = p.chromium.launch(args=['--use-gl=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'])
-        ctx = b.new_context(viewport={'width': vw, 'height': vh})
-        ctx.add_init_script(INIT_JS)
-        page = ctx.new_page()
-        sheets, console_err, failed = {}, [], []
-        page.on('console', lambda m: console_err.append(m.text[:200]) if m.type == 'error' and len(console_err) < 8 else None)
-        page.on('requestfailed', lambda r: failed.append(r.url[:120]) if len(failed) < 8 else None)
-        page.on('response', lambda r: sheets.__setitem__(r.url, r) if 'text/css' in (r.headers.get('content-type') or '') else None)
+      resp = page.goto(a.url, wait_until='load', timeout=45000)
+      report['status'] = resp.status if resp else None
+    except Exception as e:
+      report['notes'].append(f'goto failed: {str(e)[:200]}'); report['status'] = None
+      (out / 'report.json').write_text(json.dumps(report, indent=2)); print(json.dumps(report, indent=2)); b.close(); return 1
+    page.wait_for_timeout(int(a.wait * 1000))
+    if report['status'] and report['status'] >= 400 or 'just a moment' in (page.title() or '').lower():
+      report['notes'].append('page looks blocked (bot wall or error); report may describe the block page, not the site')
+
+    report.update(page.evaluate(PAGE_JS))
+    report['webgl'] = page.evaluate('window.__cap.webgl'); report['shaders'] = page.evaluate('window.__cap.shaders')
+    report['canvas2d_count'] = page.evaluate('window.__cap.canvases2d')
+    report['canvases'] = page.evaluate("() => [...document.querySelectorAll('canvas')].slice(0,6).map(c=>({w:c.width,h:c.height,cls:c.className||null}))")
+    report['running_animations_at_load'] = anim_probe(page)
+
+    # scroll / virtual-scroll sweep with real wheel input
+    total = page.evaluate('document.documentElement.scrollHeight')
+    if total > vh:
+      steps = max(1, a.scroll_steps)
+      step_px = max(200, min(vh, (total - vh) // steps))
+    else:
+      steps = 4
+      step_px = 400
+
+    pre_motion_changes = sum(m.get('changes', 0) for m in page.evaluate('window.__cap.motionLog()'))
+    scroll_log = []
+    screen_bytes = []
+    for i in range(steps):
+      page.mouse.move(vw / 2, vh / 2)
+      page.mouse.wheel(0, step_px)
+      page.wait_for_timeout(700)
+      y = page.evaluate('scrollY')
+      scroll_log.append(y)
+      if not a.no_screens:
+        shot_path = out / 'screens' / f'scroll-{i+1:02d}.png'
+        page.screenshot(path=str(shot_path))
+        screen_bytes.append(shot_path.read_bytes())
+
+    post_motion_log = page.evaluate('window.__cap.motionLog()')
+    post_motion_changes = sum(m.get('changes', 0) for m in post_motion_log)
+    screens_differ = len(screen_bytes) >= 2 and screen_bytes[0] != screen_bytes[-1]
+
+    report['scroll_positions'] = scroll_log
+    report['scroll_moved'] = bool(scroll_log and scroll_log[-1] > 0)
+    report['wheel_events_sent'] = steps
+    report['wheel_reacted'] = bool((post_motion_changes > pre_motion_changes) or screens_differ)
+    report['motion_log'] = post_motion_log
+
+    if not report['scroll_moved'] and report['wheel_reacted']:
+      report['notes'].append('page reacts to wheel input without scrolling (virtual scroll)')
+
+    if a.hover:
+      page.evaluate('scrollTo(0,0)'); page.wait_for_timeout(400)
+      targets = page.query_selector_all('a,button,[role=button],.card,[class*=card],[class*=item]')
+      hov = []
+      for el in targets[:40]:
+        if len(hov) >= a.hover: break
         try:
-            resp = page.goto(a.url, wait_until='load', timeout=45000)
-            report['status'] = resp.status if resp else None
-        except Exception as e:
-            report['notes'].append(f'goto failed: {str(e)[:200]}'); report['status'] = None
-            (out / 'report.json').write_text(json.dumps(report, indent=2)); print(json.dumps(report, indent=2)); b.close(); return 1
-        page.wait_for_timeout(int(a.wait * 1000))
-        if report['status'] and report['status'] >= 400 or 'just a moment' in (page.title() or '').lower():
-            report['notes'].append('page looks blocked (bot wall or error); report may describe the block page, not the site')
+          if not el.is_visible(): continue
+          before = el.evaluate("e=>{const c=getComputedStyle(e);return [c.transform,c.backgroundColor,c.boxShadow,c.color,c.opacity]}")
+          el.hover(timeout=1500); page.wait_for_timeout(500)
+          after = el.evaluate("e=>{const c=getComputedStyle(e);return [c.transform,c.backgroundColor,c.boxShadow,c.color,c.opacity]}")
+          names = ['transform', 'background', 'box-shadow', 'color', 'opacity']
+          diff = {n: [x, y] for n, x, y in zip(names, before, after) if x != y}
+          hov.append({'el': el.evaluate("e=>e.tagName.toLowerCase()+(e.className&&typeof e.className==='string'?'.'+e.className.split(' ')[0]:'')"), 'changed': diff or 'no computed change'})
+        except Exception: continue
+      report['hover_probe'] = hov
+    # reduced motion
+    page.emulate_media(reduced_motion='reduce'); page.wait_for_timeout(500)
+    report['running_animations_reduced_motion'] = anim_probe(page)
+    page.emulate_media(reduced_motion='no-preference')
+    # rendered pixel sample (what was on screen, NOT shader constants)
+    if report['webgl'] and not a.no_screens:
+      try:
+        from PIL import Image
+        page.evaluate('scrollTo(0,0)'); page.wait_for_timeout(600)
+        shot = out / 'screens' / 'top.png'; page.screenshot(path=str(shot))
+        im = Image.open(shot).convert('RGB').resize((6, 4))
+        report['rendered_pixel_grid_6x4'] = ['#%02X%02X%02X' % im.getpixel((x, y)) for y in range(4) for x in range(6)]
+        report['notes'].append('rendered_pixel_grid is sampled from a screenshot (rendered blend); do not report it as a shader constant')
+      except Exception as e:
+        report['notes'].append(f'pixel sample skipped: {e}')
+    elif not a.no_screens:
+      page.evaluate('scrollTo(0,0)'); page.wait_for_timeout(300); page.screenshot(path=str(out / 'screens' / 'top.png'))
 
-        report.update(page.evaluate(PAGE_JS))
-        report['webgl'] = page.evaluate('window.__cap.webgl'); report['shaders'] = page.evaluate('window.__cap.shaders')
-        report['canvas2d_count'] = page.evaluate('window.__cap.canvases2d')
-        report['canvases'] = page.evaluate("() => [...document.querySelectorAll('canvas')].slice(0,6).map(c=>({w:c.width,h:c.height,cls:c.className||null}))")
-        report['running_animations_at_load'] = anim_probe(page)
+    # CSS text
+    css_out = []
+    for u, r in list(sheets.items())[:15]:
+      try: css_out.append(f'/* {u} */\n' + r.text()[:60000])
+      except Exception: css_out.append(f'/* {u} (unreadable) */')
+    inline = page.evaluate("() => [...document.querySelectorAll('style')].map(s=>s.textContent.slice(0,60000))")
+    css_out += [f'/* inline <style> */\n{s}' for s in inline]
+    (out / 'stylesheets.txt').write_text('\n\n'.join(css_out), encoding='utf-8')
+    report['stylesheets'] = len(css_out)
+    report['console_errors'] = console_err; report['failed_requests'] = failed
+    b.close()
 
-        # scroll sweep with real wheel input; record scroll-driven change
-        total = page.evaluate('document.documentElement.scrollHeight'); steps = max(1, a.scroll_steps)
-        step_px = max(200, min(vh, (total - vh) // steps if total > vh else 0)) if total > vh else 0
-        scroll_log = []
-        for i in range(steps if step_px else 0):
-            page.mouse.move(vw / 2, vh / 2); page.mouse.wheel(0, step_px); page.wait_for_timeout(700)
-            y = page.evaluate('scrollY'); scroll_log.append(y)
-            if not a.no_screens: page.screenshot(path=str(out / 'screens' / f'scroll-{i+1:02d}.png'))
-        report['scroll_positions'] = scroll_log
-        report['scroll_moved'] = bool(scroll_log and scroll_log[-1] > 0)
-        report['motion_log'] = page.evaluate('window.__cap.motionLog()')
-        if a.hover:
-            page.evaluate('scrollTo(0,0)'); page.wait_for_timeout(400)
-            targets = page.query_selector_all('a,button,[role=button],.card,[class*=card],[class*=item]')
-            hov = []
-            for el in targets[:40]:
-                if len(hov) >= a.hover: break
-                try:
-                    if not el.is_visible(): continue
-                    before = el.evaluate("e=>{const c=getComputedStyle(e);return [c.transform,c.backgroundColor,c.boxShadow,c.color,c.opacity]}")
-                    el.hover(timeout=1500); page.wait_for_timeout(500)
-                    after = el.evaluate("e=>{const c=getComputedStyle(e);return [c.transform,c.backgroundColor,c.boxShadow,c.color,c.opacity]}")
-                    names = ['transform', 'background', 'box-shadow', 'color', 'opacity']
-                    diff = {n: [x, y] for n, x, y in zip(names, before, after) if x != y}
-                    hov.append({'el': el.evaluate("e=>e.tagName.toLowerCase()+(e.className&&typeof e.className==='string'?'.'+e.className.split(' ')[0]:'')"), 'changed': diff or 'no computed change'})
-                except Exception: continue
-            report['hover_probe'] = hov
-        # reduced motion
-        page.emulate_media(reduced_motion='reduce'); page.wait_for_timeout(500)
-        report['running_animations_reduced_motion'] = anim_probe(page)
-        page.emulate_media(reduced_motion='no-preference')
-        # rendered pixel sample (what was on screen, NOT shader constants)
-        if report['webgl'] and not a.no_screens:
-            try:
-                from PIL import Image
-                page.evaluate('scrollTo(0,0)'); page.wait_for_timeout(600)
-                shot = out / 'screens' / 'top.png'; page.screenshot(path=str(shot))
-                im = Image.open(shot).convert('RGB').resize((6, 4))
-                report['rendered_pixel_grid_6x4'] = ['#%02X%02X%02X' % im.getpixel((x, y)) for y in range(4) for x in range(6)]
-                report['notes'].append('rendered_pixel_grid is sampled from a screenshot (rendered blend); do not report it as a shader constant')
-            except Exception as e:
-                report['notes'].append(f'pixel sample skipped: {e}')
-        elif not a.no_screens:
-            page.evaluate('scrollTo(0,0)'); page.wait_for_timeout(300); page.screenshot(path=str(out / 'screens' / 'top.png'))
-
-        # CSS text
-        css_out = []
-        for u, r in list(sheets.items())[:15]:
-            try: css_out.append(f'/* {u} */\n' + r.text()[:60000])
-            except Exception: css_out.append(f'/* {u} (unreadable) */')
-        inline = page.evaluate("() => [...document.querySelectorAll('style')].map(s=>s.textContent.slice(0,60000))")
-        css_out += [f'/* inline <style> */\n{s}' for s in inline]
-        (out / 'stylesheets.txt').write_text('\n\n'.join(css_out), encoding='utf-8')
-        report['stylesheets'] = len(css_out)
-        report['console_errors'] = console_err; report['failed_requests'] = failed
-        b.close()
-
-    # verdict hints the agent can paste into evidence
-    r = report
-    r['evidence_hint'] = {
-        'tokens': 'inspected' if r.get('computed_colors') else 'inferred',
-        'palette': 'inspected' if r.get('computed_colors') and not r['notes'] else 'inferred',
-        'stack': 'inspected' if (r.get('libraries') or r.get('webgl')) else 'inferred',
-        'interactions': 'inspected' if (r.get('gsap_tweens') or r.get('scroll_triggers') or r.get('motion_log') or r.get('hover_probe')) else 'inferred',
-        'caveat': 'Hints only. A bot wall, cookie overlay or WebGL-less rendering lowers them. Read screens/ before claiming inspected.',
-    }
-    (out / 'report.json').write_text(json.dumps(r, indent=2, ensure_ascii=False), encoding='utf-8')
-    print(f'wrote {out}/report.json')
-    print(json.dumps({k: r.get(k) for k in ('title', 'status', 'libraries', 'webgl', 'scroll_moved', 'evidence_hint')}, indent=2, ensure_ascii=False))
-    return 0
+  (out / 'report.json').write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding='utf-8')
+  print(f'wrote {out}/report.json')
+  print(json.dumps({k: report.get(k) for k in ('title', 'status', 'libraries', 'webgl', 'scroll_moved', 'wheel_reacted')}, indent=2, ensure_ascii=False))
+  return 0
 
 if __name__ == '__main__':
-    sys.exit(main())
+  sys.exit(main())

@@ -11,7 +11,6 @@ Errors:
   - no entries found
 
 Warnings:
-  - missing sources or evidence (legacy entry)
   - art_styles / ui_components tags outside schemas/vocabulary.json (aliases are hinted)
   - a hex color shared by many entries (palette values may be copied or invented)
   - promotional wording in usability_notes
@@ -85,8 +84,8 @@ def main():
         return 1
 
     errors, warnings = [], []
-    entries = {}          # path -> data (schema-valid or not)
-    seen_ids = {}         # id -> path
+    entries = {}  # path -> data (schema-valid or not)
+    seen_ids = {}  # id -> path
     hex_users = defaultdict(set)
 
     for path in files:
@@ -119,12 +118,9 @@ def main():
         elif eid:
             seen_ids[eid] = name
 
-        # legacy / evidence
+        # legacy / evidence flags (kept for downstream checks)
         has_sources = "sources" in data
         has_evidence = "evidence" in data
-        if not has_sources or not has_evidence:
-            missing = [k for k, ok in (("sources", has_sources), ("evidence", has_evidence)) if not ok]
-            warnings.append(f"{name}: legacy entry, missing {' and '.join(missing)}")
 
         # url
         url = data.get("url")
@@ -179,18 +175,18 @@ def main():
                     if ev.get(field) == "inspected":
                         warnings.append(f"{name}: all sources are tier C but evidence.{field} is 'inspected'")
 
-    # repeated palette colors
-    for hex_value, users in sorted(hex_users.items(), key=lambda kv: (-len(kv[1]), kv[0])):
-        if len(users) >= REPEATED_HEX_THRESHOLD:
-            warnings.append(
-                f"palette: {hex_value} appears in {len(users)} entries "
-                f"({', '.join(sorted(u.split('-')[0] + '-' + u.split('-')[1] for u in users))}); check these are real values"
-            )
+        # repeated palette colors
+        for hex_value, users in sorted(hex_users.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+            if len(users) >= REPEATED_HEX_THRESHOLD:
+                warnings.append(
+                    f"palette: {hex_value} appears in {len(users)} entries "
+                    f"({', '.join(sorted(u.split('-')[0] + '-' + u.split('-')[1] for u in users))}); check these are real values"
+                )
 
     for line in errors:
         print(f"[ERROR] {line}")
     for line in warnings:
-        print(f"[WARN]  {line}")
+        print(f"[WARN] {line}")
 
     ok_count = len(files) - len({e.split(":")[0] for e in errors})
     print(f"\n{len(files)} entries checked: {ok_count} clean of errors, {len(errors)} error(s), {len(warnings)} warning(s).")

@@ -90,56 +90,61 @@ function renderDetail(entry) {
       <div class="preview-stage__loading">Loading preview…</div>
     </div>
 
-    <!-- ② Physical & Digital Affordance -->
-    <div class="detail-panel">
-      <p class="section-title">Affordance Translation</p>
-      <div class="affordance-block">
-        <div class="affordance-item affordance-item--physical">
-          <div class="affordance-item__label">Physical Behavior</div>
-          <div class="affordance-item__text">${escapeHtml(afford.physical_behavior || '—')}</div>
-        </div>
-        <div class="affordance-item affordance-item--digital">
-          <div class="affordance-item__label">Digital Mechanic</div>
-          <div class="affordance-item__text">${escapeHtml(afford.digital_mechanic || '—')}</div>
-        </div>
-      </div>
-    </div>
+    <!-- Editorial Dossier Grid: 2 Columns on desktop -->
+    <div class="detail-dossier detail-layout__full">
+      <!-- Left Column: Primary Concept & Affordance -->
+      <div class="detail-dossier__primary">
+        <section class="editorial-section">
+          <h2 class="editorial-section__title">Affordance Translation</h2>
+          <div class="affordance-block">
+            <div class="affordance-item affordance-item--physical">
+              <span class="affordance-item__label">Physical Behavior</span>
+              <p class="affordance-item__text">${escapeHtml(afford.physical_behavior || '—')}</p>
+            </div>
+            <div class="affordance-item affordance-item--digital">
+              <span class="affordance-item__label">Digital Mechanic</span>
+              <p class="affordance-item__text">${escapeHtml(afford.digital_mechanic || '—')}</p>
+            </div>
+          </div>
+        </section>
 
-    <!-- ③ Design Tokens -->
-    <div class="detail-panel">
-      <p class="section-title">Design Tokens</p>
-
-      <div class="token-spec">
-        <div class="token-spec__label">Dominant Colors</div>
-        <div class="swatch-row" id="swatch-row">${swatchesHtml}</div>
-      </div>
-
-      <div class="token-spec">
-        <div class="token-spec__label">Borders &amp; Keylines</div>
-        <div class="token-spec__value token-spec__value--mono">${escapeHtml(tokens.borders || '—')}</div>
+        <section class="editorial-section">
+          <h2 class="editorial-section__title">Interactive Mechanics</h2>
+          <ul class="mechanics-list">${mechanicsHtml}</ul>
+        </section>
       </div>
 
-      <div class="token-spec">
-        <div class="token-spec__label">Elevation</div>
-        <div class="token-spec__value token-spec__value--mono">${escapeHtml(tokens.elevation || '—')}</div>
+      <!-- Right Column: Technical Spec & Usability Context -->
+      <div class="detail-dossier__secondary">
+        <section class="editorial-section">
+          <h2 class="editorial-section__title">Design Tokens</h2>
+          
+          <div class="token-spec">
+            <span class="token-spec__label">Dominant Palette</span>
+            <div class="swatch-row" id="swatch-row">${swatchesHtml}</div>
+          </div>
+
+          <div class="token-spec">
+            <span class="token-spec__label">Borders &amp; Edges</span>
+            <div class="token-spec__value token-spec__value--mono">${escapeHtml(tokens.borders || '—')}</div>
+          </div>
+
+          <div class="token-spec">
+            <span class="token-spec__label">Elevation &amp; Depth</span>
+            <div class="token-spec__value token-spec__value--mono">${escapeHtml(tokens.elevation || '—')}</div>
+          </div>
+
+          <div class="token-spec">
+            <span class="token-spec__label">Typography</span>
+            <div class="token-spec__value">${escapeHtml(tokens.typography || '—')}</div>
+          </div>
+        </section>
+
+        <section class="editorial-section">
+          <h2 class="editorial-section__title">Usability &amp; Implementation Notes</h2>
+          <div class="usability-block">${escapeHtml(entry.usability_notes || '—')}</div>
+        </section>
       </div>
-
-      <div class="token-spec">
-        <div class="token-spec__label">Typography</div>
-        <div class="token-spec__value">${escapeHtml(tokens.typography || '—')}</div>
-      </div>
-    </div>
-
-    <!-- ④ Interactive Mechanics -->
-    <div class="detail-panel">
-      <p class="section-title">Interactive Mechanics</p>
-      <ul class="mechanics-list">${mechanicsHtml}</ul>
-    </div>
-
-    <!-- ⑤ Usability Notes -->
-    <div class="detail-panel">
-      <p class="section-title">Usability Notes</p>
-      <div class="usability-block">${escapeHtml(entry.usability_notes || '—')}</div>
     </div>
   `;
 
