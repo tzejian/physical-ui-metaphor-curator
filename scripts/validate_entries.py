@@ -118,7 +118,7 @@ def main():
         elif eid:
             seen_ids[eid] = name
 
-        # legacy / evidence flags (kept for downstream checks)
+        # legacy / evidence
         has_sources = "sources" in data
         has_evidence = "evidence" in data
 
@@ -175,18 +175,18 @@ def main():
                     if ev.get(field) == "inspected":
                         warnings.append(f"{name}: all sources are tier C but evidence.{field} is 'inspected'")
 
-        # repeated palette colors
-        for hex_value, users in sorted(hex_users.items(), key=lambda kv: (-len(kv[1]), kv[0])):
-            if len(users) >= REPEATED_HEX_THRESHOLD:
-                warnings.append(
-                    f"palette: {hex_value} appears in {len(users)} entries "
-                    f"({', '.join(sorted(u.split('-')[0] + '-' + u.split('-')[1] for u in users))}); check these are real values"
-                )
+    # repeated palette colors
+    for hex_value, users in sorted(hex_users.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+        if len(users) >= REPEATED_HEX_THRESHOLD:
+            warnings.append(
+                f"palette: {hex_value} appears in {len(users)} entries "
+                f"({', '.join(sorted(u.split('-')[0] + '-' + u.split('-')[1] for u in users))}); check these are real values"
+            )
 
     for line in errors:
         print(f"[ERROR] {line}")
     for line in warnings:
-        print(f"[WARN] {line}")
+        print(f"[WARN]  {line}")
 
     ok_count = len(files) - len({e.split(":")[0] for e in errors})
     print(f"\n{len(files)} entries checked: {ok_count} clean of errors, {len(errors)} error(s), {len(warnings)} warning(s).")
